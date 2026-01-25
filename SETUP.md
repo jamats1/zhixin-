@@ -21,26 +21,44 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 
 ### 2. Sanity CMS Setup
 
-1. **Create a Sanity project:**
+**Project Information:**
+- **Project Name:** Zhixin车
+- **Project ID:** `fhp2b1rf`
+- **Organization ID:** `odeOGKGmh`
+- **Dataset:** `production`
+- **Plan:** Growth Trial (Active)
+
+1. **Install Sanity CLI (if not already installed):**
    ```bash
    npm install -g @sanity/cli
-   sanity login
-   sanity init
    ```
 
-2. **Configure your project:**
-   - Use the project ID from Sanity dashboard
-   - Set dataset to `production` (or your preferred dataset)
-
-3. **Deploy schemas:**
-   The schemas are already defined in `sanity/schemas/`. To deploy:
+2. **Login to Sanity:**
    ```bash
-   npx sanity@latest schema deploy
+   sanity login
    ```
 
-4. **Access Sanity Studio:**
+3. **Link your project (if needed):**
+   ```bash
+   npx sanity@latest init --project fhp2b1rf --dataset production
+   ```
+   Or use the command from Sanity dashboard:
+   ```bash
+   npm create sanity@latest -- --project fhp2b1rf --dataset production
+   ```
+
+4. **Deploy schemas:**
+   The schemas are already defined in `sanity/schemas/`. The schemas will be automatically available when you access the studio.
+
+5. **Access Sanity Studio:**
    - Development: `http://localhost:3000/studio`
-   - Production: Deploy studio separately or use Sanity's hosted studio
+   - The studio is integrated into your Next.js app at `/studio` route
+   - You can also access it via Sanity's hosted studio at your project dashboard
+
+6. **Verify Configuration:**
+   - Check `.env.local` has `NEXT_PUBLIC_SANITY_PROJECT_ID=fhp2b1rf`
+   - Check `NEXT_PUBLIC_SANITY_DATASET=production`
+   - Run `npm run dev` and visit `http://localhost:3000/studio`
 
 ### 3. Clerk Authentication (Optional)
 

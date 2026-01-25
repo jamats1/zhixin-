@@ -44,19 +44,20 @@ A pixel-perfect, structure-perfect English clone of Autohome China's image-list 
    npm install
    ```
 
-2. **Set up environment variables:**
+2. **Environment variables:**
+   Your `.env.local` should contain:
    ```bash
-   cp .env.local.example .env.local
+   NEXT_PUBLIC_SANITY_PROJECT_ID=fhp2b1rf
+   NEXT_PUBLIC_SANITY_DATASET=production
    ```
-   Fill in your Sanity and Clerk credentials.
+   (Already configured in your project)
 
 3. **Set up Sanity:**
-   - Create a Sanity project at [sanity.io](https://sanity.io)
-   - Deploy the schemas:
-     ```bash
-     npx sanity@latest init
-     npx sanity@latest schema deploy
-     ```
+   - **Project ID:** `fhp2b1rf`
+   - **Dataset:** `production`
+   - **Studio:** Access at `http://localhost:3000/studio` after starting dev server
+   - See `SANITY_SETUP.md` for detailed setup instructions
+   - See `VERIFY_SANITY.md` for verification steps
 
 4. **Run development server:**
    ```bash
