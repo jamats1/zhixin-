@@ -183,3 +183,73 @@ export const brandsQuery = groq`
     "count": count(*[_type == "vehicle" && brand == ^.title])
   }
 `;
+
+// Car Parts Queries
+export const carPartsByFiltersQuery = (filters: {
+  brandFilter?: string;
+  categoryFilter?: string;
+  onSaleFilter?: boolean;
+  inStockFilter?: boolean;
+  start: number;
+  end: number;
+}) => {
+  const conditions: string[] = ['_type == "carPart"'];
+
+  if (filters.brandFilter) {
+    conditions.push("brand match $brandFilter");
+  }
+  if (filters.categoryFilter) {
+    conditions.push("category == $categoryFilter");
+  }
+  if (filters.onSaleFilter) {
+    conditions.push("isOnSale == true");
+  }
+  if (filters.inStockFilter) {
+    conditions.push("inStock == true");
+  }
+
+  return groq`
+    *[${conditions.join(" && ")}] | order(publishedAt desc) [$start...$end] {
+      _id,
+      name,
+      partNumber,
+      category,
+      brand,
+      gallery[] {
+        image,
+        alt
+      },
+      priceRange,
+      specifications,
+      description,
+      isOnSale,
+      inStock,
+      slug,
+      publishedAt
+    }
+  `;
+};
+
+export const carPartsCountQuery = (filters: {
+  brandFilter?: string;
+  categoryFilter?: string;
+  onSaleFilter?: boolean;
+  inStockFilter?: boolean;
+}) => {
+  const conditions: string[] = ['_type == "carPart"'];
+
+  if (filters.brandFilter) {
+    conditions.push("brand match $brandFilter");
+  }
+  if (filters.categoryFilter) {
+    conditions.push("category == $categoryFilter");
+  }
+  if (filters.onSaleFilter) {
+    conditions.push("isOnSale == true");
+  }
+  if (filters.inStockFilter) {
+    conditions.push("inStock == true");
+  }
+
+  return groq`count(*[${conditions.join(" && ")}])`;
+};

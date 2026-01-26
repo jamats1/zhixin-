@@ -1,3 +1,4 @@
+import ErrorBoundary from "@/components/ErrorBoundary";
 import Footer from "@/components/Footer";
 import Filters from "@/components/Filters";
 import Header from "@/components/Header";
@@ -7,23 +8,37 @@ import VehicleGrid from "@/components/VehicleGrid";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <div className="flex relative">
-        {/* Sidebar - hidden on mobile, shown on desktop */}
-        <div className="hidden lg:block">
-          <Sidebar />
-        </div>
-        <main className="flex-1 min-h-screen lg:ml-64">
-          <div className="flex flex-col items-stretch py-3 md:py-5 px-3 md:pl-6 md:pr-6">
-            <Filters />
-            <VehicleGrid />
+    <ErrorBoundary>
+      <div className="min-h-screen bg-white overflow-x-hidden w-full">
+        <ErrorBoundary>
+          <Header />
+        </ErrorBoundary>
+        <div className="flex relative w-full overflow-x-hidden">
+          {/* Sidebar - hidden on mobile, shown on desktop */}
+          <div className="hidden lg:block">
+            <ErrorBoundary>
+              <Sidebar />
+            </ErrorBoundary>
           </div>
-        </main>
+          <main className="flex-1 min-h-screen lg:ml-64 w-full max-w-full overflow-x-hidden">
+            <div className="flex flex-col items-stretch py-3 md:py-5 px-3 md:pl-6 md:pr-6 w-full max-w-full overflow-x-hidden">
+              <ErrorBoundary>
+                <Filters />
+              </ErrorBoundary>
+              <ErrorBoundary>
+                <VehicleGrid />
+              </ErrorBoundary>
+            </div>
+          </main>
+        </div>
+        {/* Mobile Filter Button/Drawer */}
+        <ErrorBoundary>
+          <MobileFilters />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Footer />
+        </ErrorBoundary>
       </div>
-      {/* Mobile Filter Button/Drawer */}
-      <MobileFilters />
-      <Footer />
-    </div>
+    </ErrorBoundary>
   );
 }

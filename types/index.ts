@@ -63,3 +63,28 @@ export type BrandWithLogo = {
   count: number;
   logo?: { asset?: { _ref?: string; url?: string }; [k: string]: unknown };
 };
+
+export type CarPart = {
+  id: string;
+  name: string;
+  partNumber?: string;
+  category: string;
+  brand?: string;
+  images: VehicleImage[];
+  priceRange?: {
+    min: number;
+    max: number;
+    currency: string;
+  };
+  specifications?: {
+    material?: string;
+    dimensions?: string;
+    weight?: number;
+    warranty?: number;
+  };
+  description?: string;
+  isOnSale: boolean;
+  inStock: boolean;
+  slug?: string;
+  publishedAt?: string;
+};

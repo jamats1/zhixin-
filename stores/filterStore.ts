@@ -6,6 +6,7 @@ export type FilterState = {
   selectedBrand: string | null;
   selectedType: string | null;
   selectedCategory: string | null;
+  selectedCarPartCategory: string | null;
   onlyOnSale: boolean;
   onlyNewEnergy: boolean;
   fuelType: FuelType;
@@ -17,6 +18,7 @@ type FilterActions = {
   setBrand: (brand: string | null) => void;
   setType: (type: string | null) => void;
   setCategory: (category: string | null) => void;
+  setCarPartCategory: (category: string | null) => void;
   setOnlyOnSale: (value: boolean) => void;
   setOnlyNewEnergy: (value: boolean) => void;
   setFuelType: (fuelType: FuelType) => void;
@@ -29,6 +31,7 @@ const initialState: FilterState = {
   selectedBrand: null,
   selectedType: null,
   selectedCategory: null,
+  selectedCarPartCategory: null,
   onlyOnSale: false,
   onlyNewEnergy: false,
   fuelType: null,
@@ -41,6 +44,7 @@ export const useFilterStore = create<FilterState & FilterActions>((set) => ({
   setBrand: (brand) => set({ selectedBrand: brand }),
   setType: (type) => set({ selectedType: type }),
   setCategory: (category) => set({ selectedCategory: category }),
+  setCarPartCategory: (category) => set({ selectedCarPartCategory: category }),
   setOnlyOnSale: (value) => set({ onlyOnSale: value }),
   setOnlyNewEnergy: (value) => set({ onlyNewEnergy: value }),
   setFuelType: (fuelType) => set({ fuelType }),

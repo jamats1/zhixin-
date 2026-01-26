@@ -1,5 +1,5 @@
 import { createClient } from "@sanity/client";
-import imageUrlBuilder from "@sanity/image-url";
+import { createImageUrlBuilder } from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "fhp2b1rf";
@@ -15,13 +15,21 @@ const client = projectId
     })
   : null;
 
-const builder = client ? imageUrlBuilder(client) : null;
+const builder = client ? createImageUrlBuilder(client) : null;
 
 export function urlFor(source: SanityImageSource) {
   if (!builder) {
-    throw new Error(
+    console.warn(
       "Sanity client not configured. Please set NEXT_PUBLIC_SANITY_PROJECT_ID",
     );
+    // Return a mock object that matches the expected interface
+    const mockBuilder = {
+      url: () => "",
+      width: () => mockBuilder,
+      height: () => mockBuilder,
+      fit: () => mockBuilder,
+    };
+    return mockBuilder as any;
   }
   return builder.image(source);
 }
@@ -32,7 +40,12 @@ export function brandLogoUrl(
   size = 64,
 ): string | null {
   if (!builder || !logo) return null;
-  return builder.image(logo).width(size).height(size).fit("max").url();
+  try {
+    return builder.image(logo).width(size).height(size).fit("max").url();
+  } catch (error) {
+    console.error("Error generating brand logo URL:", error);
+    return null;
+  }
 }
 
 export default client;

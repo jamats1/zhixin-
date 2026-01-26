@@ -117,11 +117,26 @@ export default function LocationWeather() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    let isMounted = true;
+
     async function fetchLocationAndWeather() {
       try {
-        // Get location from IP address
-        const ipResponse = await fetch("https://ipapi.co/json/");
+        // Get location from IP address with timeout
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+
+        const ipResponse = await fetch("https://ipapi.co/json/", {
+          signal: controller.signal,
+        });
+        clearTimeout(timeoutId);
+
+        if (!ipResponse.ok) {
+          throw new Error(`HTTP error! status: ${ipResponse.status}`);
+        }
+
         const ipData = await ipResponse.json();
+
+        if (!isMounted) return;
 
         const cityName =
           ipData.city ||
@@ -136,10 +151,22 @@ export default function LocationWeather() {
         // Fetch weather using IP-based coordinates
         if (latitude && longitude) {
           try {
+            const weatherController = new AbortController();
+            const weatherTimeoutId = setTimeout(() => weatherController.abort(), 5000);
+
             const weatherResponse = await fetch(
-              `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weather_code,is_day&timezone=auto`
+              `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weather_code,is_day&timezone=auto`,
+              { signal: weatherController.signal }
             );
+            clearTimeout(weatherTimeoutId);
+
+            if (!weatherResponse.ok) {
+              throw new Error(`HTTP error! status: ${weatherResponse.status}`);
+            }
+
             const weatherData = await weatherResponse.json();
+
+            if (!isMounted) return;
 
             if (weatherData.current) {
               const temp = Math.round(weatherData.current.temperature_2m);
@@ -178,22 +205,31 @@ export default function LocationWeather() {
           });
         }
       } catch (error) {
-        // Fallback to default location
-        setLocation("New York");
-        setWeather({
-          location: "New York",
-          temperature: 22,
-          condition: "Clear",
-          icon: "☀️",
-          weatherCode: 0,
-          isDay: true,
-        });
+        // Only update state if component is still mounted
+        if (isMounted) {
+          // Fallback to default location
+          setLocation("New York");
+          setWeather({
+            location: "New York",
+            temperature: 22,
+            condition: "Clear",
+            icon: "☀️",
+            weatherCode: 0,
+            isDay: true,
+          });
+        }
       } finally {
-        setIsLoading(false);
+        if (isMounted) {
+          setIsLoading(false);
+        }
       }
     }
 
     fetchLocationAndWeather();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   return (

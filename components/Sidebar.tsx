@@ -72,7 +72,7 @@ export default function Sidebar() {
   };
 
   return (
-    <aside className="w-64 bg-white border-r border-[var(--border)] fixed left-0 top-[70px] bottom-0 overflow-y-auto shadow-sm">
+    <aside className="w-64 bg-white border-r border-[var(--border)] fixed left-0 top-[70px] bottom-0 overflow-y-auto overflow-x-hidden shadow-sm z-40">
       {/* Brand Filters */}
       <div className="p-4 space-y-4">
         {/* Quick Filters - Horizontal */}

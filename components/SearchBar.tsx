@@ -26,16 +26,27 @@ export default function SearchBar() {
   // Get recent searches from localStorage (by IP/user)
   const getRecentSearches = (): string[] => {
     if (typeof window === "undefined") return [];
-    const stored = localStorage.getItem("recentSearches");
-    return stored ? JSON.parse(stored).slice(0, 3) : [];
+    try {
+      const stored = localStorage.getItem("recentSearches");
+      return stored ? JSON.parse(stored).slice(0, 3) : [];
+    } catch (error) {
+      // Handle localStorage errors (quota exceeded, disabled, etc.)
+      console.warn("Error reading from localStorage:", error);
+      return [];
+    }
   };
 
   // Save search to recent searches
   const saveRecentSearch = (query: string) => {
     if (typeof window === "undefined" || !query.trim()) return;
-    const recent = getRecentSearches();
-    const updated = [query, ...recent.filter((s) => s !== query)].slice(0, 10);
-    localStorage.setItem("recentSearches", JSON.stringify(updated));
+    try {
+      const recent = getRecentSearches();
+      const updated = [query, ...recent.filter((s) => s !== query)].slice(0, 10);
+      localStorage.setItem("recentSearches", JSON.stringify(updated));
+    } catch (error) {
+      // Handle localStorage errors (quota exceeded, disabled, etc.)
+      console.warn("Error writing to localStorage:", error);
+    }
   };
 
   // Fetch search suggestions from Sanity
