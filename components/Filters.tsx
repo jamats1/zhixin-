@@ -42,8 +42,19 @@ function BrandLogoSmall({
 
 export default function Filters() {
   const { currentView, setCurrentView } = useUIStore();
-  const { setBrand, alphabeticalFilter, setAlphabeticalFilter, selectedCarPartCategory, setCarPartCategory } =
-    useFilterStore();
+  const { 
+    setBrand, 
+    alphabeticalFilter, 
+    setAlphabeticalFilter, 
+    selectedCarPartCategory, 
+    setCarPartCategory,
+    onlyOnSale,
+    onlyNewEnergy,
+    fuelType,
+    setOnlyOnSale,
+    setOnlyNewEnergy,
+    setFuelType,
+  } = useFilterStore();
   const { brands } = useBrands();
   const popularBrands = (brands || []).slice(0, POPULAR_BRANDS_COUNT);
 
@@ -173,7 +184,7 @@ export default function Filters() {
           </div>
 
           {/* Vehicle Type Filter Section */}
-          <div className="flex min-h-7 w-full border-b border-b-[#F0F3F8] py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] transition-all last:border-none min-w-0">
+          <div className="flex min-h-7 w-full border-b border-b-[#F0F3F8] py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] transition-all min-w-0">
             <div className="w-12 md:w-[68px] leading-5 md:leading-7 text-[#828CA0] text-xs md:text-sm shrink-0">
               Category
             </div>
@@ -185,6 +196,83 @@ export default function Filters() {
                   className="cursor-pointer rounded px-2 md:px-1.5 py-1 text-xs hover:bg-gray-100 whitespace-nowrap"
                 >
                   <span className="md:w-14">{type.mobileLabel || type.label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick Filters and Fuel Type Section */}
+          <div className="flex min-h-7 w-full border-b border-b-[#F0F3F8] py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] transition-all last:border-none min-w-0">
+            <div className="w-12 md:w-[68px] leading-5 md:leading-7 text-[#828CA0] text-xs md:text-sm shrink-0">
+              Filters
+            </div>
+            <div className="flex flex-1 flex-wrap gap-2 text-xs md:text-sm text-[var(--text-primary)] min-w-0">
+              {/* Quick Filters */}
+              <label
+                className={`flex items-center gap-1.5 cursor-pointer px-2.5 py-1.5 rounded-md border transition-all ${
+                  onlyOnSale && !onlyNewEnergy
+                    ? "bg-[var(--primary)]/10 border-[var(--primary)]/30 text-[var(--primary)]"
+                    : "bg-gray-50 border-gray-200 text-[var(--text-secondary)] hover:bg-gray-100 hover:border-gray-300"
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="quickFilter"
+                  checked={onlyOnSale && !onlyNewEnergy}
+                  onChange={() => {
+                    setOnlyOnSale(true);
+                    setOnlyNewEnergy(false);
+                  }}
+                  className="w-3 h-3 text-[var(--primary)] border-[var(--border)] rounded-full focus:ring-1 focus:ring-[var(--primary)] focus:ring-offset-0 accent-[var(--primary)] cursor-pointer"
+                />
+                <span className="text-xs font-medium whitespace-nowrap">
+                  On Sale
+                </span>
+              </label>
+              <label
+                className={`flex items-center gap-1.5 cursor-pointer px-2.5 py-1.5 rounded-md border transition-all ${
+                  onlyNewEnergy && !onlyOnSale
+                    ? "bg-[var(--primary)]/10 border-[var(--primary)]/30 text-[var(--primary)]"
+                    : "bg-gray-50 border-gray-200 text-[var(--text-secondary)] hover:bg-gray-100 hover:border-gray-300"
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="quickFilter"
+                  checked={onlyNewEnergy && !onlyOnSale}
+                  onChange={() => {
+                    setOnlyNewEnergy(true);
+                    setOnlyOnSale(false);
+                  }}
+                  className="w-3 h-3 text-[var(--primary)] border-[var(--border)] rounded-full focus:ring-1 focus:ring-[var(--primary)] focus:ring-offset-0 accent-[var(--primary)] cursor-pointer"
+                />
+                <span className="text-xs font-medium whitespace-nowrap">
+                  New Energy
+                </span>
+              </label>
+              
+              {/* Fuel Type Filters */}
+              {[
+                { label: "Gas", value: "gas" as const },
+                { label: "Diesel", value: "diesel" as const },
+                { label: "Electric", value: "electric" as const },
+                { label: "PHEV", value: "phev" as const },
+                { label: "Hybrid", value: "hybrid" as const },
+                { label: "Hydrogen", value: "hydrogen" as const },
+              ].map((type) => (
+                <button
+                  type="button"
+                  key={type.value}
+                  onClick={() =>
+                    setFuelType(fuelType === type.value ? null : type.value)
+                  }
+                  className={`px-2.5 py-1 text-xs rounded transition-colors whitespace-nowrap ${
+                    fuelType === type.value
+                      ? "bg-[var(--primary)] text-white"
+                      : "bg-gray-100 text-[var(--text-secondary)] hover:bg-gray-200"
+                  }`}
+                >
+                  {type.label}
                 </button>
               ))}
             </div>
@@ -217,7 +305,7 @@ export default function Filters() {
           </div>
 
           {/* Car Parts Category Filter Section */}
-          <div className="flex min-h-7 w-full border-b border-b-[#F0F3F8] py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] transition-all last:border-none min-w-0">
+          <div className="flex min-h-7 w-full border-b border-b-[#F0F3F8] py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] transition-all min-w-0">
             <div className="w-12 md:w-[68px] leading-5 md:leading-7 text-[#828CA0] text-xs md:text-sm shrink-0">
               Category
             </div>
@@ -237,6 +325,32 @@ export default function Filters() {
                   <span>{category.label}</span>
                 </button>
               ))}
+            </div>
+          </div>
+
+          {/* Car Parts: On Sale Filter */}
+          <div className="flex min-h-7 w-full border-b border-b-[#F0F3F8] py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] transition-all last:border-none min-w-0">
+            <div className="w-12 md:w-[68px] leading-5 md:leading-7 text-[#828CA0] text-xs md:text-sm shrink-0">
+              Filters
+            </div>
+            <div className="flex flex-1 flex-wrap gap-2 text-xs md:text-sm text-[var(--text-primary)] min-w-0">
+              <label
+                className={`flex items-center gap-1.5 cursor-pointer px-2.5 py-1.5 rounded-md border transition-all ${
+                  onlyOnSale
+                    ? "bg-[var(--primary)]/10 border-[var(--primary)]/30 text-[var(--primary)]"
+                    : "bg-gray-50 border-gray-200 text-[var(--text-secondary)] hover:bg-gray-100 hover:border-gray-300"
+                }`}
+              >
+                <input
+                  type="checkbox"
+                  checked={onlyOnSale}
+                  onChange={(e) => setOnlyOnSale(e.target.checked)}
+                  className="w-3 h-3 text-[var(--primary)] border-[var(--border)] rounded focus:ring-1 focus:ring-[var(--primary)] focus:ring-offset-0 accent-[var(--primary)] cursor-pointer"
+                />
+                <span className="text-xs font-medium whitespace-nowrap">
+                  On Sale
+                </span>
+              </label>
             </div>
           </div>
         </>
