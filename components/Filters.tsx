@@ -50,36 +50,39 @@ export default function Filters() {
   return (
     <>
       {/* Main Categories */}
-      <div className="mb-1 flex flex-wrap border-b border-b-[#E6E9F0] bg-white text-lg">
+      <div className="mb-2 md:mb-1 flex flex-wrap border-b border-b-[#E6E9F0] bg-white text-base md:text-lg">
         <button
           type="button"
           onClick={() => setCurrentView("imageList")}
-          className={`relative mr-10 pb-1 after:absolute after:-bottom-0 after:left-0 after:h-[3px] after:w-full transition-colors font-[600] ${
+          className={`relative mr-6 md:mr-10 pb-1 after:absolute after:-bottom-0 after:left-0 after:h-[3px] after:w-full transition-colors font-[600] ${
             currentView === "imageList"
               ? "text-[var(--primary)] after:bg-[var(--primary)]"
               : "text-[var(--text-primary)] hover:text-[var(--primary)]"
           }`}
         >
-          <h2>Image List</h2>
+          <h2>Vehicles</h2>
         </button>
         <button
           type="button"
           onClick={() => setCurrentView("featuredAlbums")}
-          className={`relative mr-10 pb-1 after:absolute after:-bottom-0 after:left-0 after:h-[3px] after:w-full transition-colors font-[600] ${
+          className={`relative mr-6 md:mr-10 pb-1 after:absolute after:-bottom-0 after:left-0 after:h-[3px] after:w-full transition-colors font-[600] ${
             currentView === "featuredAlbums"
               ? "text-[var(--primary)] after:bg-[var(--primary)]"
               : "text-[var(--text-primary)] hover:text-[var(--primary)]"
           }`}
         >
-          <h2>Featured Albums</h2>
+          <h2>Car Parts</h2>
         </button>
       </div>
 
-      {/* Brand Filter Section */}
-      <div className="flex w-full flex-col items-start text-sm text-[var(--text-primary)]">
+      {/* Brand Filter Section - Simplified for mobile */}
+      <div className="flex w-full flex-col items-start text-xs md:text-sm text-[var(--text-primary)]">
         <div className="flex w-full items-center">
-          <div className="w-14 min-w-[68px] text-left text-[#828CA0]">Brand</div>
-          <ul className="flex w-full whitespace-nowrap border-b border-dashed border-b-[#F0F3F8] py-[15px]">
+          <div className="w-12 md:w-14 min-w-[48px] md:min-w-[68px] text-left text-[#828CA0] text-xs md:text-sm">
+            Brand
+          </div>
+          {/* Letter filter - hidden on mobile */}
+          <ul className="hidden md:flex w-full whitespace-nowrap border-b border-dashed border-b-[#F0F3F8] py-[15px]">
             <li className="relative mr-0.5 min-w-7 cursor-pointer rounded px-1.5 py-1 text-center bg-[#CCEBFF]">
               <button
                 type="button"
@@ -109,19 +112,19 @@ export default function Filters() {
             ))}
           </ul>
         </div>
-        <div className="flex w-full items-start border-b border-b-[#F0F3F8] text-sm text-[var(--text-primary)]">
-          <div className="w-14 min-w-[68px] whitespace-nowrap text-left text-[#828CA0]"></div>
-          <div className="w-full bg-[#F8F9FC] px-4 pb-2 pt-3 h-[84px] overflow-hidden">
-            <div className="flex flex-1 flex-wrap">
+        <div className="flex w-full items-start border-b border-b-[#F0F3F8] text-xs md:text-sm text-[var(--text-primary)]">
+          <div className="w-12 md:w-14 min-w-[48px] md:min-w-[68px] shrink-0" aria-hidden="true" />
+          <div className="w-full bg-[#F8F9FC] px-2 md:px-4 pb-2 pt-2 md:pt-3 min-h-[60px] md:h-[84px] overflow-x-auto md:overflow-hidden">
+            <div className="flex flex-wrap md:flex-wrap gap-2 md:gap-0">
               {popularBrands.map((brand) => (
                 <button
                   key={brand.id}
                   type="button"
                   onClick={() => setBrand(brand.name)}
-                  className="relative mr-4 flex min-w-[68px] flex-col items-center justify-center rounded p-1.5 text-[var(--text-primary)] hover:cursor-pointer hover:bg-gray-100 mb-4"
+                  className="relative md:mr-4 flex min-w-[56px] md:min-w-[68px] flex-col items-center justify-center rounded p-1 md:p-1.5 text-[var(--text-primary)] hover:cursor-pointer hover:bg-gray-100 mb-2 md:mb-4"
                 >
-                  <BrandLogoSmall brand={brand} size={28} />
-                  <span>{brand.name}</span>
+                  <BrandLogoSmall brand={brand} size={24} />
+                  <span className="text-xs">{brand.name}</span>
                 </button>
               ))}
             </div>
@@ -130,26 +133,28 @@ export default function Filters() {
       </div>
 
       {/* Vehicle Type Filter Section */}
-      <div className="flex min-h-7 w-full border-b border-b-[#F0F3F8] py-3 text-sm text-[var(--text-primary)] transition-all last:border-none">
-        <div className="w-[68px] leading-7 text-[#828CA0]">Category</div>
-        <div className="flex flex-1 flex-wrap gap-2 text-nowrap text-sm text-[var(--text-primary)]">
+      <div className="flex min-h-7 w-full border-b border-b-[#F0F3F8] py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] transition-all last:border-none">
+        <div className="w-12 md:w-[68px] leading-5 md:leading-7 text-[#828CA0] text-xs md:text-sm shrink-0">
+          Category
+        </div>
+        <div className="flex flex-1 flex-wrap gap-1.5 md:gap-2 text-nowrap text-xs md:text-sm text-[var(--text-primary)] overflow-x-auto">
           {[
             { label: "All", value: "all" },
-            { label: "Cars (All)", value: "cars" },
-            { label: "SUVs (All)", value: "suvs" },
-            { label: "MPVs (All)", value: "mpvs" },
-            { label: "Sports Car", value: "sports" },
+            { label: "Cars", value: "cars", mobileLabel: "Cars" },
+            { label: "SUVs", value: "suvs", mobileLabel: "SUVs" },
+            { label: "MPVs", value: "mpvs", mobileLabel: "MPVs" },
+            { label: "Sports", value: "sports", mobileLabel: "Sports" },
             { label: "Minivan", value: "minivan" },
-            { label: "Mini Truck", value: "minitruck" },
-            { label: "Light Passenger", value: "light" },
+            { label: "Truck", value: "minitruck", mobileLabel: "Truck" },
+            { label: "Passenger", value: "light", mobileLabel: "Passenger" },
             { label: "Pickup", value: "pickup" },
           ].map((type) => (
             <button
               type="button"
               key={type.value}
-              className="cursor-pointer rounded px-1.5 py-1 hover:bg-gray-100"
+              className="cursor-pointer rounded px-2 md:px-1.5 py-1 text-xs hover:bg-gray-100 whitespace-nowrap"
             >
-              <span className="w-14">{type.label}</span>
+              <span className="md:w-14">{type.mobileLabel || type.label}</span>
             </button>
           ))}
         </div>

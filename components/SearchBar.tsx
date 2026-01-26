@@ -176,7 +176,7 @@ export default function SearchBar() {
   return (
     <form
       onSubmit={handleSearch}
-      className="flex-1 max-w-2xl mx-8"
+      className="flex-1 max-w-2xl mx-2 md:mx-8"
       ref={searchRef}
     >
       <div className="relative">
@@ -188,7 +188,7 @@ export default function SearchBar() {
           } bg-white`}
         >
           <Search
-            className={`absolute left-4 h-4 w-4 transition-colors ${
+            className={`absolute left-3 md:left-4 h-4 w-4 transition-colors ${
               isFocused
                 ? "text-[var(--primary)]"
                 : "text-[var(--text-tertiary)]"
@@ -211,8 +211,8 @@ export default function SearchBar() {
               // Delay to allow suggestion clicks
               setTimeout(() => setIsFocused(false), 200);
             }}
-            placeholder="Search vehicles, brands, models..."
-            className="w-full pl-11 pr-24 py-3 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] bg-transparent border-0 outline-none focus:outline-none"
+            placeholder="Search vehicles..."
+            className="w-full pl-9 md:pl-11 pr-20 md:pr-24 py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] bg-transparent border-0 outline-none focus:outline-none"
             aria-label="Search vehicles"
           />
           <div className="absolute right-2 flex items-center gap-1">
@@ -228,13 +228,14 @@ export default function SearchBar() {
             )}
             <button
               type="submit"
-              className={`px-4 py-1.5 text-sm font-medium rounded-md transition-all duration-200 ${
+              className={`px-3 md:px-4 py-1.5 text-xs md:text-sm font-medium rounded-md transition-all duration-200 ${
                 isFocused || localSearch
                   ? "bg-[var(--primary)] text-white hover:bg-[var(--primary-hover)] shadow-md hover:shadow-lg"
                   : "bg-gray-100 text-[var(--text-secondary)] hover:bg-gray-200"
               }`}
             >
-              Search
+              <span className="hidden sm:inline">Search</span>
+              <Search className="h-4 w-4 sm:hidden" />
             </button>
           </div>
         </div>

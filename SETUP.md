@@ -1,4 +1,4 @@
-# GlobalVehicleHub Setup Guide
+# Zhixin车 Setup Guide
 
 ## Quick Start
 

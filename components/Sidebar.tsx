@@ -72,38 +72,58 @@ export default function Sidebar() {
   };
 
   return (
-    <aside className="w-64 bg-white border-r border-[var(--border)] fixed left-0 top-[108px] bottom-0 overflow-y-auto">
+    <aside className="w-64 bg-white border-r border-[var(--border)] fixed left-0 top-[70px] bottom-0 overflow-y-auto shadow-sm">
       {/* Brand Filters */}
-      <div className="p-4">
+      <div className="p-4 space-y-4">
         {/* Quick Filters - Horizontal */}
-        <div className="mb-4 flex gap-4">
-          <label className="flex items-center gap-2 cursor-pointer">
+        <div className="flex gap-2">
+          <label
+            className={`flex items-center gap-1.5 cursor-pointer px-2.5 py-1.5 rounded-md border transition-all ${
+              onlyOnSale && !onlyNewEnergy
+                ? "bg-[var(--primary)]/10 border-[var(--primary)]/30 text-[var(--primary)]"
+                : "bg-gray-50 border-gray-200 text-[var(--text-secondary)] hover:bg-gray-100 hover:border-gray-300"
+            }`}
+          >
             <input
-              type="checkbox"
-              checked={onlyOnSale}
-              onChange={(e) => setOnlyOnSale(e.target.checked)}
-              className="w-4 h-4 text-[var(--primary)] border-[var(--border)] rounded focus:ring-[var(--primary)]"
+              type="radio"
+              name="quickFilter"
+              checked={onlyOnSale && !onlyNewEnergy}
+              onChange={() => {
+                setOnlyOnSale(true);
+                setOnlyNewEnergy(false);
+              }}
+              className="w-3 h-3 text-[var(--primary)] border-[var(--border)] rounded-full focus:ring-1 focus:ring-[var(--primary)] focus:ring-offset-0 accent-[var(--primary)] cursor-pointer"
             />
-            <span className="text-sm text-[var(--text-primary)] whitespace-nowrap">
+            <span className="text-xs font-medium whitespace-nowrap">
               On Sale
             </span>
           </label>
-          <label className="flex items-center gap-2 cursor-pointer">
+          <label
+            className={`flex items-center gap-1.5 cursor-pointer px-2.5 py-1.5 rounded-md border transition-all ${
+              onlyNewEnergy && !onlyOnSale
+                ? "bg-[var(--primary)]/10 border-[var(--primary)]/30 text-[var(--primary)]"
+                : "bg-gray-50 border-gray-200 text-[var(--text-secondary)] hover:bg-gray-100 hover:border-gray-300"
+            }`}
+          >
             <input
-              type="checkbox"
-              checked={onlyNewEnergy}
-              onChange={(e) => setOnlyNewEnergy(e.target.checked)}
-              className="w-4 h-4 text-[var(--primary)] border-[var(--border)] rounded focus:ring-[var(--primary)]"
+              type="radio"
+              name="quickFilter"
+              checked={onlyNewEnergy && !onlyOnSale}
+              onChange={() => {
+                setOnlyNewEnergy(true);
+                setOnlyOnSale(false);
+              }}
+              className="w-3 h-3 text-[var(--primary)] border-[var(--border)] rounded-full focus:ring-1 focus:ring-[var(--primary)] focus:ring-offset-0 accent-[var(--primary)] cursor-pointer"
             />
-            <span className="text-sm text-[var(--text-primary)] whitespace-nowrap">
+            <span className="text-xs font-medium whitespace-nowrap">
               New Energy
             </span>
           </label>
         </div>
 
         {/* Fuel Type Filters */}
-        <div className="mb-4">
-          <div className="text-xs font-medium text-[var(--text-secondary)] mb-2 px-1">
+        <div>
+          <div className="text-xs font-semibold text-[var(--text-primary)] mb-2 px-1 uppercase tracking-wide">
             Fuel Type
           </div>
           <div className="flex flex-wrap gap-2">
@@ -133,7 +153,10 @@ export default function Sidebar() {
           </div>
         </div>
 
-        <div className="mb-4">
+        <div>
+          <div className="text-xs font-semibold text-[var(--text-primary)] mb-2 px-1 uppercase tracking-wide">
+            Filter by Letter
+          </div>
           <div className="grid grid-cols-6 gap-1">
             {letters.map((letter) => (
               <button
@@ -154,7 +177,7 @@ export default function Sidebar() {
 
         <div className="space-y-1">
           {isLoading ? (
-            <p className="text-sm text-[var(--text-tertiary)]">
+            <p className="text-sm text-[var(--text-tertiary)] px-2 py-4 text-center">
               Loading brands...
             </p>
           ) : (
@@ -163,7 +186,7 @@ export default function Sidebar() {
                 key={letter}
                 className={expandedLetter === letter ? "block" : "hidden"}
               >
-                <div className="font-medium text-sm text-[var(--text-primary)] mb-2 px-2">
+                <div className="font-semibold text-sm text-[var(--text-primary)] mb-2 px-2 py-1 bg-gray-50 rounded">
                   {letter}
                 </div>
                 {(brandsByLetter[letter] ?? []).length === 0 ? (

@@ -16,7 +16,7 @@ type UIActions = {
 };
 
 export const useUIStore = create<UIState & UIActions>((set) => ({
-  isSidebarOpen: true,
+  isSidebarOpen: false, // Closed by default on mobile
   currentView: "imageList",
   isLoading: false,
   scrollPosition: 0,

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-[var(--border)] mt-12">
+    <footer className="bg-white border-t border-[var(--border)] mt-8 md:mt-12 lg:ml-64">
       {/* Disclaimer */}
       <div className="max-w-[1400px] mx-auto px-4 py-6">
         <p className="text-xs text-[var(--text-tertiary)] text-center mb-6">
@@ -58,8 +58,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center text-xs text-[var(--text-tertiary)]">
-          © 2004-2026 GlobalVehicleHub.com All Rights Reserved. GlobalVehicleHub
-          Copyright
+          © 2004-2026 Zhixin车. All Rights Reserved.
         </div>
       </div>
     </footer>

@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "GlobalVehicleHub - Global Vehicle Image Platform",
+  title: "Zhixin车 - Vehicle Image Platform",
   description: "Comprehensive vehicle image gallery and information platform",
 };
 

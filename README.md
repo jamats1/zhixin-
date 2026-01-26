@@ -1,4 +1,4 @@
-# GlobalVehicleHub (GVH)
+# Zhixin车
 
 A pixel-perfect, structure-perfect English clone of Autohome China's image-list platform.
 

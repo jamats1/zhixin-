@@ -36,16 +36,12 @@ export default function VehicleGrid() {
   return (
     <>
       {/* Results Count - Sticky aligned with reference */}
-      <div className="sticky top-[71px] z-10">
-        <div className="flex justify-between bg-white pb-3 pt-3">
-          <h3 className="flex items-center leading-5 text-[var(--text-primary)]">
-            <span className="mr-4 text-sm font-[300] text-[#828CA0]">
-              Total{" "}
-              <em className="not-italic text-[#FF6600]">{totalCount}</em>{" "}
-              vehicles match criteria
-            </span>
-          </h3>
-        </div>
+      <div className="sticky top-[71px] z-10 bg-white pb-3 pt-3">
+        <span className="text-sm font-[300] text-[#828CA0]">
+          Total{" "}
+          <em className="not-italic text-[#FF6600]">{totalCount}</em>{" "}
+          vehicles match criteria
+        </span>
       </div>
 
       {/* Grid */}
@@ -59,7 +55,7 @@ export default function VehicleGrid() {
             No vehicles found
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
             {vehicles.map((vehicle) => (
               <VehicleCard key={vehicle.id} vehicle={vehicle} />
             ))}
