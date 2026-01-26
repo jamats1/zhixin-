@@ -122,8 +122,8 @@ export default function Filters() {
                 Brand
               </div>
               {/* Letter filter - hidden on mobile */}
-              <ul className="hidden md:flex w-full min-w-0 whitespace-nowrap border-b border-dashed border-b-[#F0F3F8] py-[15px] overflow-x-auto">
-                <li className="relative mr-0.5 min-w-[40px] h-7 flex-shrink-0 cursor-pointer rounded text-center bg-[#CCEBFF] px-1.5">
+              <ul className="hidden md:flex w-full min-w-0 whitespace-nowrap border-b border-dashed border-b-[#F0F3F8] py-[15px] overflow-x-auto pr-4">
+                <li className="relative mr-1 min-w-[40px] h-7 flex-shrink-0 cursor-pointer rounded text-center bg-[#CCEBFF] px-1.5">
                   <button
                     type="button"
                     className="w-full h-full flex items-center justify-center text-xs font-medium"
@@ -137,7 +137,7 @@ export default function Filters() {
                 ).map((letter) => (
                   <li
                     key={letter}
-                    className={`relative mr-0.5 w-7 h-7 flex-shrink-0 cursor-pointer rounded text-center hover:bg-gray-100 ${
+                    className={`relative mr-1 w-7 h-7 flex-shrink-0 cursor-pointer rounded text-center hover:bg-gray-100 ${
                       alphabeticalFilter === letter ? "bg-[#CCEBFF]" : ""
                     }`}
                   >

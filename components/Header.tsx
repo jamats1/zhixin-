@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header className="bg-white border-b border-[var(--border)] sticky top-0 z-50 w-full left-0 right-0 overflow-x-hidden">
       {/* Top Bar */}
-      <div className="max-w-[1400px] mx-auto px-3 md:px-4 py-2 md:py-3 flex items-center justify-between gap-2 md:gap-4 w-full overflow-x-hidden">
+      <div className="max-w-[1400px] mx-auto px-3 md:px-4 pr-4 md:pr-6 py-2 md:py-3 flex items-center justify-between gap-2 md:gap-4 w-full overflow-x-hidden">
         {/* Logo */}
         <Link href="/" className="shrink-0 text-xl md:text-2xl text-[var(--primary)]">
           <span className="font-bold">ZHI</span>

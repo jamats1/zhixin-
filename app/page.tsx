@@ -15,13 +15,13 @@ export default function Home() {
         </ErrorBoundary>
         <div className="flex relative w-full overflow-x-hidden">
           {/* Sidebar - hidden on mobile, shown on desktop */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:block shrink-0">
             <ErrorBoundary>
               <Sidebar />
             </ErrorBoundary>
           </div>
-          <main className="flex-1 min-h-screen lg:ml-64 w-full max-w-full overflow-x-hidden">
-            <div className="flex flex-col items-stretch py-3 md:py-5 px-3 md:pl-6 md:pr-6 w-full max-w-full overflow-x-hidden">
+          <main className="flex-1 min-h-screen w-full max-w-full overflow-x-hidden min-w-0">
+            <div className="flex flex-col items-stretch py-3 md:py-5 px-3 md:pl-6 md:pr-4 lg:pr-6 w-full max-w-full overflow-x-hidden">
               <ErrorBoundary>
                 <Filters />
               </ErrorBoundary>
