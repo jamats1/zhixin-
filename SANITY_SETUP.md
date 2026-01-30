@@ -129,23 +129,22 @@ import client from "@/lib/sanity/client";
 
 ### GROQ Queries
 
-All queries are defined in `lib/sanity/queries.ts`:
+All queries are defined in `lib/sanity/queries.ts`. **Vehicles are fetched from Vehicle Series (Autohome)** only:
 
-- `vehicleQuery` - Get all vehicles
-- `vehicleBySlugQuery` - Get vehicle by slug
-- `vehicleCategoriesQuery` - Get all categories
-- `vehicleTypesQuery` - Get all types
-- `vehiclesByFiltersQuery` - Filtered vehicle query
-- `vehiclesCountQuery` - Count vehicles with filters
-- `brandsQuery` - Get all brands with vehicle counts
+- `vehicleSeriesByFiltersQuery` - Paginated vehicle series with category, type, brand, on-sale, new-energy filters
+- `vehicleSeriesCountQuery` - Count vehicle series with same filters
+- `vehicleCategoriesQuery` - Get all vehicle categories
+- `vehicleTypesQuery` - Get all vehicle types
+- `brandsQuery` - Get all brands with vehicle-series count
 
 ### Example Usage
 
 ```typescript
 import client from "@/lib/sanity/client";
-import { vehicleQuery } from "@/lib/sanity/queries";
+import { vehicleSeriesByFiltersQuery } from "@/lib/sanity/queries";
 
-const vehicles = await client.fetch(vehicleQuery);
+const filters = { start: 0, end: 20 };
+const vehicles = await client.fetch(vehicleSeriesByFiltersQuery(filters), filters);
 ```
 
 ## Image Handling

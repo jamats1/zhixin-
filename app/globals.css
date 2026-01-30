@@ -33,6 +33,7 @@ html {
   width: 100%;
   /* Prevent scrollbar from overlapping content */
   padding-right: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -59,11 +60,6 @@ body {
 img {
   max-width: 100%;
   height: auto;
-}
-
-/* Ensure smooth scrolling works across browsers */
-html {
-  scroll-behavior: smooth;
 }
 
 /* Prevent text selection issues on mobile */

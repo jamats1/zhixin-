@@ -20,7 +20,7 @@ export default function MobileFilters() {
       <button
         type="button"
         onClick={() => setSidebarOpen(true)}
-        className="lg:hidden fixed bottom-4 right-4 z-40 bg-[var(--primary)] text-white px-4 py-2.5 rounded-full shadow-lg hover:bg-[var(--primary-hover)] transition-all flex items-center gap-2 text-sm font-medium"
+        className="lg:hidden fixed right-4 z-40 bg-[var(--primary)] text-white px-4 py-2.5 rounded-full shadow-lg hover:bg-[var(--primary-hover)] transition-all flex items-center gap-2 text-sm font-medium bottom-[calc(1rem+env(safe-area-inset-bottom))]"
       >
         <svg
           className="w-5 h-5"
@@ -49,7 +49,10 @@ export default function MobileFilters() {
       />
 
       {/* Mobile Filter Drawer */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl z-50 max-h-[80vh] overflow-y-auto">
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl z-50 max-h-[80vh] overflow-y-auto pb-[env(safe-area-inset-bottom)]">
+        <div className="flex justify-center pt-3">
+          <div className="w-10 h-1.5 rounded-full bg-gray-300" aria-hidden="true" />
+        </div>
         <div className="sticky top-0 bg-white border-b border-[var(--border)] px-4 py-3 flex items-center justify-between">
           <h3 className="text-lg font-semibold text-[var(--text-primary)]">
             Filters

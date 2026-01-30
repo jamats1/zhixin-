@@ -54,6 +54,7 @@ export default function Sidebar() {
     setBrand,
     alphabeticalFilter,
     setAlphabeticalFilter,
+    selectedBrand,
     selectedCarPartCategory,
     setCarPartCategory,
   } = useFilterStore();
@@ -225,7 +226,7 @@ export default function Sidebar() {
                         <button
                           type="button"
                           key={brand.id}
-                          onClick={() => setBrand(brand.name)}
+                          onClick={() => setBrand(brand.id)}
                           className="w-full text-left px-2 py-1.5 text-sm text-[var(--text-secondary)] hover:text-[var(--primary)] hover:bg-gray-50 rounded flex items-center gap-2 justify-between group"
                         >
                           <span className="flex items-center gap-2 min-w-0">
@@ -315,11 +316,11 @@ export default function Sidebar() {
                       key={brand.id}
                       onClick={() =>
                         setBrand(
-                          selectedBrand === brand.name ? null : brand.name
+                          selectedBrand === brand.id ? null : brand.name
                         )
                       }
                       className={`w-full text-left px-2 py-1.5 text-sm rounded flex items-center gap-2 justify-between group transition-colors ${
-                        selectedBrand === brand.name
+                        selectedBrand === brand.id
                           ? "bg-[var(--primary)]/10 text-[var(--primary)]"
                           : "text-[var(--text-secondary)] hover:text-[var(--primary)] hover:bg-gray-50"
                       }`}
@@ -330,7 +331,7 @@ export default function Sidebar() {
                       </span>
                       <span
                         className={`text-xs shrink-0 ${
-                          selectedBrand === brand.name
+                          selectedBrand === brand.id
                             ? "text-[var(--primary)]"
                             : "text-[var(--text-tertiary)] group-hover:text-[var(--primary)]"
                         }`}

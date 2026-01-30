@@ -60,7 +60,7 @@ export default function VehicleCard({ vehicle, isCarPart = false }: ItemCardProp
   const imageUrl = primaryImage?.url || "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&h=600&fit=crop";
 
   return (
-    <div className="bg-white rounded-lg overflow-hidden border border-[var(--border)] hover:shadow-lg transition-shadow">
+    <div className="bg-white rounded-lg overflow-hidden border border-[var(--border)] hover:shadow-lg transition-shadow transition-transform active:scale-[0.98] active:opacity-95">
       {/* Image Container */}
       <div className="relative aspect-[4/3] bg-gray-100">
         <Image
@@ -119,13 +119,13 @@ export default function VehicleCard({ vehicle, isCarPart = false }: ItemCardProp
         <div className="flex gap-2">
           <button
             type="button"
-            className="flex-1 px-4 py-2 bg-[var(--primary)] text-white rounded hover:bg-[var(--primary-hover)] transition-colors font-medium text-sm"
+            className="flex-1 px-4 py-2 bg-[var(--primary)] text-white rounded hover:bg-[var(--primary-hover)] transition-colors font-medium text-sm min-h-[44px] flex items-center justify-center"
           >
             {isCarPart ? "Add to Cart" : "Inquire Price"}
           </button>
           <Link
             href={detailUrl}
-            className="px-4 py-2 border border-[var(--border)] text-[var(--text-primary)] rounded hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors font-medium text-sm"
+            className="px-4 py-2 border border-[var(--border)] text-[var(--text-primary)] rounded hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors font-medium text-sm min-h-[44px] flex items-center justify-center"
           >
             {isCarPart ? "View Details" : "View Series"}
           </Link>

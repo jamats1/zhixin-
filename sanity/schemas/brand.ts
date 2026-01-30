@@ -31,6 +31,15 @@ export default defineType({
       },
     }),
     defineField({
+      name: "thumbnail",
+      title: "Thumbnail",
+      type: "image",
+      description: "Listing/card thumbnail. Logo is the main brand image.",
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: "order",
       title: "Display Order",
       type: "number",

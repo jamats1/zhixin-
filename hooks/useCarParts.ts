@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { useBrands } from "@/hooks/useBrands";
 import client from "@/lib/sanity/client";
 import {
   carPartsByFiltersQuery,
@@ -62,7 +63,13 @@ export function useCarParts() {
     onlyOnSale,
     selectedCarPartCategory,
   } = useFilterStore();
+  const { brands } = useBrands();
   const [error, setError] = useState<string | null>(null);
+
+  // selectedBrand is Sanity brand id; car parts filter by brand name
+  const brandName = selectedBrand
+    ? brands?.find((b) => b.id === selectedBrand)?.name
+    : null;
 
   const fetchCarParts = useCallback(async (page: number = 1, append: boolean = false) => {
     try {
@@ -89,8 +96,8 @@ export function useCarParts() {
         end,
       };
 
-      if (selectedBrand) {
-        filters.brandFilter = `*${selectedBrand}*`;
+      if (brandName) {
+        filters.brandFilter = `*${brandName}*`;
         params.brandFilter = filters.brandFilter;
       }
       if (selectedCarPartCategory && selectedCarPartCategory !== "all") {
@@ -167,7 +174,7 @@ export function useCarParts() {
     } finally {
       setLoading(false);
     }
-  }, [selectedBrand, onlyOnSale, selectedCarPartCategory, setCarParts, appendCarParts, setLoading, setTotalCount, setHasMore, setCurrentPage]);
+  }, [brandName, onlyOnSale, selectedCarPartCategory, setCarParts, appendCarParts, setLoading, setTotalCount, setHasMore, setCurrentPage]);
 
   const loadMore = useCallback(() => {
     const state = useCarPartsStore.getState();

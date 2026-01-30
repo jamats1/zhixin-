@@ -36,7 +36,7 @@ const initialState: FilterState = {
   onlyNewEnergy: false,
   fuelType: null,
   searchQuery: "",
-  alphabeticalFilter: "A",
+  alphabeticalFilter: null,
 };
 
 export const useFilterStore = create<FilterState & FilterActions>((set) => ({

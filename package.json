@@ -10,7 +10,11 @@
     "format": "biome format --write",
     "studio": "next dev",
     "sanity:deploy": "npx sanity@latest deploy",
-    "sanity:graphql": "npx sanity@latest graphql deploy"
+    "sanity:graphql": "npx sanity@latest graphql deploy",
+    "scrape:autohome": "node run-scraper.cjs",
+    "verify:sanity-vehicles": "node scripts/verify-vehicles-fetch.mjs",
+    "sanity:clear-vehicle-galleries": "tsx scripts/clear-vehicle-series-gallery.ts",
+    "sanity:copy-series-images-to-brands": "tsx scripts/copy-series-images-to-brands.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.36.9",
@@ -24,6 +28,7 @@
     "lucide-react": "^0.562.0",
     "next": "16.1.4",
     "next-sanity": "^12.0.14",
+    "openai": "^4.77.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "tailwind-merge": "^3.4.0",
@@ -35,7 +40,11 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^16.4.5",
+    "puppeteer": "^23.0.0",
+    "slugify": "^1.6.6",
     "tailwindcss": "^4",
+    "tsx": "^4.19.2",
     "typescript": "^5"
   }
 }

@@ -20,6 +20,7 @@ export default function SearchBar() {
   const [suggestions, setSuggestions] = useState<SearchSuggestion[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
+  const [isMobileOverlayOpen, setIsMobileOverlayOpen] = useState(false);
   const searchRef = useRef<HTMLFormElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -76,22 +77,22 @@ export default function SearchBar() {
         const query = localSearch.toLowerCase();
         const searchPattern = `*${query}*`;
 
-        // Search brands and models
+        // Search brands and series (from Vehicle Series in Sanity)
         const suggestionsQuery = groq`
           {
-            "brands": *[_type == "vehicle" && brand match $pattern] | order(publishedAt desc) [0...5] {
-              brand
+            "brands": *[_type == "vehicleSeries" && defined(brand) && brand->title match $pattern] | order(title asc) [0...5] {
+              "brand": brand->title
             },
-            "models": *[_type == "vehicle" && model match $pattern] | order(publishedAt desc) [0...5] {
-              model,
-              brand
+            "series": *[_type == "vehicleSeries" && title match $pattern] | order(title asc) [0...5] {
+              title,
+              "brand": brand->title
             }
           }
         `;
 
         const data = await client.fetch<{
-          brands: { brand: string }[];
-          models: { model: string; brand: string }[];
+          brands: { brand: string | null }[];
+          series: { title: string; brand: string | null }[];
         }>(suggestionsQuery, { pattern: searchPattern });
 
         if (cancelled) return;
@@ -100,20 +101,24 @@ export default function SearchBar() {
 
         // Add unique brands
         const uniqueBrands = Array.from(
-          new Set(data.brands.map((b) => b.brand)),
+          new Set(
+            data.brands.map((b) => b.brand).filter((b): b is string => !!b),
+          ),
         ).slice(0, 4);
         uniqueBrands.forEach((brand) => {
           suggestionList.push({ type: "brand", text: brand });
         });
 
-        // Add unique models
-        const uniqueModels = Array.from(
+        // Add unique series (title + brand)
+        const uniqueSeries = Array.from(
           new Set(
-            data.models.map((m) => `${m.brand} ${m.model}`),
+            data.series.map((s) =>
+              s.brand ? `${s.brand} ${s.title}` : s.title,
+            ),
           ),
         ).slice(0, 4);
-        uniqueModels.forEach((model) => {
-          suggestionList.push({ type: "model", text: model });
+        uniqueSeries.forEach((text) => {
+          suggestionList.push({ type: "model", text });
         });
 
         // Add recent searches if query is empty or matches
@@ -184,6 +189,125 @@ export default function SearchBar() {
     inputRef.current?.focus();
   };
 
+  const openMobileOverlayIfNeeded = () => {
+    if (typeof window !== "undefined" && window.innerWidth < 768) {
+      setIsMobileOverlayOpen(true);
+    }
+  };
+
+  const closeMobileOverlay = () => {
+    setIsMobileOverlayOpen(false);
+    setShowSuggestions(false);
+    setIsFocused(false);
+    inputRef.current?.blur();
+  };
+
+  // Mobile full-screen overlay search
+  if (isMobileOverlayOpen) {
+    return (
+      <div className="md:hidden">
+        <div className="fixed inset-0 z-[60] bg-white pt-[env(safe-area-inset-top)]">
+          <form
+            onSubmit={handleSearch}
+            ref={searchRef}
+            className="px-3 pt-3 pb-2 border-b border-[var(--border)] flex items-center gap-2"
+          >
+            <button
+              type="button"
+              onClick={closeMobileOverlay}
+              className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+              aria-label="Close search"
+            >
+              <X className="h-5 w-5 text-[var(--text-secondary)]" />
+            </button>
+            <div className="flex-1 relative">
+              <Search
+                className={`absolute left-3 h-4 w-4 transition-colors ${
+                  isFocused
+                    ? "text-[var(--primary)]"
+                    : "text-[var(--text-tertiary)]"
+                } pointer-events-none`}
+                aria-hidden
+              />
+              <input
+                ref={inputRef}
+                type="search"
+                value={localSearch}
+                onChange={(e) => {
+                  setLocalSearch(e.target.value);
+                  setShowSuggestions(true);
+                }}
+                onFocus={() => {
+                  setIsFocused(true);
+                  setShowSuggestions(true);
+                }}
+                placeholder="Search vehicles..."
+                className="w-full pl-9 pr-4 py-3 text-base text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] bg-transparent border-0 outline-none focus:outline-none"
+                aria-label="Search vehicles"
+                autoFocus
+              />
+            </div>
+            {localSearch && (
+              <button
+                type="button"
+                onClick={handleClear}
+                className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+                aria-label="Clear search"
+              >
+                <X className="h-4 w-4 text-[var(--text-tertiary)]" />
+              </button>
+            )}
+          </form>
+
+          <div className="px-3 pb-[env(safe-area-inset-bottom)] pt-2 overflow-y-auto max-h-[calc(100vh-env(safe-area-inset-top)-56px)]">
+            {showSuggestions &&
+              (suggestions.length > 0 || localSearch.trim() === "") && (
+                <>
+                  {suggestions.length > 0 ? (
+                    <div className="space-y-1">
+                      {suggestions.map((suggestion, idx) => (
+                        <button
+                          key={`${suggestion.type}-${suggestion.text}-${idx}`}
+                          type="button"
+                          onClick={() => {
+                            handleSuggestionClick(suggestion);
+                            closeMobileOverlay();
+                          }}
+                          className="w-full px-2 py-3 text-left text-sm hover:bg-gray-50 transition-colors flex items-center justify-between group rounded-md"
+                        >
+                          <div className="flex items-center gap-3">
+                            <Search className="h-4 w-4 text-[var(--text-tertiary)] group-hover:text-[var(--primary)] transition-colors" />
+                            <span className="text-[var(--text-primary)] group-hover:text-[var(--primary)] transition-colors">
+                              {suggestion.text}
+                            </span>
+                            {suggestion.type === "recent" && (
+                              <span className="text-xs text-[var(--text-tertiary)]">
+                                Recent
+                              </span>
+                            )}
+                          </div>
+                          {suggestion.count !== undefined && (
+                            <span className="text-xs text-[var(--text-tertiary)]">
+                              {suggestion.count}
+                            </span>
+                          )}
+                        </button>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="px-2 py-3 text-sm text-[var(--text-tertiary)]">
+                      Start typing to search...
+                    </div>
+                  )}
+                </>
+              )}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Default inline search (desktop + mobile trigger)
   return (
     <form
       onSubmit={handleSearch}
@@ -217,9 +341,10 @@ export default function SearchBar() {
             onFocus={() => {
               setIsFocused(true);
               setShowSuggestions(true);
+              openMobileOverlayIfNeeded();
             }}
             onBlur={() => {
-              // Delay to allow suggestion clicks
+              // Delay to allow suggestion clicks (desktop)
               setTimeout(() => setIsFocused(false), 200);
             }}
             placeholder="Search vehicles..."
@@ -251,10 +376,10 @@ export default function SearchBar() {
           </div>
         </div>
 
-        {/* Search Suggestions Dropdown */}
+        {/* Desktop suggestions dropdown */}
         {showSuggestions &&
           (suggestions.length > 0 || localSearch.trim() === "") && (
-            <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-[var(--border)] rounded-lg shadow-xl z-50 max-h-[400px] overflow-y-auto">
+            <div className="hidden md:block absolute top-full left-0 right-0 mt-1 bg-white border border-[var(--border)] rounded-lg shadow-xl z-50 max-h-[400px] overflow-y-auto">
               {suggestions.length > 0 ? (
                 <div className="py-2">
                   {suggestions.map((suggestion, idx) => (
