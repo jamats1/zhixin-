@@ -1,0 +1,1737 @@
+[
+  {
+    "name": "BYD",
+    "count": 110129,
+    "logoUrl": "https://i1.autocango.com/brand/ME4.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Toyota",
+    "count": 71683,
+    "logoUrl": "https://i1.autocango.com/brand/1Q.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "HongQi",
+    "count": 22523,
+    "logoUrl": "https://i1.autocango.com/brand/AD3.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ChangAn",
+    "count": 46985,
+    "logoUrl": "https://i1.autocango.com/brand/V98.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Nissan",
+    "count": 44189,
+    "logoUrl": "https://i1.autocango.com/brand/1YP.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Mercedes-Benz",
+    "count": 68855,
+    "logoUrl": "https://i1.autocango.com/brand/R41.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Chery",
+    "count": 29107,
+    "logoUrl": "https://i1.autocango.com/brand/NA3.webp?x-image-process=image/quality,q_75/resize,w_60,h_60/imageslim"
+  },
+  {
+    "name": "MG",
+    "count": 15268,
+    "logoUrl": "https://i1.autocango.com/brand/VXX.webp?x-image-process=image/quality,q_75/resize,w_60,h_60/imageslim"
+  },
+  {
+    "name": "Geely",
+    "count": 68196,
+    "logoUrl": "https://i1.autocango.com/brand/3D7.webp?x-image-process=image/quality,q_75/resize,w_60,h_60/imageslim"
+  },
+  {
+    "name": "Haval",
+    "count": 41492,
+    "logoUrl": "https://i1.autocango.com/brand/3NN.webp?x-image-process=image/quality,q_75/resize,w_60,h_60/imageslim"
+  },
+  {
+    "name": "GAC",
+    "count": 117,
+    "logoUrl": "https://i1.autocango.com/brand/NLE.webp?x-image-process=image/quality,q_75/resize,w_60,h_60/imageslim"
+  },
+  {
+    "name": "Jetour",
+    "count": 17216,
+    "logoUrl": "https://i1.autocango.com/brand/3VBY.webp?x-image-process=image/quality,q_75/resize,w_60,h_60/imageslim"
+  },
+  {
+    "name": "Tesla",
+    "count": 32394,
+    "logoUrl": "https://i1.autocango.com/brand/7QY.webp?x-image-process=image/quality,q_75/resize,w_60,h_60/imageslim"
+  },
+  {
+    "name": "NIO",
+    "count": 15570,
+    "logoUrl": "https://i1.autocango.com/brand/G3WA.webp?x-image-process=image/quality,q_75/resize,w_60,h_60/imageslim"
+  },
+  {
+    "name": "Xpeng",
+    "count": 15030,
+    "logoUrl": "https://i1.autocango.com/brand/B3G7.webp?x-image-process=image/quality,q_75/resize,w_60,h_60/imageslim"
+  },
+  {
+    "name": "Zeekr",
+    "count": 2434,
+    "logoUrl": "https://i1.autocango.com/brand/4VE3.webp?x-image-process=image/quality,q_75/resize,w_60,h_60/imageslim"
+  },
+  {
+    "name": "Volkswagen",
+    "count": 192091,
+    "logoUrl": "https://i1.autocango.com/brand/YB.webp?x-image-process=image/quality,q_75/resize,w_60,h_60/imageslim"
+  },
+  {
+    "name": "BMW",
+    "count": 69234,
+    "logoUrl": "https://i1.autocango.com/brand/M4L.webp?x-image-process=image/quality,q_75/resize,w_60,h_60/imageslim"
+  },
+  {
+    "name": "212",
+    "count": 938,
+    "logoUrl": "https://i1.autocango.com/brand/G3XB.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Audi",
+    "count": 71846,
+    "logoUrl": "https://i1.autocango.com/brand/78W.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Aion",
+    "count": 15358,
+    "logoUrl": "https://i1.autocango.com/brand/ML1L.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "AITO",
+    "count": 13508,
+    "logoUrl": "https://i1.autocango.com/brand/B37E.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Avatr",
+    "count": 2834,
+    "logoUrl": "https://i1.autocango.com/brand/V1A3.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ARCFOX",
+    "count": 1499,
+    "logoUrl": "https://i1.autocango.com/brand/WNKL.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Alfa Romeo",
+    "count": 1119,
+    "logoUrl": "https://i1.autocango.com/brand/WDB.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Aston Martin",
+    "count": 512,
+    "logoUrl": "https://i1.autocango.com/brand/AQ1.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Acura",
+    "count": 303,
+    "logoUrl": "https://i1.autocango.com/brand/N9E.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Aiways",
+    "count": 36,
+    "logoUrl": "https://i1.autocango.com/brand/7PWA.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "AUXUN",
+    "count": 4,
+    "logoUrl": "https://i1.autocango.com/brand/4VGE.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ALPINA",
+    "count": 2,
+    "logoUrl": "https://i1.autocango.com/brand/97RL.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "AM XIAOAO",
+    "count": 2,
+    "logoUrl": "https://i1.autocango.com/brand/LKE9.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "AnKai",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/X4Q.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ARMADILLO",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/G3LX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Buick",
+    "count": 37250,
+    "logoUrl": "https://i1.autocango.com/brand/9QK.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "BaoJun",
+    "count": 11661,
+    "logoUrl": "https://i1.autocango.com/brand/VW8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Bestune",
+    "count": 2001,
+    "logoUrl": "https://i1.autocango.com/brand/8Y8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "BAW",
+    "count": 1176,
+    "logoUrl": "https://i1.autocango.com/brand/VBD.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Beijing",
+    "count": 1051,
+    "logoUrl": "https://i1.autocango.com/brand/Y1N.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "BeiJing Auto",
+    "count": 636,
+    "logoUrl": "https://i1.autocango.com/brand/8W3.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Brilliance Auto",
+    "count": 633,
+    "logoUrl": "https://i1.autocango.com/brand/EKX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "BAIC BJEV",
+    "count": 294,
+    "logoUrl": "https://i1.autocango.com/brand/PL7.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Bentley",
+    "count": 259,
+    "logoUrl": "https://i1.autocango.com/brand/84D.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Borgward",
+    "count": 251,
+    "logoUrl": "https://i1.autocango.com/brand/QWVQ.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "BAIC ChangHe",
+    "count": 185,
+    "logoUrl": "https://i1.autocango.com/brand/LXN.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "BAIC Hyosow",
+    "count": 180,
+    "logoUrl": "https://i1.autocango.com/brand/3GN.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "BAIC WeiWang",
+    "count": 129,
+    "logoUrl": "https://i1.autocango.com/brand/X89.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "BiSu",
+    "count": 26,
+    "logoUrl": "https://i1.autocango.com/brand/7PL3.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Brabus",
+    "count": 18,
+    "logoUrl": "https://i1.autocango.com/brand/48A.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "BAIC RuiXiang",
+    "count": 8,
+    "logoUrl": "https://i1.autocango.com/brand/WNN7.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "BiKe",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/G3Q7.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "BaiZhi",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/NKP8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Bufite",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/MLEK.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Chevrolet",
+    "count": 29990,
+    "logoUrl": "https://i1.autocango.com/brand/B4E.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Cadillac",
+    "count": 27083,
+    "logoUrl": "https://i1.autocango.com/brand/AQ3.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ChangAn QiYuan",
+    "count": 5501,
+    "logoUrl": "https://i1.autocango.com/brand/E1XX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Citroen",
+    "count": 3633,
+    "logoUrl": "https://i1.autocango.com/brand/9ND.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ChangAn Oshan",
+    "count": 1177,
+    "logoUrl": "https://i1.autocango.com/brand/1QK.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Chery EV",
+    "count": 788,
+    "logoUrl": "https://i1.autocango.com/brand/YXPR.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ChangAn Kaicene",
+    "count": 571,
+    "logoUrl": "https://i1.autocango.com/brand/WN3L.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ChangAn KuaYue",
+    "count": 189,
+    "logoUrl": "https://i1.autocango.com/brand/8DA9.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Chrysler",
+    "count": 100,
+    "logoUrl": "https://i1.autocango.com/brand/AEM.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Ciimo",
+    "count": 53,
+    "logoUrl": "https://i1.autocango.com/brand/KW9.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Cyberspace",
+    "count": 46,
+    "logoUrl": "https://i1.autocango.com/brand/3V17.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "CHEVOO",
+    "count": 23,
+    "logoUrl": "https://i1.autocango.com/brand/E1M8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Century",
+    "count": 11,
+    "logoUrl": "https://i1.autocango.com/brand/WN8X.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ChengShi",
+    "count": 4,
+    "logoUrl": "https://i1.autocango.com/brand/8DDW.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "CAVAN",
+    "count": 4,
+    "logoUrl": "https://i1.autocango.com/brand/RL97.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "CHTC",
+    "count": 3,
+    "logoUrl": "https://i1.autocango.com/brand/P87.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Carlsson",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/E9M.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Cenntro",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/XP9B.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Chery Wanda",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/G3RB.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Denza",
+    "count": 6996,
+    "logoUrl": "https://i1.autocango.com/brand/Y4V.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Deepal",
+    "count": 4902,
+    "logoUrl": "https://i1.autocango.com/brand/RL81.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "DongFeng Aeolus",
+    "count": 4305,
+    "logoUrl": "https://i1.autocango.com/brand/AB3.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Dongfeng",
+    "count": 1811,
+    "logoUrl": "https://i1.autocango.com/brand/D8N.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "DongFeng eπ",
+    "count": 1702,
+    "logoUrl": "https://i1.autocango.com/brand/B37W.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "DongFeng Forthing",
+    "count": 1503,
+    "logoUrl": "https://i1.autocango.com/brand/Q4Q.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "DongFeng Fengon",
+    "count": 585,
+    "logoUrl": "https://i1.autocango.com/brand/XM44.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "DongFeng FuKang",
+    "count": 578,
+    "logoUrl": "https://i1.autocango.com/brand/WNY7.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "DongFeng DFAC",
+    "count": 475,
+    "logoUrl": "https://i1.autocango.com/brand/AY9D.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "DS",
+    "count": 317,
+    "logoUrl": "https://i1.autocango.com/brand/AX7.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "DongFeng DFSK",
+    "count": 231,
+    "logoUrl": "https://i1.autocango.com/brand/VB8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Dodge",
+    "count": 110,
+    "logoUrl": "https://i1.autocango.com/brand/MAK.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "DaYun",
+    "count": 86,
+    "logoUrl": "https://i1.autocango.com/brand/7P18.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "DongFeng FengDu",
+    "count": 9,
+    "logoUrl": "https://i1.autocango.com/brand/QRQ.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Dorcen",
+    "count": 8,
+    "logoUrl": "https://i1.autocango.com/brand/3VMY.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Dearcc",
+    "count": 3,
+    "logoUrl": "https://i1.autocango.com/brand/V13M.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Exceed",
+    "count": 1579,
+    "logoUrl": "https://i1.autocango.com/brand/WNBP.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Everus",
+    "count": 121,
+    "logoUrl": "https://i1.autocango.com/brand/GRB.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Enovate",
+    "count": 28,
+    "logoUrl": "https://i1.autocango.com/brand/LK9W.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Enranger",
+    "count": 20,
+    "logoUrl": "https://i1.autocango.com/brand/RBE.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "EV House",
+    "count": 15,
+    "logoUrl": "https://i1.autocango.com/brand/V1P3.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Ford",
+    "count": 20545,
+    "logoUrl": "https://i1.autocango.com/brand/W3P.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "FangChengBao",
+    "count": 2690,
+    "logoUrl": "https://i1.autocango.com/brand/8DND.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Foton",
+    "count": 1514,
+    "logoUrl": "https://i1.autocango.com/brand/44A.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Fulwin",
+    "count": 1377,
+    "logoUrl": "https://i1.autocango.com/brand/4VWA.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Ferrari",
+    "count": 822,
+    "logoUrl": "https://i1.autocango.com/brand/VEX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Firefly",
+    "count": 237,
+    "logoUrl": "https://i1.autocango.com/brand/AYB3.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "FAW",
+    "count": 203,
+    "logoUrl": "https://i1.autocango.com/brand/D4Q.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Fiat",
+    "count": 137,
+    "logoUrl": "https://i1.autocango.com/brand/BRY.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Foday",
+    "count": 78,
+    "logoUrl": "https://i1.autocango.com/brand/MG4.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "FHA",
+    "count": 10,
+    "logoUrl": "https://i1.autocango.com/brand/8DPK.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "FeiDi",
+    "count": 3,
+    "logoUrl": "https://i1.autocango.com/brand/4VX3.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "GAC Trumpchi",
+    "count": 40868,
+    "logoUrl": "https://i1.autocango.com/brand/NLE.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Geely Galaxy",
+    "count": 6095,
+    "logoUrl": "https://i1.autocango.com/brand/B34W.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Geometry",
+    "count": 2796,
+    "logoUrl": "https://i1.autocango.com/brand/AY1M.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Great Wall",
+    "count": 1715,
+    "logoUrl": "https://i1.autocango.com/brand/XQ9.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Golden Dragon",
+    "count": 109,
+    "logoUrl": "https://i1.autocango.com/brand/MRA.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "GMC",
+    "count": 75,
+    "logoUrl": "https://i1.autocango.com/brand/WXX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Genesis",
+    "count": 74,
+    "logoUrl": "https://i1.autocango.com/brand/7PMA.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "GuoJi",
+    "count": 21,
+    "logoUrl": "https://i1.autocango.com/brand/YXWN.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Gleagle",
+    "count": 10,
+    "logoUrl": "https://i1.autocango.com/brand/M8A.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "George Patton",
+    "count": 9,
+    "logoUrl": "https://i1.autocango.com/brand/EEM.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "GAC Gonow",
+    "count": 8,
+    "logoUrl": "https://i1.autocango.com/brand/PRB.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Honda",
+    "count": 54066,
+    "logoUrl": "https://i1.autocango.com/brand/4DE.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Hyundai",
+    "count": 36986,
+    "logoUrl": "https://i1.autocango.com/brand/9W1.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "HaiMa",
+    "count": 572,
+    "logoUrl": "https://i1.autocango.com/brand/PDB.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "HYPTEC",
+    "count": 543,
+    "logoUrl": "https://i1.autocango.com/brand/PKDX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "HanTeng",
+    "count": 535,
+    "logoUrl": "https://i1.autocango.com/brand/1X84.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "HIMA",
+    "count": 321,
+    "logoUrl": "https://i1.autocango.com/brand/B3LW.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Hycan",
+    "count": 263,
+    "logoUrl": "https://i1.autocango.com/brand/97G1.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "HiPhi",
+    "count": 224,
+    "logoUrl": "https://i1.autocango.com/brand/LKNW.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "HuangHai",
+    "count": 173,
+    "logoUrl": "https://i1.autocango.com/brand/M74.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "HawTai",
+    "count": 40,
+    "logoUrl": "https://i1.autocango.com/brand/Q78.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Hunkt",
+    "count": 24,
+    "logoUrl": "https://i1.autocango.com/brand/NKNW.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Hummer",
+    "count": 18,
+    "logoUrl": "https://i1.autocango.com/brand/X77.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "HuaSong",
+    "count": 10,
+    "logoUrl": "https://i1.autocango.com/brand/VRD.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "HEDMOS",
+    "count": 9,
+    "logoUrl": "https://i1.autocango.com/brand/8DE8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Hafei Motor",
+    "count": 5,
+    "logoUrl": "https://i1.autocango.com/brand/GKX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "HuaTai",
+    "count": 5,
+    "logoUrl": "https://i1.autocango.com/brand/E1NN.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "HuaChenXinRi",
+    "count": 4,
+    "logoUrl": "https://i1.autocango.com/brand/NKE8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Higer",
+    "count": 3,
+    "logoUrl": "https://i1.autocango.com/brand/9EP.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "HuaKai",
+    "count": 3,
+    "logoUrl": "https://i1.autocango.com/brand/7ALQ.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "HengChi",
+    "count": 2,
+    "logoUrl": "https://i1.autocango.com/brand/WNW7.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Horki",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/KK9.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "HuaZi Auto",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/97PE.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "IM",
+    "count": 2354,
+    "logoUrl": "https://i1.autocango.com/brand/D31K.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Isuzu",
+    "count": 2068,
+    "logoUrl": "https://i1.autocango.com/brand/77M.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Infiniti",
+    "count": 1780,
+    "logoUrl": "https://i1.autocango.com/brand/8N8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Iveco",
+    "count": 650,
+    "logoUrl": "https://i1.autocango.com/brand/DBE.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "iCAR",
+    "count": 296,
+    "logoUrl": "https://i1.autocango.com/brand/977E.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Jetta",
+    "count": 6114,
+    "logoUrl": "https://i1.autocango.com/brand/V1KP.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Jeep",
+    "count": 5111,
+    "logoUrl": "https://i1.autocango.com/brand/WDX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Jaguar",
+    "count": 2086,
+    "logoUrl": "https://i1.autocango.com/brand/D8Q.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Jetour ShanHai",
+    "count": 1877,
+    "logoUrl": "https://i1.autocango.com/brand/NKXE.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "JAC",
+    "count": 1248,
+    "logoUrl": "https://i1.autocango.com/brand/KVY.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "JMC",
+    "count": 653,
+    "logoUrl": "https://i1.autocango.com/brand/MV4.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "JinBei",
+    "count": 568,
+    "logoUrl": "https://i1.autocango.com/brand/YMX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "JAC Refine",
+    "count": 291,
+    "logoUrl": "https://i1.autocango.com/brand/QL9W.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "JMEV",
+    "count": 86,
+    "logoUrl": "https://i1.autocango.com/brand/D3PY.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "JiYue",
+    "count": 40,
+    "logoUrl": "https://i1.autocango.com/brand/E1LX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Jetour Zongheng",
+    "count": 36,
+    "logoUrl": "https://i1.autocango.com/brand/WNAX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Jenhoo",
+    "count": 28,
+    "logoUrl": "https://i1.autocango.com/brand/E14X.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "JAC EV",
+    "count": 25,
+    "logoUrl": "https://i1.autocango.com/brand/LKRX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "JDMC",
+    "count": 12,
+    "logoUrl": "https://i1.autocango.com/brand/DVE.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "JunTian",
+    "count": 11,
+    "logoUrl": "https://i1.autocango.com/brand/4VKE.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Joylong",
+    "count": 4,
+    "logoUrl": "https://i1.autocango.com/brand/8X3.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Jonway",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/B7E.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "JiangNan",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/YX1N.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "JMMC",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/97NK.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Jingfei Automobile",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/8DYD.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Kia",
+    "count": 17214,
+    "logoUrl": "https://i1.autocango.com/brand/KQY.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Karry",
+    "count": 274,
+    "logoUrl": "https://i1.autocango.com/brand/LDN.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "KaiYi",
+    "count": 241,
+    "logoUrl": "https://i1.autocango.com/brand/RYE.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "KingLong",
+    "count": 142,
+    "logoUrl": "https://i1.autocango.com/brand/7VM.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Kede",
+    "count": 33,
+    "logoUrl": "https://i1.autocango.com/brand/MLP8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Kama",
+    "count": 15,
+    "logoUrl": "https://i1.autocango.com/brand/RLV1.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Kawe Auto",
+    "count": 3,
+    "logoUrl": "https://i1.autocango.com/brand/XXQ.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "KaSheng",
+    "count": 3,
+    "logoUrl": "https://i1.autocango.com/brand/GN4.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Kmuller",
+    "count": 2,
+    "logoUrl": "https://i1.autocango.com/brand/RLG1.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Land Rover",
+    "count": 29709,
+    "logoUrl": "https://i1.autocango.com/brand/BBE.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Li",
+    "count": 25515,
+    "logoUrl": "https://i1.autocango.com/brand/1XMQ.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "LYNK&CO",
+    "count": 21861,
+    "logoUrl": "https://i1.autocango.com/brand/MLQR.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Lincoln",
+    "count": 10590,
+    "logoUrl": "https://i1.autocango.com/brand/848.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Lexus",
+    "count": 4829,
+    "logoUrl": "https://i1.autocango.com/brand/4NA.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Leapmotor",
+    "count": 2975,
+    "logoUrl": "https://i1.autocango.com/brand/G3AL.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Lamborghini",
+    "count": 673,
+    "logoUrl": "https://i1.autocango.com/brand/R47.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Livan",
+    "count": 436,
+    "logoUrl": "https://i1.autocango.com/brand/E1BD.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Levdeo",
+    "count": 404,
+    "logoUrl": "https://i1.autocango.com/brand/B93.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "LiFan",
+    "count": 331,
+    "logoUrl": "https://i1.autocango.com/brand/G9B.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Landwind",
+    "count": 280,
+    "logoUrl": "https://i1.autocango.com/brand/DAQ.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Luxgen",
+    "count": 196,
+    "logoUrl": "https://i1.autocango.com/brand/PQB.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "LingBox",
+    "count": 190,
+    "logoUrl": "https://i1.autocango.com/brand/NKD8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Luxeed",
+    "count": 190,
+    "logoUrl": "https://i1.autocango.com/brand/AYD1.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Leopaard",
+    "count": 180,
+    "logoUrl": "https://i1.autocango.com/brand/ER8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "LanDian",
+    "count": 173,
+    "logoUrl": "https://i1.autocango.com/brand/V1DX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Lotus",
+    "count": 47,
+    "logoUrl": "https://i1.autocango.com/brand/9QD.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Lorinser",
+    "count": 37,
+    "logoUrl": "https://i1.autocango.com/brand/4WA.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "LUMMA",
+    "count": 12,
+    "logoUrl": "https://i1.autocango.com/brand/3VE4.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "LinkTour",
+    "count": 10,
+    "logoUrl": "https://i1.autocango.com/brand/YXDB.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Linxys",
+    "count": 5,
+    "logoUrl": "https://i1.autocango.com/brand/KLQK.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "LEVC",
+    "count": 3,
+    "logoUrl": "https://i1.autocango.com/brand/NK4W.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Langsi",
+    "count": 3,
+    "logoUrl": "https://i1.autocango.com/brand/WN7B.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Lark",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/LK4W.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "LITE",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/MLYL.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Mazda",
+    "count": 24587,
+    "logoUrl": "https://i1.autocango.com/brand/GLB.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "MI",
+    "count": 13414,
+    "logoUrl": "https://i1.autocango.com/brand/1XWX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "MAXUS",
+    "count": 12526,
+    "logoUrl": "https://i1.autocango.com/brand/X8Q.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Maserati",
+    "count": 3616,
+    "logoUrl": "https://i1.autocango.com/brand/LRN.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Mitsubishi",
+    "count": 2788,
+    "logoUrl": "https://i1.autocango.com/brand/W7X.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "MINI",
+    "count": 2076,
+    "logoUrl": "https://i1.autocango.com/brand/EX8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "McLaren",
+    "count": 298,
+    "logoUrl": "https://i1.autocango.com/brand/1NP.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Mansory",
+    "count": 211,
+    "logoUrl": "https://i1.autocango.com/brand/RLKD.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "M Hero",
+    "count": 169,
+    "logoUrl": "https://i1.autocango.com/brand/3VD7.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "MAEXTRO",
+    "count": 77,
+    "logoUrl": "https://i1.autocango.com/brand/QLG8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Morgan",
+    "count": 10,
+    "logoUrl": "https://i1.autocango.com/brand/WGY.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Modern Auto",
+    "count": 2,
+    "logoUrl": "https://i1.autocango.com/brand/YX3R.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "MaiMai",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/XPGB.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Neta",
+    "count": 9819,
+    "logoUrl": "https://i1.autocango.com/brand/B31Y.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "NLM Motor",
+    "count": 28,
+    "logoUrl": "https://i1.autocango.com/brand/MDA.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "New Gonow",
+    "count": 4,
+    "logoUrl": "https://i1.autocango.com/brand/7PRW.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Neomor",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/XP77.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Ora",
+    "count": 1214,
+    "logoUrl": "https://i1.autocango.com/brand/B3VY.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ONVO",
+    "count": 293,
+    "logoUrl": "https://i1.autocango.com/brand/4V4A.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Opel",
+    "count": 16,
+    "logoUrl": "https://i1.autocango.com/brand/31X.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Oley",
+    "count": 5,
+    "logoUrl": "https://i1.autocango.com/brand/WQY.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Obbin",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/1XPG.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Peugeot",
+    "count": 3165,
+    "logoUrl": "https://i1.autocango.com/brand/8AK.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Porsche",
+    "count": 2620,
+    "logoUrl": "https://i1.autocango.com/brand/4RB.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Polestar",
+    "count": 141,
+    "logoUrl": "https://i1.autocango.com/brand/RLXD.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Pocco",
+    "count": 3,
+    "logoUrl": "https://i1.autocango.com/brand/7PE8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Qoros",
+    "count": 176,
+    "logoUrl": "https://i1.autocango.com/brand/487.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "QianTu",
+    "count": 17,
+    "logoUrl": "https://i1.autocango.com/brand/AEG7.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Roewe",
+    "count": 21247,
+    "logoUrl": "https://i1.autocango.com/brand/MWK.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Rolls-Royce",
+    "count": 865,
+    "logoUrl": "https://i1.autocango.com/brand/VD8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Renault",
+    "count": 563,
+    "logoUrl": "https://i1.autocango.com/brand/RND.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Ruichi Auto",
+    "count": 174,
+    "logoUrl": "https://i1.autocango.com/brand/RLNV.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ROX",
+    "count": 49,
+    "logoUrl": "https://i1.autocango.com/brand/1XYG.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ROXROX",
+    "count": 31,
+    "logoUrl": "https://i1.autocango.com/brand/1XYG.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Radar",
+    "count": 21,
+    "logoUrl": "https://i1.autocango.com/brand/V1XX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "RAM",
+    "count": 19,
+    "logoUrl": "https://i1.autocango.com/brand/RLE9.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Riich",
+    "count": 6,
+    "logoUrl": "https://i1.autocango.com/brand/38X.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Reach",
+    "count": 6,
+    "logoUrl": "https://i1.autocango.com/brand/7PYW.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ROXPloeStone",
+    "count": 3,
+    "logoUrl": "https://i1.autocango.com/brand/1XYG.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Rely",
+    "count": 2,
+    "logoUrl": "https://i1.autocango.com/brand/GXB.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Rhine Auto",
+    "count": 2,
+    "logoUrl": "https://i1.autocango.com/brand/B3PN.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Skoda",
+    "count": 15467,
+    "logoUrl": "https://i1.autocango.com/brand/7NY.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Subaru",
+    "count": 2985,
+    "logoUrl": "https://i1.autocango.com/brand/QM8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Suzuki",
+    "count": 1694,
+    "logoUrl": "https://i1.autocango.com/brand/MB4.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Smart",
+    "count": 819,
+    "logoUrl": "https://i1.autocango.com/brand/78Y.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Skyworth",
+    "count": 361,
+    "logoUrl": "https://i1.autocango.com/brand/4VLE.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Soueast",
+    "count": 270,
+    "logoUrl": "https://i1.autocango.com/brand/3YX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Sehol",
+    "count": 231,
+    "logoUrl": "https://i1.autocango.com/brand/RLQD.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Stelato",
+    "count": 215,
+    "logoUrl": "https://i1.autocango.com/brand/7PQY.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "SWM",
+    "count": 179,
+    "logoUrl": "https://i1.autocango.com/brand/QLVL.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "SERES",
+    "count": 85,
+    "logoUrl": "https://i1.autocango.com/brand/QLN3.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ShenZhou",
+    "count": 69,
+    "logoUrl": "https://i1.autocango.com/brand/D3RK.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Shenzer",
+    "count": 57,
+    "logoUrl": "https://i1.autocango.com/brand/V1YP.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "SRM",
+    "count": 55,
+    "logoUrl": "https://i1.autocango.com/brand/WNPP.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "SionGold",
+    "count": 53,
+    "logoUrl": "https://i1.autocango.com/brand/D3NP.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ShangJie",
+    "count": 53,
+    "logoUrl": "https://i1.autocango.com/brand/D37Q.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "SsangYong",
+    "count": 37,
+    "logoUrl": "https://i1.autocango.com/brand/A83.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Saleen",
+    "count": 35,
+    "logoUrl": "https://i1.autocango.com/brand/YEV.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "SONGSAN MOTORS",
+    "count": 18,
+    "logoUrl": "https://i1.autocango.com/brand/V1N3.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "SunLong",
+    "count": 17,
+    "logoUrl": "https://i1.autocango.com/brand/E1YD.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Seat",
+    "count": 14,
+    "logoUrl": "https://i1.autocango.com/brand/VV8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "SinoTruck VGV",
+    "count": 13,
+    "logoUrl": "https://i1.autocango.com/brand/V19X.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Saab",
+    "count": 7,
+    "logoUrl": "https://i1.autocango.com/brand/P4B.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Startech",
+    "count": 5,
+    "logoUrl": "https://i1.autocango.com/brand/9WRP.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Sitech",
+    "count": 4,
+    "logoUrl": "https://i1.autocango.com/brand/PK7A.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "SHELBY",
+    "count": 4,
+    "logoUrl": "https://i1.autocango.com/brand/KL8E.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ShuangHuan",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/W8X.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Skywell",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/AR7.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Speed Auto",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/KLME.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "SuDa",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/8DKW.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ShengTang",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/NKR3.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Tank",
+    "count": 4457,
+    "logoUrl": "https://i1.autocango.com/brand/V113.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "The Durant Guild",
+    "count": 18,
+    "logoUrl": "https://i1.autocango.com/brand/ML74.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Traum",
+    "count": 16,
+    "logoUrl": "https://i1.autocango.com/brand/B3R7.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "TaiRuiTe",
+    "count": 3,
+    "logoUrl": "https://i1.autocango.com/brand/D3DP.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "TongJia",
+    "count": 2,
+    "logoUrl": "https://i1.autocango.com/brand/BA3.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "TECHART",
+    "count": 2,
+    "logoUrl": "https://i1.autocango.com/brand/GG4.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Volvo",
+    "count": 4519,
+    "logoUrl": "https://i1.autocango.com/brand/RV7.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Voyah",
+    "count": 1331,
+    "logoUrl": "https://i1.autocango.com/brand/QLAY.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Venucia",
+    "count": 546,
+    "logoUrl": "https://i1.autocango.com/brand/EW8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "VGV",
+    "count": 90,
+    "logoUrl": "https://i1.autocango.com/brand/7P1A.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Victory Auto",
+    "count": 9,
+    "logoUrl": "https://i1.autocango.com/brand/437.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Vulcanus",
+    "count": 3,
+    "logoUrl": "https://i1.autocango.com/brand/XPL7.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "WuLing",
+    "count": 25200,
+    "logoUrl": "https://i1.autocango.com/brand/R97.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "WEY",
+    "count": 6461,
+    "logoUrl": "https://i1.autocango.com/brand/LK88.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Weltmeister",
+    "count": 1497,
+    "logoUrl": "https://i1.autocango.com/brand/QLWL.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Wowsen",
+    "count": 327,
+    "logoUrl": "https://i1.autocango.com/brand/B3AE.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "WanXiang",
+    "count": 22,
+    "logoUrl": "https://i1.autocango.com/brand/KLGK.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "WinnerWay",
+    "count": 19,
+    "logoUrl": "https://i1.autocango.com/brand/PKEP.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "XiaoHu EV",
+    "count": 6,
+    "logoUrl": "https://i1.autocango.com/brand/ML38.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Xinkai",
+    "count": 2,
+    "logoUrl": "https://i1.autocango.com/brand/1EK.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "XingHaiShi",
+    "count": 1,
+    "logoUrl": "https://i1.autocango.com/brand/1XBP.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "YangWang",
+    "count": 440,
+    "logoUrl": "https://i1.autocango.com/brand/97QK.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Yudo",
+    "count": 270,
+    "logoUrl": "https://i1.autocango.com/brand/NKQY.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Yema",
+    "count": 112,
+    "logoUrl": "https://i1.autocango.com/brand/7XY.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "YuanChen",
+    "count": 87,
+    "logoUrl": "https://i1.autocango.com/brand/E1PK.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Yufeng Auto",
+    "count": 64,
+    "logoUrl": "https://i1.autocango.com/brand/WNXX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Youngman Lotus",
+    "count": 8,
+    "logoUrl": "https://i1.autocango.com/brand/7YY.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "YuTong",
+    "count": 4,
+    "logoUrl": "https://i1.autocango.com/brand/97WL.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "YuanHang",
+    "count": 4,
+    "logoUrl": "https://i1.autocango.com/brand/G3KX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "YaSheng",
+    "count": 3,
+    "logoUrl": "https://i1.autocango.com/brand/1XXX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Yuejin",
+    "count": 2,
+    "logoUrl": "https://i1.autocango.com/brand/1XRP.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Zotye",
+    "count": 1455,
+    "logoUrl": "https://i1.autocango.com/brand/9YD.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ZD",
+    "count": 62,
+    "logoUrl": "https://i1.autocango.com/brand/KA9.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ZX AUTO",
+    "count": 36,
+    "logoUrl": "https://i1.autocango.com/brand/41A.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Zedriv",
+    "count": 4,
+    "logoUrl": "https://i1.autocango.com/brand/QL13.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Zinoro",
+    "count": 2,
+    "logoUrl": "https://i1.autocango.com/brand/NB7.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "212", 
+    "count": 938, 
+    "logoUrl": "https://i1.autocango.com/brand/G3XB.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Audi", 
+    "count": 71846, 
+    "logoUrl": "https://i1.autocango.com/brand/78W.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Aion", 
+    "count": 15358, 
+    "logoUrl": "https://i1.autocango.com/brand/ML1L.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },              
+  {
+    "name": "AITO", 
+    "count": 13508, 
+    "logoUrl": "https://i1.autocango.com/brand/B37E.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Avatr", 
+    "count": 2834, 
+    "logoUrl": "https://i1.autocango.com/brand/V1A3.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },  
+  {
+    "name": "BAIC WeiWang", 
+    "count": 129, 
+    "logoUrl": "https://i1.autocango.com/brand/X89.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  { 
+    "name": "BiSu", 
+    "count": 26, 
+    "logoUrl": "https://i1.autocango.com/brand/7PL3.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim" 
+  },
+  {
+    "name": "Brabus", 
+    "count": 18, 
+    "logoUrl": "https://i1.autocango.com/brand/48A.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "BAIC RuiXiang", 
+    "count": 8, 
+    "logoUrl": "https://i1.autocango.com/brand/WNN7.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "BiKe", 
+    "count": 1, 
+    "logoUrl": "https://i1.autocango.com/brand/G3Q7.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "BaiZhi", 
+    "count": 1, 
+    "logoUrl": "https://i1.autocango.com/brand/NKP8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "BaiZhi", 
+    "count": 1, 
+    "logoUrl": "https://i1.autocango.com/brand/NKP8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Bufite", 
+    "count": 1, 
+    "logoUrl": "https://i1.autocango.com/brand/MLEK.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ChangAn", 
+    "count": 46985, 
+    "logoUrl": "https://i1.autocango.com/brand/V98.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Chevrolet", 
+    "count": 29990, 
+    "logoUrl": "https://i1.autocango.com/brand/B4E.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Chery", 
+    "count": 29107, 
+    "logoUrl": "https://i1.autocango.com/brand/NA3.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Cadillac",
+    "count": 27083, 
+    "logoUrl": "https://i1.autocango.com/brand/AQ3.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ChangAn QiYuan", 
+    "count": 5501, 
+    "logoUrl": "https://i1.autocango.com/brand/E1XX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Citroen", 
+    "count": 3633, 
+    "logoUrl": "https://i1.autocango.com/brand/9ND.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ChangAn Oshan", 
+    "count": 1177, 
+    "logoUrl": "https://i1.autocango.com/brand/1QK.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Chery EV", 
+    "count": 788, 
+    "logoUrl": "https://i1.autocango.com/brand/YXPR.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ChangAn Kaicene", 
+    "count": 571, 
+    "logoUrl": "https://i1.autocango.com/brand/WN3L.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ChangAn KuaYue", 
+    "count": 189, 
+    "logoUrl": "https://i1.autocango.com/brand/8DA9.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Chrysler", 
+    "count": 100, 
+    "logoUrl": "https://i1.autocango.com/brand/AEM.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Ciimo", 
+    "count": 53, 
+    "logoUrl": "https://i1.autocango.com/brand/KW9.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Cyberspace", 
+    "count": 46, 
+    "logoUrl": "https://i1.autocango.com/brand/3V17.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "CHEVOO", 
+    "count": 23, 
+    "logoUrl": "https://i1.autocango.com/brand/E1M8.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Century", 
+    "count": 11, 
+    "logoUrl": "https://i1.autocango.com/brand/WN8X.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "ChengShi", 
+    "count": 4, 
+    "logoUrl": "https://i1.autocango.com/brand/8DDW.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "CAVAN", 
+    "count": 4, 
+    "logoUrl": "https://i1.autocango.com/brand/RL97.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "CHTC", 
+    "count": 3, 
+    "logoUrl": "https://i1.autocango.com/brand/P87.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Carlsson", 
+    "count": 1, 
+    "logoUrl": "https://i1.autocango.com/brand/E9M.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Cenntro", 
+    "count": 1, 
+    "logoUrl": "https://i1.autocango.com/brand/XP9B.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Chery Wanda", 
+    "count": 1, 
+    "logoUrl": "https://i1.autocango.com/brand/G3RB.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Denza", 
+    "count": 6996, 
+    "logoUrl": "https://i1.autocango.com/brand/Y4V.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Deepal", 
+    "count": 4902, 
+    "logoUrl": "https://i1.autocango.com/brand/RL81.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "DongFeng Aeolus", 
+    "count": 4305, 
+    "logoUrl": "https://i1.autocango.com/brand/AB3.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Dongfeng", 
+    "count": 1811, 
+    "logoUrl": "https://i1.autocango.com/brand/D8N.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Dongfeng eπ", 
+    "count": 1702, 
+    "logoUrl": "https://i1.autocango.com/brand/B37W.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "DongFeng Forthing", 
+    "count": 1503, 
+    "logoUrl": "https://i1.autocango.com/brand/Q4Q.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "DongFeng Fengon", 
+    "count": 585, 
+    "logoUrl": "https://i1.autocango.com/brand/XM44.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "DongFeng FuKang", 
+    "count": 578, 
+    "logoUrl": "https://i1.autocango.com/brand/WNY7.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "DongFeng DFAC", 
+    "count": 475, 
+    "logoUrl": "https://i1.autocango.com/brand/AY9D.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "DS", 
+    "count": 317, 
+    "logoUrl": "https://i1.autocango.com/brand/AX7.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  },
+  {
+    "name": "Hafei Motor", 
+    "count": 5, 
+    "logoUrl": "https://i1.autocango.com/brand/GKX.webp?x-image-process=image/quality,q_50/resize,w_80,h_80/imageslim"
+  }
+]
