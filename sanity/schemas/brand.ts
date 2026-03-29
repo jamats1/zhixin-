@@ -40,6 +40,14 @@ export default defineType({
       },
     }),
     defineField({
+      name: "isHot",
+      title: "Hot Brand",
+      type: "boolean",
+      description:
+        "Whether this brand should appear under the Hot tab (e.g. matching AutoCango popular list).",
+      initialValue: false,
+    }),
+    defineField({
       name: "order",
       title: "Display Order",
       type: "number",

@@ -21,25 +21,27 @@ export default function Header() {
           <LocationWeather />
         </div>
 
-        {/* Modern Search Bar with Suggestions */}
-        <div className="flex-1 max-w-md lg:max-w-lg">
+        {/* Modern Search Bar with Suggestions — 100% of available space */}
+        <div className="flex-1 min-w-0">
           <SearchBar />
         </div>
 
         {/* User Actions — hidden on mobile */}
         <div className="hidden md:flex items-center gap-3 text-sm">
-          <button
-            type="button"
-            className="px-4 md:px-5 py-1.5 md:py-2 min-h-[44px] bg-[var(--primary)] text-white rounded-md text-xs md:text-sm font-medium hover:bg-[var(--primary-hover)] transition-all duration-200 hover:shadow-md hover:shadow-[var(--primary)]/30 active:scale-[0.98]"
+          <a
+            href="https://wa.me/8618157977478"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 md:px-5 py-1.5 md:py-2 min-h-[44px] bg-[var(--primary)] text-white rounded-md text-xs md:text-sm font-medium hover:bg-[var(--primary-hover)] transition-all duration-200 hover:shadow-md hover:shadow-[var(--primary)]/30 active:scale-[0.98] inline-flex items-center justify-center"
           >
-            Sign Up
-          </button>
-          <button
-            type="button"
-            className="px-4 md:px-5 py-1.5 md:py-2 min-h-[44px] text-[var(--primary)] border border-[var(--primary)] rounded-md text-xs md:text-sm font-medium hover:bg-[var(--primary)] hover:text-white transition-all duration-200 hover:shadow-md hover:shadow-[var(--primary)]/20 active:scale-[0.98]"
+            WhatsApp
+          </a>
+          <Link
+            href="/inquiry"
+            className="px-4 md:px-5 py-1.5 md:py-2 min-h-[44px] text-[var(--primary)] border border-[var(--primary)] rounded-md text-xs md:text-sm font-medium hover:bg-[var(--primary)] hover:text-white transition-all duration-200 hover:shadow-md hover:shadow-[var(--primary)]/20 active:scale-[0.98] inline-flex items-center justify-center"
           >
-            Login
-          </button>
+            Inquiry form
+          </Link>
         </div>
       </div>
     </header>

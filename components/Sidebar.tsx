@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useMemo } from "react";
 import { useBrands } from "@/hooks/useBrands";
+import { useSparePartLines } from "@/hooks/useSparePartLines";
 import { brandLogoUrl } from "@/lib/sanity/client";
 import { useFilterStore } from "@/stores/filterStore";
 import { useUIStore } from "@/stores/uiStore";
@@ -24,7 +25,7 @@ function BrandLogo({
         width={size}
         height={size}
         className="shrink-0 rounded object-contain bg-gray-50"
-        unoptimized={false}
+        unoptimized={process.env.NODE_ENV !== "production"}
       />
     );
   }
@@ -41,7 +42,8 @@ function BrandLogo({
 
 export default function Sidebar() {
   const { currentView } = useUIStore();
-  const isVehiclesView = currentView === "imageList";
+  const isVehiclesView =
+    currentView === "imageList" || currentView === "truckList";
   const isCarPartsView = currentView === "featuredAlbums";
 
   const {
@@ -52,30 +54,34 @@ export default function Sidebar() {
     setOnlyNewEnergy,
     setFuelType,
     setBrand,
+    setSparePartLine,
     alphabeticalFilter,
     setAlphabeticalFilter,
     selectedBrand,
+    selectedSparePartLineId,
     selectedCarPartCategory,
     setCarPartCategory,
   } = useFilterStore();
   const { brands, isLoading } = useBrands();
+  const { lines: sparePartLines, isLoading: spareLinesLoading } =
+    useSparePartLines(isCarPartsView ? selectedBrand : null);
   const expandedLetter = alphabeticalFilter ?? "A";
 
-  // Car Parts Categories
   const carPartCategories = [
     { label: "All", value: "all" },
     { label: "Engine", value: "engine" },
     { label: "Transmission", value: "transmission" },
-    { label: "Brakes", value: "brakes" },
-    { label: "Suspension", value: "suspension" },
-    { label: "Electrical", value: "electrical" },
-    { label: "Body & Exterior", value: "body" },
-    { label: "Interior", value: "interior" },
-    { label: "Wheels & Tires", value: "wheels" },
+    { label: "Axle", value: "axle" },
+    { label: "Tire", value: "tire" },
+    { label: "Retarder", value: "retarder" },
+    { label: "Other parts", value: "other" },
     { label: "Lighting", value: "lighting" },
-    { label: "Filters", value: "filters" },
-    { label: "Fluids", value: "fluids" },
-    { label: "Other", value: "other" },
+    { label: "Body / panels", value: "body-panel" },
+    { label: "Glass", value: "glass" },
+    { label: "Filters", value: "filter" },
+    { label: "Wheels", value: "wheel" },
+    { label: "Accessories", value: "accessory" },
+    { label: "Other retail", value: "other-retail" },
   ];
 
   const brandsByLetter = useMemo(() => {
@@ -279,7 +285,7 @@ export default function Sidebar() {
                     key={category.value}
                     onClick={() =>
                       setCarPartCategory(
-                        category.value === "all" ? null : category.value
+                        category.value === "all" ? null : category.value,
                       )
                     }
                     className={`px-2.5 py-1.5 text-xs text-left rounded transition-colors ${
@@ -315,9 +321,7 @@ export default function Sidebar() {
                       type="button"
                       key={brand.id}
                       onClick={() =>
-                        setBrand(
-                          selectedBrand === brand.id ? null : brand.name
-                        )
+                        setBrand(selectedBrand === brand.id ? null : brand.id)
                       }
                       className={`w-full text-left px-2 py-1.5 text-sm rounded flex items-center gap-2 justify-between group transition-colors ${
                         selectedBrand === brand.id
@@ -343,6 +347,59 @@ export default function Sidebar() {
                 )}
               </div>
             </div>
+
+            {selectedBrand && (
+              <div>
+                <div className="text-xs font-semibold text-[var(--text-primary)] mb-2 px-1 uppercase tracking-wide">
+                  Model line
+                </div>
+                <div className="space-y-1 max-h-[220px] overflow-y-auto">
+                  {spareLinesLoading ? (
+                    <p className="text-sm text-[var(--text-tertiary)] px-2 py-2">
+                      Loading lines…
+                    </p>
+                  ) : sparePartLines.length === 0 ? (
+                    <p className="px-2 py-1.5 text-xs text-[var(--text-tertiary)]">
+                      No model lines yet (run BD Spares ingest).
+                    </p>
+                  ) : (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => setSparePartLine(null)}
+                        className={`w-full text-left px-2 py-1.5 text-xs rounded transition-colors ${
+                          !selectedSparePartLineId
+                            ? "bg-[var(--primary)] text-white"
+                            : "bg-gray-100 text-[var(--text-secondary)] hover:bg-gray-200"
+                        }`}
+                      >
+                        All lines
+                      </button>
+                      {sparePartLines.map((line) => (
+                        <button
+                          type="button"
+                          key={line.id}
+                          onClick={() =>
+                            setSparePartLine(
+                              selectedSparePartLineId === line.id
+                                ? null
+                                : line.id,
+                            )
+                          }
+                          className={`w-full text-left px-2 py-1.5 text-xs rounded truncate transition-colors ${
+                            selectedSparePartLineId === line.id
+                              ? "bg-[var(--primary)]/10 text-[var(--primary)]"
+                              : "text-[var(--text-secondary)] hover:bg-gray-50"
+                          }`}
+                        >
+                          {line.title}
+                        </button>
+                      ))}
+                    </>
+                  )}
+                </div>
+              </div>
+            )}
           </>
         )}
       </div>

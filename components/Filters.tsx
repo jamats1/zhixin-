@@ -26,7 +26,7 @@ function BrandLogoSmall({
         width={size}
         height={size}
         className="shrink-0 rounded object-contain bg-gray-50"
-        unoptimized={false}
+        unoptimized={process.env.NODE_ENV !== "production"}
       />
     );
   }
@@ -49,6 +49,7 @@ export default function Filters() {
     selectedCategory,
     alphabeticalFilter,
     setAlphabeticalFilter,
+    setVehicleView,
     selectedCarPartCategory,
     setCarPartCategory,
     onlyOnSale,
@@ -58,27 +59,41 @@ export default function Filters() {
     setOnlyNewEnergy,
     setFuelType,
   } = useFilterStore();
-  const { brands } = useBrands();
+  const { brands, isLoading: brandsLoading } = useBrands();
   const { categories: vehicleCategories } = useVehicleCategories();
-  const popularBrands = (brands || []).slice(0, POPULAR_BRANDS_COUNT);
+  const brandList = brands || [];
+  const brandsWithVehicles = brandList.filter((b) => (b.count ?? 0) > 0);
+  const hotBrands = brandList.filter((b) => b.isHot && (b.count ?? 0) > 0);
+  const popularBrands =
+    alphabeticalFilter && alphabeticalFilter.length === 1
+      ? brandList.filter((b) =>
+          b.name.toUpperCase().startsWith(alphabeticalFilter.toUpperCase()),
+        )
+      : hotBrands.length > 0
+        ? hotBrands.slice(0, POPULAR_BRANDS_COUNT)
+        : brandsWithVehicles.length > 0
+          ? brandsWithVehicles.slice(0, POPULAR_BRANDS_COUNT)
+          : brandList.slice(0, POPULAR_BRANDS_COUNT);
 
-  const isVehiclesView = currentView === "imageList";
+  const isVehiclesView =
+    currentView === "imageList" || currentView === "truckList";
 
-  // Car Parts Categories
+  /** ChinaTrucks parts index URLs: …/product/parts/{engine|transmission|axle|tire|retarder|other-parts}/ */
   const carPartCategories = [
     { label: "All", value: "all" },
     { label: "Engine", value: "engine" },
     { label: "Transmission", value: "transmission" },
-    { label: "Brakes", value: "brakes" },
-    { label: "Suspension", value: "suspension" },
-    { label: "Electrical", value: "electrical" },
-    { label: "Body & Exterior", value: "body" },
-    { label: "Interior", value: "interior" },
-    { label: "Wheels & Tires", value: "wheels" },
+    { label: "Axle", value: "axle" },
+    { label: "Tire", value: "tire" },
+    { label: "Retarder", value: "retarder" },
+    { label: "Other parts", value: "other" },
     { label: "Lighting", value: "lighting" },
-    { label: "Filters", value: "filters" },
-    { label: "Fluids", value: "fluids" },
-    { label: "Other", value: "other" },
+    { label: "Body / panels", value: "body-panel" },
+    { label: "Glass", value: "glass" },
+    { label: "Filters", value: "filter" },
+    { label: "Wheels", value: "wheel" },
+    { label: "Accessories", value: "accessory" },
+    { label: "Other retail", value: "other-retail" },
   ];
 
   return (
@@ -88,6 +103,7 @@ export default function Filters() {
         <button
           type="button"
           onClick={() => {
+            setVehicleView("imageList");
             setCurrentView("imageList");
           }}
           className={`relative mr-4 md:mr-10 px-4 py-2 md:py-2.5 min-h-[40px] rounded-full snap-start after:absolute md:after:-bottom-0 after:left-0 md:after:h-[3px] md:after:w-full transition-colors font-[600] ${
@@ -97,6 +113,20 @@ export default function Filters() {
           }`}
         >
           <h2>Vehicles</h2>
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            setVehicleView("truckList");
+            setCurrentView("truckList");
+          }}
+          className={`relative mr-4 md:mr-10 px-4 py-2 md:py-2.5 min-h-[40px] rounded-full snap-start after:absolute md:after:-bottom-0 after:left-0 md:after:h-[3px] md:after:w-full transition-colors font-[600] ${
+            currentView === "truckList"
+              ? "text-[var(--primary)] bg-[var(--primary)]/5 md:bg-transparent md:after:bg-[var(--primary)]"
+              : "text-[var(--text-primary)] hover:text-[var(--primary)]"
+          }`}
+        >
+          <h2>Trucks</h2>
         </button>
         <button
           type="button"
@@ -154,27 +184,42 @@ export default function Filters() {
               </ul>
             </div>
             <div className="flex w-full items-start border-b border-b-[#F0F3F8] text-xs md:text-sm text-[var(--text-primary)] min-w-0">
-              <div className="hidden sm:block w-12 md:w-14 min-w-[48px] md:min-w-[68px] shrink-0" aria-hidden="true" />
+              <div
+                className="hidden sm:block w-12 md:w-14 min-w-[48px] md:min-w-[68px] shrink-0"
+                aria-hidden="true"
+              />
               <div className="w-full min-w-0 bg-[#F8F9FC] px-2 md:px-4 pb-2 pt-2 md:pt-3 min-h-[60px] md:h-[84px] overflow-x-auto md:overflow-hidden">
-                <div className="flex flex-nowrap md:flex-wrap gap-2 md:gap-0">
-                  {popularBrands.map((brand) => (
-                    <button
-                      key={brand.id}
-                      type="button"
-                      onClick={() => setBrand(brand.id)}
-                      className="relative md:mr-4 flex min-w-[56px] md:min-w-[68px] flex-col items-center justify-center rounded p-1 md:p-1.5 text-[var(--text-primary)] hover:cursor-pointer hover:bg-gray-100 mb-2 md:mb-4"
-                    >
-                      <BrandLogoSmall brand={brand} size={24} />
-                      <span className="text-xs">{brand.name}</span>
-                    </button>
-                  ))}
-                </div>
+                {brandsLoading ? (
+                  <div className="flex items-center min-h-[52px] text-[var(--text-tertiary)] text-xs">
+                    Loading brands…
+                  </div>
+                ) : popularBrands.length === 0 ? (
+                  <div className="flex items-center min-h-[52px] text-[var(--text-tertiary)] text-xs">
+                    No brands to show. Sync brands from AutoCango (npm run
+                    scrape:autocango -- --brands).
+                  </div>
+                ) : (
+                  <div className="flex flex-nowrap md:flex-wrap gap-2 md:gap-0">
+                    {popularBrands.map((brand) => (
+                      <button
+                        key={brand.id}
+                        type="button"
+                        onClick={() => setBrand(brand.id)}
+                        className="relative md:mr-4 flex min-w-[56px] md:min-w-[68px] flex-col items-center justify-center rounded p-1 md:p-1.5 text-[var(--text-primary)] hover:cursor-pointer hover:bg-gray-100 mb-2 md:mb-4"
+                        aria-label={`Filter by ${brand.name}`}
+                      >
+                        <BrandLogoSmall brand={brand} size={24} />
+                        <span className="text-xs">{brand.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </div>
 
           {/* Vehicle Category Filter Section (from Sanity Vehicle Categories) */}
-          <div className="flex min-h-7 w-full border-b border-b-[#F0F3F8] py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] transition-all min-w-0">
+          <div className="flex items-center min-h-7 w-full border-b border-b-[#F0F3F8] py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] transition-all min-w-0">
             <div className="hidden sm:block w-12 md:w-[68px] leading-5 md:leading-7 text-[#828CA0] text-xs md:text-sm shrink-0">
               Category
             </div>
@@ -184,8 +229,9 @@ export default function Filters() {
                   type="button"
                   key={cat.id}
                   onClick={() => setCategory(cat.id === "all" ? null : cat.id)}
-                  className={`cursor-pointer rounded px-3 md:px-1.5 py-2 text-xs whitespace-nowrap min-h-[40px] snap-start transition-colors ${
-                    (cat.id === "all" && !selectedCategory) || selectedCategory === cat.id
+                  className={`cursor-pointer rounded px-3 md:px-2 py-1.5 text-xs whitespace-nowrap min-h-[32px] md:min-h-[34px] snap-start transition-colors ${
+                    (cat.id === "all" && !selectedCategory) ||
+                    selectedCategory === cat.id
                       ? "bg-[var(--primary)] text-white"
                       : "hover:bg-gray-100"
                   }`}
@@ -245,7 +291,7 @@ export default function Filters() {
                   New Energy
                 </span>
               </label>
-              
+
               {/* Fuel Type Filters */}
               {[
                 { label: "Gas", value: "gas" as const },
@@ -300,7 +346,7 @@ export default function Filters() {
           </div>
 
           {/* Car Parts Category Filter Section */}
-          <div className="flex min-h-7 w-full border-b border-b-[#F0F3F8] py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] transition-all min-w-0">
+          <div className="flex items-center min-h-7 w-full border-b border-b-[#F0F3F8] py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] transition-all min-w-0">
             <div className="hidden sm:block w-12 md:w-[68px] leading-5 md:leading-7 text-[#828CA0] text-xs md:text-sm shrink-0">
               Category
             </div>
@@ -309,9 +355,13 @@ export default function Filters() {
                 <button
                   type="button"
                   key={category.value}
-                  onClick={() => setCarPartCategory(category.value === "all" ? null : category.value)}
-                  className={`cursor-pointer rounded px-3 md:px-1.5 py-2 text-xs whitespace-nowrap transition-colors min-h-[40px] snap-start ${
-                    selectedCarPartCategory === category.value || 
+                  onClick={() =>
+                    setCarPartCategory(
+                      category.value === "all" ? null : category.value,
+                    )
+                  }
+                  className={`cursor-pointer rounded px-3 md:px-2 py-1.5 text-xs whitespace-nowrap transition-colors min-h-[32px] md:min-h-[34px] snap-start ${
+                    selectedCarPartCategory === category.value ||
                     (category.value === "all" && !selectedCarPartCategory)
                       ? "bg-[var(--primary)] text-white"
                       : "hover:bg-gray-100"

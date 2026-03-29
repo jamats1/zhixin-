@@ -1,30 +1,66 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import type { CarPart, Vehicle } from "@/types";
+
+const FALLBACK_IMAGE_URL =
+  "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&h=600&fit=crop";
+
+function whatsappDigitsFromEnv(raw: string | undefined): string {
+  return (raw ?? "").replace(/\D/g, "");
+}
+
+function openWhatsAppListingInquiry(opts: {
+  phoneDigits: string;
+  listingTitle: string;
+  productPath: string;
+}) {
+  if (!opts.phoneDigits || typeof window === "undefined") return;
+  const listingUrl = `${window.location.origin}${opts.productPath}`;
+  const lead = "Hi, I'd like to inquire about pricing for:";
+  const message = `${lead}
+
+${opts.listingTitle}
+
+Product page: ${listingUrl}
+
+Please reply when you can. Thank you!`;
+  const url = `https://wa.me/${opts.phoneDigits}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank", "noopener,noreferrer");
+}
 
 type ItemCardProps = {
   vehicle: Vehicle | CarPart;
   isCarPart?: boolean;
 };
 
-export default function VehicleCard({ vehicle, isCarPart = false }: ItemCardProps) {
+export default function VehicleCard({
+  vehicle,
+  isCarPart = false,
+}: ItemCardProps) {
   // Safety check
   if (!vehicle) {
     return null;
   }
 
   const formatPrice = (priceRange?: {
-    min: number;
-    max: number;
-    currency: string;
+    min?: number;
+    max?: number;
+    currency?: string;
   }) => {
-    if (!priceRange) return "Price TBD";
+    if (priceRange == null) return "Price TBD";
+    const { min, max, currency = "USD" } = priceRange;
+    if (min == null || max == null) return "Price TBD";
+    if (!Number.isFinite(min) || !Number.isFinite(max)) return "Price TBD";
     try {
-      const { min, max, currency } = priceRange;
       if (currency === "USD") {
+        if (min === max) {
+          return `$${min.toLocaleString()}`;
+        }
         return `$${min.toLocaleString()} - $${max.toLocaleString()}`;
+      }
+      if (min === max) {
+        return `${min} ${currency}`;
       }
       return `${min} - ${max} ${currency}`;
     } catch (error) {
@@ -34,46 +70,72 @@ export default function VehicleCard({ vehicle, isCarPart = false }: ItemCardProp
   };
 
   const isVehicle = "brand" in vehicle && "model" in vehicle;
-  const title = isVehicle 
-    ? `${vehicle.brand || ""} ${vehicle.model || ""}`.trim() || "Untitled"
-    : (vehicle.name || "Untitled");
+  const title = isVehicle
+    ? (() => {
+        const brand = (vehicle.brand || "").trim();
+        const model = (vehicle.model || "").trim();
+
+        // Prefer brand + model when model is present and not identical to brand
+        if (model && model.toLowerCase() !== brand.toLowerCase()) {
+          return `${brand ? `${brand} ` : ""}${model}`.trim();
+        }
+
+        // If model is missing or same as brand, fall back to the full title from Sanity
+        if ("title" in vehicle && vehicle.title) return vehicle.title;
+
+        // Last resort: brand only or generic label
+        if (brand) return brand;
+        return "Untitled";
+      })()
+    : vehicle.name || "Untitled";
   const imageAlt = isVehicle
     ? `${vehicle.brand || ""} ${vehicle.model || ""}`.trim() || "Vehicle"
-    : (vehicle.name || "Car Part");
-  const imageCount = isVehicle 
-    ? (vehicle as Vehicle).imageCount || ((vehicle as Vehicle).images?.length || 0)
-    : (vehicle.images?.length || 0);
-  const detailUrl = isVehicle 
-    ? `/vehicle/${vehicle.id}`
-    : `/car-part/${vehicle.id}`;
-  const vrUrl = isVehicle 
-    ? `/vehicle/${vehicle.id}/vr`
-    : undefined;
+    : vehicle.name || "Car Part";
+  const imageCount = isVehicle
+    ? (vehicle as Vehicle).imageCount ||
+      (vehicle as Vehicle).images?.length ||
+      0
+    : vehicle.images?.length || 0;
+  const slug =
+    "slug" in vehicle && vehicle.slug && String(vehicle.slug).trim()
+      ? String(vehicle.slug).trim()
+      : null;
+  const detailUrl = isVehicle
+    ? slug
+      ? `/vehicle/${slug}`
+      : `/vehicle/id/${vehicle.id}`
+    : slug
+      ? `/car-part/${slug}`
+      : `/car-part/id/${vehicle.id}`;
+  const vrUrl = isVehicle && slug ? `/vehicle/${slug}/vr` : undefined;
 
   const primaryImage = vehicle.images?.[0] || {
-    url: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&h=600&fit=crop",
+    url: FALLBACK_IMAGE_URL,
     alt: imageAlt,
     type: "exterior" as const,
   };
 
-  // Ensure we have a valid image URL
-  const imageUrl = primaryImage?.url || "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&h=600&fit=crop";
+  const imageUrl = primaryImage?.url || FALLBACK_IMAGE_URL;
+
+  const whatsappDigits = whatsappDigitsFromEnv(
+    process.env.NEXT_PUBLIC_WHATSAPP_PHONE,
+  );
 
   return (
     <div className="bg-white rounded-lg overflow-hidden border border-[var(--border)] hover:shadow-lg transition-shadow transition-transform active:scale-[0.98] active:opacity-95">
-      {/* Image Container */}
-      <div className="relative aspect-[4/3] bg-gray-100">
-        <Image
+      {/* Image: native img to avoid Next image optimizer timeouts; Sanity CDN URLs loaded directly */}
+      <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden">
+        <img
           src={imageUrl}
           alt={primaryImage?.alt || imageAlt}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover"
+          sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
           onError={(e) => {
-            // Fallback to placeholder on error
-            const target = e.target as HTMLImageElement;
-            if (target) {
-              target.src = "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&h=600&fit=crop";
+            const target = e.currentTarget;
+            if (target.src !== FALLBACK_IMAGE_URL) {
+              target.src = FALLBACK_IMAGE_URL;
             }
           }}
         />
@@ -110,19 +172,93 @@ export default function VehicleCard({ vehicle, isCarPart = false }: ItemCardProp
           </div>
         )}
 
-        {/* Price Range */}
-        <div className="text-sm text-[var(--text-secondary)] mb-4">
-          {formatPrice(vehicle.priceRange)}
+        {/* Price */}
+        <div className="text-sm mb-4">
+          <span className="font-semibold text-blue-600">
+            {formatPrice(vehicle.priceRange)}
+          </span>
         </div>
+
+        {/* Specs Grid – only show columns that have values (avoids "-" for unfilled vehicles) */}
+        {isVehicle &&
+          (() => {
+            const v = vehicle as Vehicle;
+            const specs = [
+              {
+                label: "Reg. Year",
+                value: v.registrationYear,
+                className: "text-green-600",
+              },
+              {
+                label: "Mlg(km)",
+                value: v.mileage != null ? v.mileage.toLocaleString() : null,
+                className: "text-gray-900",
+              },
+              {
+                label: "Fuel",
+                value: v.fuelType || null,
+                className: "text-green-600",
+              },
+              {
+                label: "Engine(cc)",
+                value: v.engineDisplacement || null,
+                className: "text-gray-900",
+              },
+              {
+                label: "Transm.",
+                value: v.transmission || null,
+                className: "text-gray-900",
+              },
+            ].filter((s) => s.value != null && s.value !== "");
+            if (specs.length === 0) return null;
+            return (
+              <div
+                className="grid gap-1 border-t border-gray-100 pt-3 mb-4 text-[10px] text-center"
+                style={{
+                  gridTemplateColumns: `repeat(${specs.length}, minmax(0, 1fr))`,
+                }}
+              >
+                {specs.map((s, i) => (
+                  <div
+                    key={s.label}
+                    className={`flex flex-col gap-1 ${i > 0 ? "border-l border-gray-100" : ""}`}
+                  >
+                    <span className="text-gray-400 uppercase">{s.label}</span>
+                    <span className={`font-bold ${s.className}`}>
+                      {s.value}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            );
+          })()}
 
         {/* Action Buttons */}
         <div className="flex gap-2">
-          <button
-            type="button"
-            className="flex-1 px-4 py-2 bg-[var(--primary)] text-white rounded hover:bg-[var(--primary-hover)] transition-colors font-medium text-sm min-h-[44px] flex items-center justify-center"
+          <span
+            className="flex-1 min-w-0"
+            title={
+              whatsappDigits
+                ? undefined
+                : "Set NEXT_PUBLIC_WHATSAPP_PHONE in .env.local (e.g. country code + number)"
+            }
           >
-            {isCarPart ? "Add to Cart" : "Inquire Price"}
-          </button>
+            <button
+              type="button"
+              className="w-full px-4 py-2 bg-[var(--primary)] text-white rounded hover:bg-[var(--primary-hover)] transition-colors font-medium text-sm min-h-[44px] flex items-center justify-center disabled:opacity-50 disabled:pointer-events-none"
+              disabled={!whatsappDigits}
+              aria-label="Contact via WhatsApp to inquire about price"
+              onClick={() =>
+                openWhatsAppListingInquiry({
+                  phoneDigits: whatsappDigits,
+                  listingTitle: title,
+                  productPath: detailUrl,
+                })
+              }
+            >
+              Inquire Price
+            </button>
+          </span>
           <Link
             href={detailUrl}
             className="px-4 py-2 border border-[var(--border)] text-[var(--text-primary)] rounded hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors font-medium text-sm min-h-[44px] flex items-center justify-center"

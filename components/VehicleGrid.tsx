@@ -1,7 +1,7 @@
 "use client";
 
 import { X } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useBrands } from "@/hooks/useBrands";
 import { useCarParts } from "@/hooks/useCarParts";
 import { useVehicles } from "@/hooks/useVehicles";
@@ -13,7 +13,7 @@ import VehicleCard from "./VehicleCard";
 
 export default function VehicleGrid() {
   const { currentView } = useUIStore();
-  const isVehiclesView = currentView === "imageList";
+  const isVehiclesView = currentView === "imageList" || currentView === "truckList";
   const isCarPartsView = currentView === "featuredAlbums";
   const { brands } = useBrands();
 
@@ -47,7 +47,41 @@ export default function VehicleGrid() {
   const isLoading = isVehiclesView ? vehiclesHook.isLoading : carPartsHook.isLoading;
   const hasMore = isVehiclesView ? vehiclesHook.hasMore : carPartsHook.hasMore;
   const loadMore = isVehiclesView ? vehiclesHook.loadMore : carPartsHook.loadMore;
-  const itemType = isVehiclesView ? "vehicles" : "car parts";
+  const itemType = isCarPartsView
+    ? "car parts"
+    : currentView === "truckList"
+      ? "trucks"
+      : "vehicles";
+
+  // Sort vehicles so that the newest (by registrationYear/year) appear first
+  const sortedItems = useMemo(() => {
+    if (!isVehiclesView) return items;
+
+    return [...items].sort((a: any, b: any) => {
+      if (!a || !b) return 0;
+
+      const parseReg = (v: any): { year: number; month: number } => {
+        const raw = typeof v?.registrationYear === "string" ? v.registrationYear : "";
+        const m = raw.match(/^(\d{4})(?:-(\d{1,2}))?/);
+        if (m) {
+          const year = Number.parseInt(m[1], 10);
+          const month = m[2] ? Number.parseInt(m[2], 10) : 1;
+          if (!Number.isNaN(year)) {
+            return { year, month: Number.isNaN(month) ? 1 : month };
+          }
+        }
+        const y = typeof v?.year === "number" ? v.year : 0;
+        return { year: y || 0, month: 1 };
+      };
+
+      const aDate = parseReg(a);
+      const bDate = parseReg(b);
+
+      if (aDate.year !== bDate.year) return bDate.year - aDate.year;
+      if (aDate.month !== bDate.month) return bDate.month - aDate.month;
+      return 0;
+    });
+  }, [items, isVehiclesView]);
 
   // Check if any filters are active (only show "match criteria" after user selects something)
   const hasActiveFilters = isVehiclesView
@@ -275,7 +309,7 @@ export default function VehicleGrid() {
           </div>
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
-            {items.map((item) => {
+            {sortedItems.map((item: any) => {
               if (!item || !item.id) return null;
               return (
                 <VehicleCard 

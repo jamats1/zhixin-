@@ -7,9 +7,25 @@ export type VehicleImage = {
 
 export type Vehicle = {
   id: string;
+  title: string;
   brand: string;
   model: string;
-  year: number;
+  year?: number;
+  registrationYear?: string;
+  mileage?: number;
+  fuelType?: string;
+  engineDisplacement?: string;
+  transmission?: string;
+  price?: number;
+  sku?: string;
+  bodyType?: string;
+  seats?: number;
+  doors?: number;
+  weightKg?: number;
+  batteryCapacityKwh?: number;
+  rangeKm?: number;
+  drivetrain?: string;
+  features?: string[];
   type: string;
   category: string;
   images: VehicleImage[];
@@ -62,6 +78,7 @@ export type BrandWithLogo = {
   name: string;
   count: number;
   logo?: { asset?: { _ref?: string; url?: string }; [k: string]: unknown };
+  isHot?: boolean;
 };
 
 export type CarPart = {
@@ -70,6 +87,8 @@ export type CarPart = {
   partNumber?: string;
   category: string;
   brand?: string;
+  /** Sanity spare-part line (e.g. BD Spares C-Class) when set. */
+  sparePartLineId?: string;
   images: VehicleImage[];
   priceRange?: {
     min: number;

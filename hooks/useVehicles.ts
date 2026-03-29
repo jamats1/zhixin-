@@ -6,6 +6,7 @@ import {
 } from "@/lib/sanity/queries";
 import { useFilterStore } from "@/stores/filterStore";
 import { useGalleryStore } from "@/stores/galleryStore";
+import { useUIStore } from "@/stores/uiStore";
 import type { Vehicle } from "@/types";
 
 type SanityVehicleSeries = {
@@ -47,7 +48,9 @@ export function useVehicles() {
     selectedCategory,
     onlyOnSale,
     onlyNewEnergy,
+    fuelType,
   } = useFilterStore();
+  const { currentView } = useUIStore();
   const [error, setError] = useState<string | null>(null);
 
   const fetchVehicles = useCallback(
@@ -63,8 +66,11 @@ export function useVehicles() {
           categoryFilter?: string;
           typeFilter?: string;
           brandFilter?: string;
+          segmentFilter?: "car" | "truck";
+          excludeTruck?: boolean;
           onSaleFilter?: boolean;
           newEnergyFilter?: boolean;
+          fuelFilter?: string;
           start: number;
           end: number;
         } = { start, end };
@@ -78,13 +84,53 @@ export function useVehicles() {
         if (selectedBrand) {
           seriesFilters.brandFilter = selectedBrand;
         }
+        // Keep Vehicles and Trucks tabs isolated by segment.
+        if (currentView === "truckList") {
+          seriesFilters.segmentFilter = "truck";
+        } else if (currentView === "imageList") {
+          seriesFilters.excludeTruck = true;
+        }
         if (onlyOnSale) seriesFilters.onSaleFilter = true;
         if (onlyNewEnergy) seriesFilters.newEnergyFilter = true;
 
+        // Map UI fuelType chips to Sanity fuelType patterns
+        if (fuelType) {
+          switch (fuelType) {
+            case "gas":
+              // Petrol / Gasoline
+              seriesFilters.fuelFilter = "Petrol|Gas";
+              break;
+            case "diesel":
+              seriesFilters.fuelFilter = "Diesel";
+              break;
+            case "electric":
+              seriesFilters.fuelFilter = "Electric|BEV|EV";
+              break;
+            case "phev":
+              seriesFilters.fuelFilter = "PHEV";
+              break;
+            case "hybrid":
+              seriesFilters.fuelFilter = "Hybrid";
+              break;
+            case "hydrogen":
+              seriesFilters.fuelFilter = "Hydrogen";
+              break;
+            default:
+              break;
+          }
+        }
+
         const params: Record<string, unknown> = { start, end };
-        if (seriesFilters.categoryFilter) params.categoryFilter = seriesFilters.categoryFilter;
-        if (seriesFilters.typeFilter) params.typeFilter = seriesFilters.typeFilter;
-        if (seriesFilters.brandFilter) params.brandFilter = seriesFilters.brandFilter;
+        if (seriesFilters.categoryFilter)
+          params.categoryFilter = seriesFilters.categoryFilter;
+        if (seriesFilters.typeFilter)
+          params.typeFilter = seriesFilters.typeFilter;
+        if (seriesFilters.brandFilter)
+          params.brandFilter = seriesFilters.brandFilter;
+        if (seriesFilters.segmentFilter)
+          params.segmentFilter = seriesFilters.segmentFilter;
+        if (seriesFilters.fuelFilter)
+          params.fuelFilter = seriesFilters.fuelFilter;
 
         if (!client) {
           setVehicles([]);
@@ -102,22 +148,77 @@ export function useVehicles() {
           categoryFilter: seriesFilters.categoryFilter,
           typeFilter: seriesFilters.typeFilter,
           brandFilter: seriesFilters.brandFilter,
+          segmentFilter: seriesFilters.segmentFilter,
+          excludeTruck: seriesFilters.excludeTruck,
           onSaleFilter: seriesFilters.onSaleFilter,
           newEnergyFilter: seriesFilters.newEnergyFilter,
+          fuelFilter: seriesFilters.fuelFilter,
         };
         const countParams: Record<string, unknown> = {};
-        if (countFilters.categoryFilter) countParams.categoryFilter = countFilters.categoryFilter;
-        if (countFilters.typeFilter) countParams.typeFilter = countFilters.typeFilter;
-        if (countFilters.brandFilter) countParams.brandFilter = countFilters.brandFilter;
+        if (countFilters.categoryFilter)
+          countParams.categoryFilter = countFilters.categoryFilter;
+        if (countFilters.typeFilter)
+          countParams.typeFilter = countFilters.typeFilter;
+        if (countFilters.brandFilter)
+          countParams.brandFilter = countFilters.brandFilter;
+        if (countFilters.segmentFilter)
+          countParams.segmentFilter = countFilters.segmentFilter;
+        if (countFilters.fuelFilter)
+          countParams.fuelFilter = countFilters.fuelFilter;
 
         const query = vehicleSeriesByFiltersQuery(seriesFilters);
         const [fetchedSeries, totalCount] = await Promise.all([
-          client.fetch<SanityVehicleSeries[]>(query, params),
-          client.fetch<number>(vehicleSeriesCountQuery(countFilters), countParams),
+          client.fetch<any[]>(query, params),
+          client.fetch<number>(
+            vehicleSeriesCountQuery(countFilters),
+            countParams,
+          ),
         ]);
 
         const transformedVehicles: Vehicle[] = fetchedSeries.map((s) => {
-          // Use brand logo as card image; vehicleSeries gallery is not used (wrong images).
+          if (s._type === "vehicle") {
+            return {
+              id: s._id,
+              title: s.title,
+              brand: s.brand?.title ?? s.brand?.name ?? "",
+              model: s.model ?? "",
+              year: s.year ?? 0,
+              registrationYear: s.registrationYear,
+              mileage: s.mileage,
+              fuelType: s.fuelType,
+              engineDisplacement: s.engineDisplacement,
+              transmission: s.transmission,
+              price: s.price,
+              sku: s.sku,
+              type: s.type?.slug ?? "",
+              category: s.category?.slug ?? "",
+              images:
+                s.images?.map((img: any, i: number) => ({
+                  id: `${s._id}-img-${i}`,
+                  url: urlFor(img).width(800).quality(75).url(),
+                  alt: s.title,
+                  type: "exterior",
+                })) || [],
+              priceRange: s.price
+                ? { min: s.price, max: s.price, currency: "USD" }
+                : undefined,
+              isOnSale: s.isOnSale ?? true,
+              isNewEnergy:
+                s.isNewEnergy ?? ["BEV", "PHEV"].includes(s.fuelType),
+              imageCount: s.images?.length || 0,
+              slug: s.slug?.current,
+              features: s.features,
+              bodyType: s.bodyType,
+              seats: s.seats,
+              doors: s.doors,
+              weightKg: s.weightKg,
+              batteryCapacityKwh: s.batteryCapacityKwh,
+              rangeKm: s.rangeKm,
+              drivetrain: s.drivetrain,
+            };
+          }
+
+          // Existing vehicleSeries transformation
           const images: Vehicle["images"] = [];
           const brandLogoUrl = s.brand?.logo
             ? urlFor(s.brand.logo).width(800).height(600).fit("max").url()
@@ -137,6 +238,7 @@ export function useVehicles() {
               : undefined;
           return {
             id: s._id,
+            title: s.title,
             brand: s.brand?.title ?? "",
             model: s.title,
             year: 0,
@@ -157,7 +259,14 @@ export function useVehicles() {
             isOnSale: s.isOnSale ?? false,
             isNewEnergy: s.isNewEnergy ?? false,
             imageCount: images.length,
-            slug: s.slug,
+            slug:
+              s.slug?.current ||
+              (typeof s.slug === "string" ? s.slug : undefined),
+            registrationYear: s.registrationYear,
+            mileage: s.mileage,
+            fuelType: s.fuelType,
+            engineDisplacement: s.engineDisplacement,
+            transmission: s.transmission,
           };
         });
 
@@ -185,6 +294,8 @@ export function useVehicles() {
       selectedCategory,
       onlyOnSale,
       onlyNewEnergy,
+      fuelType,
+      currentView,
       setVehicles,
       appendVehicles,
       setLoading,

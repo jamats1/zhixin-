@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:webpack": "next dev --webpack",
     "build": "next build",
     "start": "next start",
     "lint": "biome check",
@@ -12,6 +13,13 @@
     "sanity:deploy": "npx sanity@latest deploy",
     "sanity:graphql": "npx sanity@latest graphql deploy",
     "scrape:autohome": "node run-scraper.cjs",
+    "scrape:china-crunch": "tsx scripts/scrape-china-crunch.ts",
+    "scrape:chinatrucks": "tsx scripts/scrape-chinatrucks.ts",
+    "scrape:chinatrucks-parts": "tsx scripts/scrape-chinatrucks-parts.ts",
+    "scrape:bdspares": "tsx scripts/scrape-bdspares.ts",
+    "scrape:autocango": "tsx scripts/scrape-autocango.ts",
+    "scrape:auto": "tsx scripts/run-scrapers-auto.ts",
+    "scrape:all": "tsx scripts/run-scrapers-auto.ts",
     "verify:sanity-vehicles": "node scripts/verify-vehicles-fetch.mjs",
     "sanity:clear-vehicle-galleries": "tsx scripts/clear-vehicle-series-gallery.ts",
     "sanity:copy-series-images-to-brands": "tsx scripts/copy-series-images-to-brands.ts"

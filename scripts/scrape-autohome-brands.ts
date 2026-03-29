@@ -258,8 +258,9 @@ async function fetchBrandLogoUrl(
       if (img && img.src && /\.(jpg|jpeg|png|webp)/i.test(img.src)) return img.src;
       const imgs = document.querySelectorAll("img[src*='autohome']");
       for (const i of imgs) {
-        const src = (i as HTMLImageElement).src;
-        if (src && (i.width > 40 || i.height > 40)) return src;
+        const el = i as HTMLImageElement;
+        const src = el.src;
+        if (src && (el.width > 40 || el.height > 40)) return src;
       }
       return null;
     });

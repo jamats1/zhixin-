@@ -11,6 +11,7 @@ type SanityBrand = {
   slug: string | null;
   logo?: { asset?: { _ref?: string; url?: string }; [k: string]: unknown };
   count: number;
+  isHot?: boolean;
 };
 
 const MOCK_BRANDS: BrandWithLogo[] = [
@@ -59,6 +60,7 @@ export function useBrands() {
           name: b.title,
           count: b.count,
           logo: b.logo,
+          isHot: b.isHot ?? false,
         }));
         setBrands(mapped);
       } catch (e) {

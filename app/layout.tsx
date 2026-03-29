@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { getSiteUrl } from "@/lib/seo/site-url";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,9 +9,34 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const siteUrl = getSiteUrl();
+
 export const metadata: Metadata = {
-  title: "Zhixin车 - Vehicle Image Platform",
-  description: "Comprehensive vehicle image gallery and information platform",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Zhixin — Vehicles & spare parts",
+    template: "%s | Zhixin",
+  },
+  description:
+    "Browse vehicle series, trucks, and spare parts. Photos, specifications, and WhatsApp inquiry — export-focused inventory.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "Zhixin",
+    title: "Zhixin — Vehicles & spare parts",
+    description:
+      "Browse vehicle series, trucks, and spare parts. Photos, specifications, and WhatsApp inquiry.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zhixin — Vehicles & spare parts",
+    description:
+      "Browse vehicle series, trucks, and spare parts. Photos, specifications, and WhatsApp inquiry.",
+  },
+  robots: { index: true, follow: true },
+  referrer: "origin-when-cross-origin",
 };
 
 export default function RootLayout({
@@ -20,7 +46,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="overflow-x-hidden">
-      <body className={`${inter.variable} antialiased overflow-x-hidden`}>{children}</body>
+      <body className={`${inter.variable} antialiased overflow-x-hidden`}>
+        {children}
+      </body>
     </html>
   );
 }

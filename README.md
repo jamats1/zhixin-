@@ -64,6 +64,19 @@ A pixel-perfect, structure-perfect English clone of Autohome China's image-list 
    npm run dev
    ```
 
+### Troubleshooting
+
+- **`ERR_PROXY_CONNECTION_FAILED`** (Sanity API / ipapi.co requests failing)  
+  The browser is using a proxy (system, corporate, or VPN) that blocks or fails for these hosts. Fix it by one of:
+  - **Chrome/Edge:** Settings → System → Open proxy settings → use “Use a proxy server” only when needed, or add `localhost;*.sanity.io;ipapi.co` to “Don’t use the proxy server for these addresses”.
+  - **Windows:** System → Network & Internet → Proxy → turn off “Use a proxy server” for local dev, or add the same bypass list.
+  - **Env (if your app respects it):** `NO_PROXY=localhost,*.sanity.io,ipapi.co` (or `no_proxy`) so Node/browser skip the proxy for these.
+
+- **Sanity: “You have configured Sanity client to use a token in the browser”**  
+  Prefer a **read-only** token in the browser so the write token is not exposed. In `.env.local`:
+  - Set `NEXT_PUBLIC_SANITY_READ_TOKEN` to a Sanity token with **Viewer** (read-only) rights and use it for the app.
+  - Use `SANITY_API_TOKEN` or `NEXT_PUBLIC_SANITY_API_TOKEN` only for scripts/builds that need write access (e.g. scrapers). The app’s client already uses `NEXT_PUBLIC_SANITY_READ_TOKEN` when set.
+
 ## Features
 
 - ✅ Pixel-perfect layout matching Autohome

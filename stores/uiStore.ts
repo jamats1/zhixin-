@@ -2,7 +2,7 @@ import { create } from "zustand";
 
 type UIState = {
   isSidebarOpen: boolean;
-  currentView: "imageList" | "featuredAlbums";
+  currentView: "imageList" | "truckList" | "featuredAlbums";
   isLoading: boolean;
   scrollPosition: number;
 };
@@ -10,7 +10,9 @@ type UIState = {
 type UIActions = {
   toggleSidebar: () => void;
   setSidebarOpen: (open: boolean) => void;
-  setCurrentView: (view: "imageList" | "featuredAlbums") => void;
+  setCurrentView: (
+    view: "imageList" | "truckList" | "featuredAlbums",
+  ) => void;
   setLoading: (loading: boolean) => void;
   setScrollPosition: (position: number) => void;
 };

@@ -120,6 +120,34 @@ export default defineType({
       description: "Type under category from Sanity.",
     }),
     defineField({
+      name: "registrationYear",
+      title: "Registration Year",
+      type: "string",
+      description: "e.g. 2022-06",
+    }),
+    defineField({
+      name: "mileage",
+      title: "Mileage (km)",
+      type: "number",
+    }),
+    defineField({
+      name: "fuelType",
+      title: "Fuel Type",
+      type: "string",
+      description: "e.g. BEV, PHEV, Petrol",
+    }),
+    defineField({
+      name: "engineDisplacement",
+      title: "Engine Displacement (cc)",
+      type: "string",
+    }),
+    defineField({
+      name: "transmission",
+      title: "Transmission",
+      type: "string",
+      description: "e.g. AT, MT, DCT",
+    }),
+    defineField({
       name: "brand",
       title: "Brand",
       type: "reference",

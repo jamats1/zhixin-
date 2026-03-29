@@ -307,11 +307,11 @@ export default function SearchBar() {
     );
   }
 
-  // Default inline search (desktop + mobile trigger)
+  // Default inline search (desktop + mobile trigger) — 100% of available space
   return (
     <form
       onSubmit={handleSearch}
-      className="flex-1 max-w-2xl mx-2 md:mx-8"
+      className="flex-1 min-w-0 mx-2 md:mx-4"
       ref={searchRef}
     >
       <div className="relative">
