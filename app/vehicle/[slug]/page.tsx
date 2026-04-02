@@ -174,7 +174,7 @@ export default async function VehicleDetailPage({ params }: Props) {
             <div className="text-4xl font-bold text-[var(--primary)]">
               {doc.price != null && doc.price > 0
                 ? `$${doc.price.toLocaleString("en-US")}`
-                : "Inquire for price"}
+                : "WhatsApp for price"}
             </div>
 
             <ProductInquiryCTA

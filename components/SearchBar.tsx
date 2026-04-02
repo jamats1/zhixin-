@@ -1,10 +1,11 @@
 "use client";
 
 import { Search, X } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import { useFilterStore } from "@/stores/filterStore";
-import client from "@/lib/sanity/client";
+import { useRouter } from "next/navigation";
 import { groq } from "next-sanity";
+import { useEffect, useRef, useState } from "react";
+import client from "@/lib/sanity/client";
+import { useFilterStore } from "@/stores/filterStore";
 
 type SearchSuggestion = {
   type: "brand" | "model" | "recent";
@@ -14,7 +15,30 @@ type SearchSuggestion = {
 
 const MAX_SUGGESTIONS = 8;
 
+function getRecentSearches(): string[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const stored = localStorage.getItem("recentSearches");
+    return stored ? JSON.parse(stored).slice(0, 3) : [];
+  } catch (error) {
+    console.warn("Error reading from localStorage:", error);
+    return [];
+  }
+}
+
+function saveRecentSearch(query: string) {
+  if (typeof window === "undefined" || !query.trim()) return;
+  try {
+    const recent = getRecentSearches();
+    const updated = [query, ...recent.filter((s) => s !== query)].slice(0, 10);
+    localStorage.setItem("recentSearches", JSON.stringify(updated));
+  } catch (error) {
+    console.warn("Error writing to localStorage:", error);
+  }
+}
+
 export default function SearchBar() {
+  const router = useRouter();
   const { searchQuery, setSearchQuery } = useFilterStore();
   const [localSearch, setLocalSearch] = useState(searchQuery);
   const [suggestions, setSuggestions] = useState<SearchSuggestion[]>([]);
@@ -23,32 +47,6 @@ export default function SearchBar() {
   const [isMobileOverlayOpen, setIsMobileOverlayOpen] = useState(false);
   const searchRef = useRef<HTMLFormElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-
-  // Get recent searches from localStorage (by IP/user)
-  const getRecentSearches = (): string[] => {
-    if (typeof window === "undefined") return [];
-    try {
-      const stored = localStorage.getItem("recentSearches");
-      return stored ? JSON.parse(stored).slice(0, 3) : [];
-    } catch (error) {
-      // Handle localStorage errors (quota exceeded, disabled, etc.)
-      console.warn("Error reading from localStorage:", error);
-      return [];
-    }
-  };
-
-  // Save search to recent searches
-  const saveRecentSearch = (query: string) => {
-    if (typeof window === "undefined" || !query.trim()) return;
-    try {
-      const recent = getRecentSearches();
-      const updated = [query, ...recent.filter((s) => s !== query)].slice(0, 10);
-      localStorage.setItem("recentSearches", JSON.stringify(updated));
-    } catch (error) {
-      // Handle localStorage errors (quota exceeded, disabled, etc.)
-      console.warn("Error writing to localStorage:", error);
-    }
-  };
 
   // Fetch search suggestions from Sanity
   useEffect(() => {
@@ -148,6 +146,10 @@ export default function SearchBar() {
     };
   }, [localSearch, isFocused]);
 
+  useEffect(() => {
+    setLocalSearch(searchQuery);
+  }, [searchQuery]);
+
   // Close suggestions when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -166,9 +168,12 @@ export default function SearchBar() {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    if (localSearch.trim()) {
-      saveRecentSearch(localSearch.trim());
-      setSearchQuery(localSearch.trim());
+    const trimmed = localSearch.trim();
+    if (trimmed) {
+      saveRecentSearch(trimmed);
+      setSearchQuery(trimmed);
+      router.push(`/search?q=${encodeURIComponent(trimmed)}`);
+      setIsMobileOverlayOpen(false);
     }
     setShowSuggestions(false);
     setIsFocused(false);
@@ -244,6 +249,7 @@ export default function SearchBar() {
                 placeholder="Search vehicles..."
                 className="w-full pl-9 pr-4 py-3 text-base text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] bg-transparent border-0 outline-none focus:outline-none"
                 aria-label="Search vehicles"
+                // biome-ignore lint/a11y/noAutofocus: full-screen mobile search overlay should focus the field on open
                 autoFocus
               />
             </div>
@@ -261,46 +267,43 @@ export default function SearchBar() {
 
           <div className="px-3 pb-[env(safe-area-inset-bottom)] pt-2 overflow-y-auto max-h-[calc(100vh-env(safe-area-inset-top)-56px)]">
             {showSuggestions &&
-              (suggestions.length > 0 || localSearch.trim() === "") && (
-                <>
-                  {suggestions.length > 0 ? (
-                    <div className="space-y-1">
-                      {suggestions.map((suggestion, idx) => (
-                        <button
-                          key={`${suggestion.type}-${suggestion.text}-${idx}`}
-                          type="button"
-                          onClick={() => {
-                            handleSuggestionClick(suggestion);
-                            closeMobileOverlay();
-                          }}
-                          className="w-full px-2 py-3 text-left text-sm hover:bg-gray-50 transition-colors flex items-center justify-between group rounded-md"
-                        >
-                          <div className="flex items-center gap-3">
-                            <Search className="h-4 w-4 text-[var(--text-tertiary)] group-hover:text-[var(--primary)] transition-colors" />
-                            <span className="text-[var(--text-primary)] group-hover:text-[var(--primary)] transition-colors">
-                              {suggestion.text}
-                            </span>
-                            {suggestion.type === "recent" && (
-                              <span className="text-xs text-[var(--text-tertiary)]">
-                                Recent
-                              </span>
-                            )}
-                          </div>
-                          {suggestion.count !== undefined && (
-                            <span className="text-xs text-[var(--text-tertiary)]">
-                              {suggestion.count}
-                            </span>
-                          )}
-                        </button>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="px-2 py-3 text-sm text-[var(--text-tertiary)]">
-                      Start typing to search...
-                    </div>
-                  )}
-                </>
-              )}
+              (suggestions.length > 0 || localSearch.trim() === "") &&
+              (suggestions.length > 0 ? (
+                <div className="space-y-1">
+                  {suggestions.map((suggestion, idx) => (
+                    <button
+                      key={`${suggestion.type}-${suggestion.text}-${idx}`}
+                      type="button"
+                      onClick={() => {
+                        handleSuggestionClick(suggestion);
+                        closeMobileOverlay();
+                      }}
+                      className="w-full px-2 py-3 text-left text-sm hover:bg-gray-50 transition-colors flex items-center justify-between group rounded-md"
+                    >
+                      <div className="flex items-center gap-3">
+                        <Search className="h-4 w-4 text-[var(--text-tertiary)] group-hover:text-[var(--primary)] transition-colors" />
+                        <span className="text-[var(--text-primary)] group-hover:text-[var(--primary)] transition-colors">
+                          {suggestion.text}
+                        </span>
+                        {suggestion.type === "recent" && (
+                          <span className="text-xs text-[var(--text-tertiary)]">
+                            Recent
+                          </span>
+                        )}
+                      </div>
+                      {suggestion.count !== undefined && (
+                        <span className="text-xs text-[var(--text-tertiary)]">
+                          {suggestion.count}
+                        </span>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              ) : (
+                <div className="px-2 py-3 text-sm text-[var(--text-tertiary)]">
+                  Start typing to search...
+                </div>
+              ))}
           </div>
         </div>
       </div>
@@ -379,7 +382,7 @@ export default function SearchBar() {
         {/* Desktop suggestions dropdown */}
         {showSuggestions &&
           (suggestions.length > 0 || localSearch.trim() === "") && (
-            <div className="hidden md:block absolute top-full left-0 right-0 mt-1 bg-white border border-[var(--border)] rounded-lg shadow-xl z-50 max-h-[400px] overflow-y-auto">
+            <div className="hidden md:block absolute top-full left-0 right-0 mt-1 bg-white border border-[var(--border)] rounded-lg shadow-xl z-[60] max-h-[400px] overflow-y-auto">
               {suggestions.length > 0 ? (
                 <div className="py-2">
                   {suggestions.map((suggestion, idx) => (

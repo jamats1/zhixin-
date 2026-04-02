@@ -1,14 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import { getSiteWhatsAppDigits } from "@/lib/site-whatsapp";
 import type { CarPart, Vehicle } from "@/types";
 
 const FALLBACK_IMAGE_URL =
   "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&h=600&fit=crop";
-
-function whatsappDigitsFromEnv(raw: string | undefined): string {
-  return (raw ?? "").replace(/\D/g, "");
-}
 
 function openWhatsAppListingInquiry(opts: {
   phoneDigits: string;
@@ -117,9 +114,7 @@ export default function VehicleCard({
 
   const imageUrl = primaryImage?.url || FALLBACK_IMAGE_URL;
 
-  const whatsappDigits = whatsappDigitsFromEnv(
-    process.env.NEXT_PUBLIC_WHATSAPP_PHONE,
-  );
+  const whatsappDigits = getSiteWhatsAppDigits();
 
   return (
     <div className="bg-white rounded-lg overflow-hidden border border-[var(--border)] hover:shadow-lg transition-shadow transition-transform active:scale-[0.98] active:opacity-95">
@@ -235,19 +230,11 @@ export default function VehicleCard({
 
         {/* Action Buttons */}
         <div className="flex gap-2">
-          <span
-            className="flex-1 min-w-0"
-            title={
-              whatsappDigits
-                ? undefined
-                : "Set NEXT_PUBLIC_WHATSAPP_PHONE in .env.local (e.g. country code + number)"
-            }
-          >
+          <span className="flex-1 min-w-0">
             <button
               type="button"
-              className="w-full px-4 py-2 bg-[var(--primary)] text-white rounded hover:bg-[var(--primary-hover)] transition-colors font-medium text-sm min-h-[44px] flex items-center justify-center disabled:opacity-50 disabled:pointer-events-none"
-              disabled={!whatsappDigits}
-              aria-label="Contact via WhatsApp to inquire about price"
+              className="w-full px-4 py-2 bg-[var(--primary)] text-white rounded hover:bg-[var(--primary-hover)] transition-colors font-medium text-sm min-h-[44px] flex items-center justify-center"
+              aria-label="WhatsApp Me about this listing"
               onClick={() =>
                 openWhatsAppListingInquiry({
                   phoneDigits: whatsappDigits,
@@ -256,7 +243,7 @@ export default function VehicleCard({
                 })
               }
             >
-              Inquire Price
+              WhatsApp Me
             </button>
           </span>
           <Link

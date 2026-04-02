@@ -1,6 +1,6 @@
 "use client";
 
-import { X } from "lucide-react";
+import { Loader2, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useBrands } from "@/hooks/useBrands";
 import { useCarPartCategories } from "@/hooks/useCarPartCategories";
@@ -14,7 +14,8 @@ import VehicleCard from "./VehicleCard";
 
 export default function VehicleGrid() {
   const { currentView } = useUIStore();
-  const isVehiclesView = currentView === "imageList" || currentView === "truckList";
+  const isVehiclesView =
+    currentView === "imageList" || currentView === "truckList";
   const isCarPartsView = currentView === "featuredAlbums";
   const { brands } = useBrands();
   const { categories: carPartCategories } = useCarPartCategories();
@@ -43,12 +44,16 @@ export default function VehicleGrid() {
   // Use appropriate store and hook based on view
   const { vehicles, totalCount: vehiclesCount } = useGalleryStore();
   const { carParts, totalCount: carPartsCount } = useCarPartsStore();
-  
+
   const items = isVehiclesView ? vehicles : carParts;
   const totalCount = isVehiclesView ? vehiclesCount : carPartsCount;
-  const isLoading = isVehiclesView ? vehiclesHook.isLoading : carPartsHook.isLoading;
+  const isLoading = isVehiclesView
+    ? vehiclesHook.isLoading
+    : carPartsHook.isLoading;
   const hasMore = isVehiclesView ? vehiclesHook.hasMore : carPartsHook.hasMore;
-  const loadMore = isVehiclesView ? vehiclesHook.loadMore : carPartsHook.loadMore;
+  const loadMore = isVehiclesView
+    ? vehiclesHook.loadMore
+    : carPartsHook.loadMore;
   const itemType = isCarPartsView
     ? "car parts"
     : currentView === "truckList"
@@ -63,7 +68,8 @@ export default function VehicleGrid() {
       if (!a || !b) return 0;
 
       const parseReg = (v: any): { year: number; month: number } => {
-        const raw = typeof v?.registrationYear === "string" ? v.registrationYear : "";
+        const raw =
+          typeof v?.registrationYear === "string" ? v.registrationYear : "";
         const m = raw.match(/^(\d{4})(?:-(\d{1,2}))?/);
         if (m) {
           const year = Number.parseInt(m[1], 10);
@@ -87,52 +93,55 @@ export default function VehicleGrid() {
 
   // Check if any filters are active (only show "match criteria" after user selects something)
   const hasActiveFilters = isVehiclesView
-    ? !!(selectedBrand || selectedType || onlyOnSale || onlyNewEnergy || fuelType)
+    ? !!(
+        selectedBrand ||
+        selectedType ||
+        onlyOnSale ||
+        onlyNewEnergy ||
+        fuelType
+      )
     : !!(selectedBrand || onlyOnSale || selectedCarPartCategory);
 
   const selectedCarPartCategoryTitle =
     isCarPartsView && selectedCarPartCategory
-      ? carPartCategories.find((c) => c.id === selectedCarPartCategory)?.title ??
-        selectedCarPartCategory
+      ? (carPartCategories.find((c) => c.id === selectedCarPartCategory)
+          ?.title ?? selectedCarPartCategory)
       : null;
-
-  const observerTarget = useRef<HTMLDivElement>(null);
 
   // Pull-to-refresh state (mobile)
   const [pullDistance, setPullDistance] = useState(0);
   const pullStartY = useRef<number | null>(null);
   const isPulling = useRef(false);
 
-  // Infinite scroll observer with cross-browser support
-  useEffect(() => {
-    // Check if IntersectionObserver is supported
-    if (typeof IntersectionObserver === "undefined") {
-      // Fallback for browsers without IntersectionObserver
-      return;
-    }
+  const remainingCount = Math.max(0, totalCount - items.length);
+  const loadMoreLabel = isCarPartsView ? "Load more parts" : "Load more";
 
-    const currentTarget = observerTarget.current;
-    if (!currentTarget || !hasMore || isLoading) {
-      return;
-    }
+  const prefetchSentinelRef = useRef<HTMLDivElement>(null);
+  const loadMoreRef = useRef(loadMore);
+  const isLoadingRef = useRef(isLoading);
+  loadMoreRef.current = loadMore;
+  isLoadingRef.current = isLoading;
+
+  // Prefetch next page when the user scrolls near the sentinel (keeps Load more as explicit fallback)
+  useEffect(() => {
+    if (typeof IntersectionObserver === "undefined") return;
+    if (items.length === 0 || !hasMore) return;
+
+    const el = prefetchSentinelRef.current;
+    if (!el) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0]?.isIntersecting && hasMore && !isLoading) {
-          loadMore();
-        }
+        if (!entries[0]?.isIntersecting) return;
+        if (isLoadingRef.current) return;
+        loadMoreRef.current();
       },
-      { threshold: 0.1, rootMargin: "100px" },
+      { root: null, rootMargin: "320px", threshold: 0 },
     );
 
-    observer.observe(currentTarget);
-
-    return () => {
-      if (currentTarget) {
-        observer.unobserve(currentTarget);
-      }
-    };
-  }, [hasMore, isLoading, loadMore, currentView]);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [hasMore, items.length]);
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     if (typeof window === "undefined") return;
@@ -190,20 +199,23 @@ export default function VehicleGrid() {
       <div className="sticky top-[60px] md:top-[71px] z-10 bg-white pb-2 md:pb-3 pt-2 md:pt-3 border-b border-[var(--border)]">
         <div className="flex items-center justify-between gap-4 flex-wrap">
           <span className="text-xs md:text-sm font-[300] text-[#828CA0]">
-            Total{" "}
-            <em className="not-italic text-[#FF6600]">{totalCount}</em>{" "}
+            Total <em className="not-italic text-[#FF6600]">{totalCount}</em>{" "}
             {hasActiveFilters ? (
-              <span className="hidden sm:inline">{itemType} match criteria</span>
+              <span className="hidden sm:inline">
+                {itemType} match criteria
+              </span>
             ) : (
               <span className="hidden sm:inline">{itemType}</span>
             )}
             <span className="sm:hidden">found</span>
           </span>
-          
+
           {/* Active Filters Display */}
           {hasActiveFilters && (
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-xs text-[var(--text-tertiary)]">Active filters:</span>
+              <span className="text-xs text-[var(--text-tertiary)]">
+                Active filters:
+              </span>
               {isVehiclesView && (
                 <>
                   {onlyOnSale && (
@@ -249,7 +261,9 @@ export default function VehicleGrid() {
               )}
               {selectedBrand && (
                 <span className="inline-flex items-center gap-1 px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] rounded text-xs">
-                  Brand: {brands?.find((b) => b.id === selectedBrand)?.name ?? selectedBrand}
+                  Brand:{" "}
+                  {brands?.find((b) => b.id === selectedBrand)?.name ??
+                    selectedBrand}
                   <button
                     type="button"
                     onClick={() => setBrand(null)}
@@ -292,52 +306,104 @@ export default function VehicleGrid() {
             {vehiclesError}
           </div>
         ) : isLoading && items.length === 0 ? (
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 lg:gap-6 py-4">
-            {Array.from({ length: 4 }).map((_, index) => (
-              <div
-                // eslint-disable-next-line react/no-array-index-key
-                key={index}
-                className="bg-white rounded-lg border border-[var(--border)] overflow-hidden animate-pulse"
-              >
-                <div className="bg-gray-200 aspect-[4/3]" />
-                <div className="p-4 space-y-3">
-                  <div className="h-4 bg-gray-200 rounded w-3/4" />
-                  <div className="h-3 bg-gray-200 rounded w-1/2" />
-                  <div className="flex gap-2 pt-2">
-                    <div className="h-9 bg-gray-200 rounded flex-1" />
-                    <div className="h-9 bg-gray-200 rounded w-16" />
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div
+            className="flex min-h-[280px] flex-col items-center justify-center gap-3 rounded-lg border border-dashed border-[var(--border)] bg-gray-50 py-16 px-6 text-center dark:bg-zinc-900/40"
+            aria-live="polite"
+            aria-busy="true"
+          >
+            <Loader2
+              className="h-10 w-10 animate-spin text-[var(--primary)]"
+              aria-hidden
+            />
+            <p className="text-sm font-medium text-[var(--text-primary)]">
+              Loading {itemType}…
+            </p>
+            <p className="max-w-sm text-xs text-[var(--text-tertiary)]">
+              Fetching listings from the catalog. More listings appear when you
+              scroll near the bottom or tap{" "}
+              <span className="font-medium text-[var(--text-secondary)]">
+                {loadMoreLabel}
+              </span>
+              .
+            </p>
           </div>
         ) : items.length === 0 ? (
           <div className="text-center py-12 text-[var(--text-secondary)]">
             No {itemType} found
           </div>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
-            {sortedItems.map((item: any) => {
-              if (!item || !item.id) return null;
-              return (
-                <VehicleCard 
-                  key={item.id} 
-                  vehicle={item as any} 
-                  isCarPart={isCarPartsView} 
-                />
-              );
-            })}
+          <>
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
+              {sortedItems.map((item: any) => {
+                if (!item || !item.id) return null;
+                return (
+                  <VehicleCard
+                    key={item.id}
+                    vehicle={item as any}
+                    isCarPart={isCarPartsView}
+                  />
+                );
+              })}
+            </div>
+            {hasMore && (
+              <div
+                ref={prefetchSentinelRef}
+                className="pointer-events-none h-1 w-full shrink-0"
+                aria-hidden
+              />
+            )}
+          </>
+        )}
+
+        {items.length > 0 && hasMore && (
+          <div className="mt-8 flex flex-col items-center gap-3 border-t border-[var(--border)] pt-8 pb-4">
+            <p className="text-center text-xs text-[var(--text-tertiary)]">
+              Showing{" "}
+              <span className="font-medium text-[var(--text-secondary)]">
+                {items.length}
+              </span>{" "}
+              of{" "}
+              <span className="font-medium text-[var(--text-secondary)]">
+                {totalCount}
+              </span>
+              {remainingCount > 0 ? (
+                <>
+                  {" "}
+                  · {remainingCount} more{" "}
+                  {remainingCount === 1 ? "listing" : "listings"}
+                </>
+              ) : null}
+            </p>
+            <p className="text-center text-[11px] text-[var(--text-tertiary)]">
+              Scrolling near the end loads the next page automatically.
+            </p>
+            <button
+              type="button"
+              onClick={() => loadMore()}
+              disabled={isLoading}
+              className="inline-flex min-h-[44px] min-w-[200px] items-center justify-center gap-2 rounded-lg bg-[var(--primary)] px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--primary-hover)] disabled:cursor-not-allowed disabled:opacity-60"
+              aria-busy={isLoading}
+            >
+              {isLoading ? (
+                <>
+                  <Loader2
+                    className="h-4 w-4 shrink-0 animate-spin"
+                    aria-hidden
+                  />
+                  Loading…
+                </>
+              ) : (
+                loadMoreLabel
+              )}
+            </button>
           </div>
         )}
 
-        {/* Infinite Scroll Trigger */}
-        {hasMore && <div ref={observerTarget} className="h-20" />}
-
-        {/* Loading More Indicator */}
-        {isLoading && items.length > 0 && (
-          <div className="text-center py-8 text-[var(--text-secondary)]">
-            Loading more...
-          </div>
+        {items.length > 0 && !hasMore && totalCount > 0 && (
+          <p className="mt-6 text-center text-xs text-[var(--text-tertiary)]">
+            You&apos;ve reached the end — all {totalCount}{" "}
+            {totalCount === 1 ? "listing" : "listings"} are shown.
+          </p>
         )}
       </div>
     </div>

@@ -1,15 +1,13 @@
 "use client";
 
+import { getSiteWhatsAppDigits } from "@/lib/site-whatsapp";
+
 type Props = {
   listingTitle: string;
   productPath: string;
   isCarPart?: boolean;
   className?: string;
 };
-
-function whatsappDigitsFromEnv(raw: string | undefined): string {
-  return (raw ?? "").replace(/\D/g, "");
-}
 
 function openWhatsAppListingInquiry(opts: {
   phoneDigits: string;
@@ -39,29 +37,15 @@ export default function ProductInquiryCTA({
   isCarPart = false,
   className = "",
 }: Props) {
-  const whatsappDigits = whatsappDigitsFromEnv(
-    process.env.NEXT_PUBLIC_WHATSAPP_PHONE,
-  );
+  const whatsappDigits = getSiteWhatsAppDigits();
 
   return (
     <div className={`flex flex-col sm:flex-row gap-3 ${className}`}>
-      <span
-        className="flex-1 min-w-0"
-        title={
-          whatsappDigits
-            ? undefined
-            : "Set NEXT_PUBLIC_WHATSAPP_PHONE in .env.local (e.g. country code + number)"
-        }
-      >
+      <span className="flex-1 min-w-0">
         <button
           type="button"
-          className="w-full py-4 px-4 bg-[var(--primary)] text-white rounded-xl font-bold text-lg hover:bg-[var(--primary-hover)] transition-colors min-h-[48px] disabled:opacity-50 disabled:pointer-events-none"
-          disabled={!whatsappDigits}
-          aria-label={
-            isCarPart
-              ? "Contact via WhatsApp about this part"
-              : "Contact via WhatsApp to inquire about this vehicle"
-          }
+          className="w-full py-4 px-4 bg-[var(--primary)] text-white rounded-xl font-bold text-lg hover:bg-[var(--primary-hover)] transition-colors min-h-[48px]"
+          aria-label="WhatsApp Me about this listing"
           onClick={() =>
             openWhatsAppListingInquiry({
               phoneDigits: whatsappDigits,
@@ -71,9 +55,7 @@ export default function ProductInquiryCTA({
             })
           }
         >
-          {isCarPart
-            ? "WhatsApp — order / inquiry"
-            : "WhatsApp — price inquiry"}
+          WhatsApp Me
         </button>
       </span>
     </div>
