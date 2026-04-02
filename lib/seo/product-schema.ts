@@ -33,11 +33,16 @@ function carPartDescription(doc: CarPartDetailDoc): string {
   if (doc.description?.trim()) {
     parts.push(doc.description.trim().replace(/\s+/g, " ").slice(0, 200));
   } else {
+    const categoryLabel =
+      doc.category?.title?.trim() ||
+      doc.category?.slug?.replace(/-/g, " ") ||
+      "spare";
     parts.push(
-      `${doc.name}${doc.partNumber ? ` (Part #${doc.partNumber})` : ""} — ${doc.category.replace(/-/g, " ")} spare part.`,
+      `${doc.name}${doc.partNumber ? ` (Part #${doc.partNumber})` : ""} — ${categoryLabel} spare part.`,
     );
   }
-  if (doc.brand?.trim()) parts.push(`Brand: ${doc.brand.trim()}.`);
+  const brandName = doc.brand?.title?.trim();
+  if (brandName) parts.push(`Brand: ${brandName}.`);
   parts.push("Pricing, fitment notes, and WhatsApp inquiry on Zhixin.");
   return parts.join(" ").slice(0, 320);
 }
@@ -96,8 +101,9 @@ export function carPartProductJsonLd(
     url,
     category: doc.category,
   };
-  if (doc.brand?.trim()) {
-    product.brand = { "@type": "Brand", name: doc.brand.trim() };
+  const brandTitle = doc.brand?.title?.trim();
+  if (brandTitle) {
+    product.brand = { "@type": "Brand", name: brandTitle };
   }
   if (imageUrls.length) {
     product.image = imageUrls.slice(0, 8);

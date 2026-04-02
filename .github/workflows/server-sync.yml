@@ -1,0 +1,24 @@
+name: Server sync
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: server-sync-zhixin
+  cancel-in-progress: true
+
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy on VPS (pull + build + restart)
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script_stop: true
+          script: |
+            set -euo pipefail
+            sudo -n /usr/local/bin/deploy-zhixin-autopull.sh

@@ -578,22 +578,26 @@ async function downloadImageBufferNode(
 /**
  * After `page.goto(productUrl)`, in-page fetch(image) sends Referer/cookies like a real shopper (avoids wp-content 403).
  */
+type InPageImageFetchResult =
+  | { ok: false; status: number; ct: string; bytes: number[] }
+  | { ok: true; status: number; ct: string; bytes: number[] };
+
 async function downloadImageBufferInPage(
   page: Page,
   imageUrl: string,
 ): Promise<{ buffer: Buffer; contentType: string }> {
   // No async/inner named arrows here: tsx/esbuild injects __name() into the
   // serialized function; it runs in Chromium and throws ReferenceError.
-  const result = await page.evaluate((u) => {
-    return fetch(String(u)).then(function (r) {
+  const result = (await page.evaluate((u) => {
+    return fetch(String(u)).then(function (r): Promise<InPageImageFetchResult> {
       const ct = r.headers.get("content-type") || "image/jpeg";
       if (!r.ok) {
-        return {
+        return Promise.resolve({
           ok: false,
           status: r.status,
           ct,
           bytes: [],
-        };
+        });
       }
       return r.arrayBuffer().then(function (ab) {
         return {
@@ -604,7 +608,7 @@ async function downloadImageBufferInPage(
         };
       });
     });
-  }, imageUrl);
+  }, imageUrl)) as unknown as InPageImageFetchResult;
 
   if (!result.ok) {
     throw new Error(`in-page fetch HTTP ${result.status}`);
