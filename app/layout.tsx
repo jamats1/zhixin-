@@ -37,6 +37,9 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   referrer: "origin-when-cross-origin",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

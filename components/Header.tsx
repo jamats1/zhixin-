@@ -6,14 +6,25 @@ import SearchBar from "./SearchBar";
 
 export default function Header() {
   return (
-    <header className="bg-white border-b border-[var(--border)] sticky top-0 z-50 w-full left-0 right-0 overflow-x-hidden pt-[env(safe-area-inset-top)]">
-      {/* Top Bar */}
-      <div className="max-w-[1400px] mx-auto px-3 md:px-4 md:pr-6 py-2 md:py-3 flex items-center justify-between gap-2 md:gap-4 w-full overflow-x-hidden min-h-[44px]">
+    <header className="bg-white border-b border-[var(--border)] sticky top-0 z-50 w-full left-0 right-0 pt-[env(safe-area-inset-top)]">
+      <div className="max-w-[1400px] mx-auto px-3 md:px-4 md:pr-6 py-2 md:py-3 flex items-center justify-between gap-2 md:gap-4 w-full min-h-[44px] min-w-0">
         {/* Logo */}
-        <Link href="/" className="shrink-0 text-xl md:text-2xl text-[var(--primary)]">
-          <span className="font-bold">ZHI</span>
-          <span className="font-light">XIN</span>
-          <span className="font-bold">车</span>
+        <Link
+          href="/"
+          className="shrink-0 flex items-center gap-2 text-xl md:text-2xl text-[var(--primary)]"
+        >
+          <img
+            src="/favicon.ico"
+            alt="Zhixin"
+            width={40}
+            height={40}
+            className="h-9 w-9 md:h-10 md:w-10 rounded-md object-contain"
+          />
+          <span className="leading-tight">
+            <span className="font-bold">ZHI</span>
+            <span className="font-light">XIN</span>
+            <span className="font-bold">车</span>
+          </span>
         </Link>
 
         {/* Location/Weather — hidden on mobile */}
