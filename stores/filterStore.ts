@@ -40,6 +40,7 @@ export type FilterState = {
   selectedSparePartLineId: string | null;
   selectedType: string | null;
   selectedCategory: string | null;
+  /** Sanity `_id` of `carPartCategory`. */
   selectedCarPartCategory: string | null;
   onlyOnSale: boolean;
   onlyNewEnergy: boolean;

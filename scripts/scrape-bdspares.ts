@@ -8,6 +8,7 @@
  *   npx tsx scripts/scrape-bdspares.ts --brand=mercedes-benz --limit=20
  *   npx tsx scripts/scrape-bdspares.ts --dry-run --brand=audi --line=q5 --limit=5
  *   npx tsx scripts/scrape-bdspares.ts --from-output  (reuse scripts/output-bdspares-parts.json)
+ *   npx tsx scripts/scrape-bdspares.ts --exclude-brands=mercedes-benz  (all brands except these, comma-separated)
  *
  * Env: SANITY_API_TOKEN, NEXT_PUBLIC_SANITY_* ; optional BDSPARES_ZAR_USD_RATE
  */
@@ -47,6 +48,12 @@ type RetailCategory =
   | "other-retail";
 
 type SanityBrand = { _id: string; title: string; slug: string | null };
+type SanityCarPartCategory = {
+  _id: string;
+  title: string;
+  sourceKey?: string;
+  slug: string | null;
+};
 
 type BdProductDetail = {
   sourceUrl: string;
@@ -77,6 +84,7 @@ type CliOptions = {
   fromOutput: boolean;
   brandFilter: string | null;
   lineFilter: string | null;
+  excludeBrandSlugs: Set<string>;
   limit: number | null;
   delayMs: number;
 };
@@ -99,6 +107,19 @@ const sanity =
       })
     : null;
 
+function parseExcludeBrandSlugs(args: string[]): Set<string> {
+  const out = new Set<string>();
+  for (const a of args) {
+    if (!a.startsWith("--exclude-brands=")) continue;
+    const raw = (a.split("=")[1] ?? "").trim();
+    for (const part of raw.split(",")) {
+      const s = part.trim().toLowerCase();
+      if (s) out.add(s);
+    }
+  }
+  return out;
+}
+
 function getCliOptions(): CliOptions {
   const args = process.argv.slice(2);
   const brandArg = args.find((a) => a.startsWith("--brand="));
@@ -120,6 +141,7 @@ function getCliOptions(): CliOptions {
     lineFilter: lineArg
       ? (lineArg.split("=")[1] ?? "").trim().toLowerCase() || null
       : null,
+    excludeBrandSlugs: parseExcludeBrandSlugs(args),
     limit: Number.isFinite(limit) && limit !== null && limit > 0 ? limit : null,
     delayMs: Number.isFinite(delayMs) && delayMs >= 0 ? delayMs : 900,
   };
@@ -476,7 +498,22 @@ async function getHtml(
     await page.setUserAgent(
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
     );
-    await page.goto(url, { waitUntil: "networkidle2", timeout: 120_000 });
+    // Some B+D pages (notably `/brands/accessories/`) keep network connections
+    // open (analytics, long-polling), so `networkidle2` may never be reached.
+    // We retry with `domcontentloaded` if the initial navigation times out.
+    try {
+      await page.goto(url, { waitUntil: "networkidle2", timeout: 120_000 });
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : String(e);
+      if (msg.includes("Navigation timeout")) {
+        await page.goto(url, {
+          waitUntil: "domcontentloaded",
+          timeout: 60_000,
+        });
+      } else {
+        throw e;
+      }
+    }
     await sleep(delayMs);
     return await page.content();
   } finally {
@@ -545,24 +582,28 @@ async function downloadImageBufferInPage(
   page: Page,
   imageUrl: string,
 ): Promise<{ buffer: Buffer; contentType: string }> {
-  const result = await page.evaluate(async (u) => {
-    const r = await fetch(u);
-    const ct = r.headers.get("content-type") || "image/jpeg";
-    if (!r.ok) {
-      return {
-        ok: false as const,
-        status: r.status,
-        ct,
-        bytes: [] as number[],
-      };
-    }
-    const ab = await r.arrayBuffer();
-    return {
-      ok: true as const,
-      status: r.status,
-      ct,
-      bytes: Array.from(new Uint8Array(ab)),
-    };
+  // No async/inner named arrows here: tsx/esbuild injects __name() into the
+  // serialized function; it runs in Chromium and throws ReferenceError.
+  const result = await page.evaluate((u) => {
+    return fetch(String(u)).then(function (r) {
+      const ct = r.headers.get("content-type") || "image/jpeg";
+      if (!r.ok) {
+        return {
+          ok: false,
+          status: r.status,
+          ct,
+          bytes: [],
+        };
+      }
+      return r.arrayBuffer().then(function (ab) {
+        return {
+          ok: true,
+          status: r.status,
+          ct,
+          bytes: Array.from(new Uint8Array(ab)),
+        };
+      });
+    });
   }, imageUrl);
 
   if (!result.ok) {
@@ -575,22 +616,25 @@ async function downloadImageBufferInPage(
 async function collectLiveGalleryImageUrls(page: Page): Promise<string[]> {
   const raw = await page.evaluate(() => {
     const found: string[] = [];
-    const add = (u: string | null | undefined) => {
-      if (!u || typeof u !== "string") return;
-      const t = u.split("#")[0].trim();
-      if (t.includes("wp-content/uploads")) found.push(t);
-    };
-    document
-      .querySelectorAll(
-        ".woocommerce-product-gallery img, .woocommerce-product-gallery__image img, .product-images img, .wd-gallery-item img, [class*='product-gallery'] img",
-      )
-      .forEach((img) => {
-        const el = img as HTMLImageElement;
-        add(el.getAttribute("data-large_image"));
-        add(el.getAttribute("data-src"));
-        add(el.getAttribute("src"));
-        add(el.currentSrc);
-      });
+    const sel =
+      ".woocommerce-product-gallery img, .woocommerce-product-gallery__image img, .product-images img, .wd-gallery-item img, [class*='product-gallery'] img";
+    const nodes = document.querySelectorAll(sel);
+    for (let i = 0; i < nodes.length; i++) {
+      const el = nodes[i];
+      if (!(el instanceof HTMLImageElement)) continue;
+      const candidates = [
+        el.getAttribute("data-large_image"),
+        el.getAttribute("data-src"),
+        el.getAttribute("src"),
+        el.currentSrc,
+      ];
+      for (let j = 0; j < candidates.length; j++) {
+        const u = candidates[j];
+        if (!u || typeof u !== "string") continue;
+        const t = u.split("#")[0].trim();
+        if (t.includes("wp-content/uploads")) found.push(t);
+      }
+    }
     return [...new Set(found)];
   });
   return raw.filter(isPlausibleBdSparesImageUrl);
@@ -777,6 +821,33 @@ async function loadBrands(): Promise<SanityBrand[]> {
   );
 }
 
+async function upsertCarPartCategory(key: RetailCategory): Promise<string | null> {
+  if (!sanity) return null;
+  const docId = `carPartCategory-${key}`.slice(0, 128);
+  const titleByKey: Record<RetailCategory, string> = {
+    lighting: "Lighting",
+    "body-panel": "Body / panels",
+    glass: "Glass",
+    filter: "Filters",
+    wheel: "Wheels",
+    accessory: "Accessories",
+    "other-retail": "Other retail",
+  };
+  const title = titleByKey[key] ?? key;
+  await sanity.createOrReplace({
+    _id: docId,
+    _type: "carPartCategory",
+    title,
+    slug: {
+      _type: "slug",
+      current: slugifySegment(title),
+    },
+    sourceKey: key,
+    order: 0,
+  });
+  return docId;
+}
+
 async function upsertSparePartLine(
   job: LineJob,
   brandRef: string | undefined,
@@ -832,13 +903,21 @@ async function upsertCarPart(
     ctx.imageBrowser,
   );
 
+  const carPartCategoryId = await upsertCarPartCategory(ctx.category);
+
   const doc = {
     _id: docId,
     _type: "carPart" as const,
     name: detail.name,
     partNumber,
-    category: ctx.category,
-    brand: ctx.brandTitleForFilter,
+    ...(carPartCategoryId
+      ? { category: { _type: "reference" as const, _ref: carPartCategoryId } }
+      : {}),
+    ...(ctx.brandRef
+      ? { brand: { _type: "reference" as const, _ref: ctx.brandRef } }
+      : {}),
+    legacyCategoryKey: ctx.category,
+    legacyBrandText: ctx.brandTitleForFilter,
     ...(detail.woocommerceCategory != null && detail.woocommerceCategory !== ""
       ? { woocommerceCategory: detail.woocommerceCategory }
       : {}),
@@ -892,8 +971,24 @@ async function collectLineJobs(
   const jobs: LineJob[] = [];
   const indexHtml = await getHtml(browser, `${BASE}/brands/`, options.delayMs);
   let brandSlugs = extractBrandSlugsFromIndex(indexHtml);
+  if (options.excludeBrandSlugs.size > 0) {
+    const before = brandSlugs.length;
+    brandSlugs = brandSlugs.filter((s) => !options.excludeBrandSlugs.has(s));
+    console.log(
+      `Excluded ${before - brandSlugs.length} brand(s): ${[...options.excludeBrandSlugs].join(", ")}`,
+    );
+  }
   if (options.brandFilter) {
     brandSlugs = brandSlugs.filter((s) => s === options.brandFilter);
+    // "accessories" and similar are stripped in extractBrandSlugsFromIndex (denylist)
+    // so full crawls skip non-vehicle hubs — but /brands/accessories/ still exists; see
+    // https://www.bdspares.co.za/brands/accessories/
+    if (brandSlugs.length === 0) {
+      brandSlugs = [options.brandFilter];
+      console.log(
+        `Brand "${options.brandFilter}" not in index list; crawling /brands/${options.brandFilter}/ (explicit --brand=).`,
+      );
+    }
   }
   console.log(`Brands to scan: ${brandSlugs.length}`);
 

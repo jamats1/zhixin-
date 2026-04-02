@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useBrands } from "@/hooks/useBrands";
 import client from "@/lib/sanity/client";
+import { resolveCarPartPriceRange } from "@/lib/sanity/car-part-price";
 import {
   carPartsByFiltersQuery,
   carPartsCountQuery,
@@ -15,8 +16,8 @@ type SanityCarPart = {
   _id: string;
   name: string;
   partNumber?: string;
-  category: string;
-  brand?: string;
+  category?: { _id: string; title?: string; slug?: string } | null;
+  brand?: { _id: string; title?: string; slug?: string } | null;
   gallery?: Array<{
     image?: {
       asset?: {
@@ -26,10 +27,12 @@ type SanityCarPart = {
     alt?: string;
   }>;
   priceRange?: {
-    min: number;
-    max: number;
-    currency: string;
+    min?: number;
+    max?: number;
+    currency?: string;
   };
+  priceZar?: number;
+  exchangeRateZarUsd?: number;
   specifications?: {
     material?: string;
     dimensions?: string;
@@ -63,14 +66,9 @@ export function useCarParts() {
     selectedSparePartLineId,
     onlyOnSale,
     selectedCarPartCategory,
+    searchQuery,
   } = useFilterStore();
-  const { brands } = useBrands();
   const [error, setError] = useState<string | null>(null);
-
-  // selectedBrand is Sanity brand id; car parts filter by brand name
-  const brandName = selectedBrand
-    ? brands?.find((b) => b.id === selectedBrand)?.name
-    : null;
 
   const fetchCarParts = useCallback(
     async (page: number = 1, append: boolean = false) => {
@@ -82,11 +80,12 @@ export function useCarParts() {
         const end = start + ITEMS_PER_PAGE;
 
         const filters: {
-          brandFilter?: string;
-          categoryFilter?: string;
+          brandId?: string;
+          categoryId?: string;
           sparePartLineId?: string;
           onSaleFilter?: boolean;
           inStockFilter?: boolean;
+          searchPattern?: string;
           start: number;
           end: number;
         } = {
@@ -99,20 +98,25 @@ export function useCarParts() {
           end,
         };
 
-        if (brandName) {
-          filters.brandFilter = `*${brandName}*`;
-          params.brandFilter = filters.brandFilter;
+        if (selectedBrand) {
+          filters.brandId = selectedBrand;
+          params.brandId = selectedBrand;
         }
         if (selectedSparePartLineId) {
           filters.sparePartLineId = selectedSparePartLineId;
           params.sparePartLineId = selectedSparePartLineId;
         }
-        if (selectedCarPartCategory && selectedCarPartCategory !== "all") {
-          filters.categoryFilter = selectedCarPartCategory;
-          params.categoryFilter = selectedCarPartCategory;
+        if (selectedCarPartCategory) {
+          filters.categoryId = selectedCarPartCategory;
+          params.categoryId = selectedCarPartCategory;
         }
         if (onlyOnSale) {
           filters.onSaleFilter = true;
+        }
+        const trimmedSearch = (searchQuery || "").trim();
+        if (trimmedSearch) {
+          filters.searchPattern = `*${trimmedSearch}*`;
+          params.searchPattern = filters.searchPattern;
         }
         // Always filter for in-stock items
         filters.inStockFilter = true;
@@ -135,8 +139,8 @@ export function useCarParts() {
           id: p._id,
           name: p.name,
           partNumber: p.partNumber,
-          category: p.category,
-          brand: p.brand,
+          category: p.category?.title || "Uncategorized",
+          brand: p.brand?.title || undefined,
           images:
             p.gallery?.map((img, idx) => ({
               id: `${p._id}-img-${idx}`,
@@ -144,13 +148,11 @@ export function useCarParts() {
               alt: img.alt || p.name,
               type: "exterior" as const,
             })) || [],
-          priceRange: p.priceRange
-            ? {
-                min: p.priceRange.min,
-                max: p.priceRange.max,
-                currency: p.priceRange.currency || "USD",
-              }
-            : undefined,
+          priceRange: resolveCarPartPriceRange({
+            priceRange: p.priceRange,
+            priceZar: p.priceZar,
+            exchangeRateZarUsd: p.exchangeRateZarUsd,
+          }),
           specifications: p.specifications,
           description: p.description,
           isOnSale: p.isOnSale || false,
@@ -166,11 +168,12 @@ export function useCarParts() {
         }
 
         const countQuery = carPartsCountQuery({
-          brandFilter: filters.brandFilter,
-          categoryFilter: filters.categoryFilter,
+          brandId: filters.brandId,
+          categoryId: filters.categoryId,
           sparePartLineId: filters.sparePartLineId,
           onSaleFilter: filters.onSaleFilter,
           inStockFilter: filters.inStockFilter,
+          searchPattern: filters.searchPattern,
         });
         const total = await client.fetch<number>(countQuery, params);
         setTotalCount(total);
@@ -189,10 +192,11 @@ export function useCarParts() {
       }
     },
     [
-      brandName,
       selectedSparePartLineId,
       onlyOnSale,
       selectedCarPartCategory,
+      selectedBrand,
+      searchQuery,
       setCarParts,
       appendCarParts,
       setLoading,

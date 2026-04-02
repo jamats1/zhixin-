@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useMemo } from "react";
 import { useBrands } from "@/hooks/useBrands";
+import { useCarPartCategories } from "@/hooks/useCarPartCategories";
 import { useSparePartLines } from "@/hooks/useSparePartLines";
 import { brandLogoUrl } from "@/lib/sanity/client";
 import { useFilterStore } from "@/stores/filterStore";
@@ -63,26 +64,10 @@ export default function Sidebar() {
     setCarPartCategory,
   } = useFilterStore();
   const { brands, isLoading } = useBrands();
+  const { categories: carPartCategories } = useCarPartCategories();
   const { lines: sparePartLines, isLoading: spareLinesLoading } =
     useSparePartLines(isCarPartsView ? selectedBrand : null);
   const expandedLetter = alphabeticalFilter ?? "A";
-
-  const carPartCategories = [
-    { label: "All", value: "all" },
-    { label: "Engine", value: "engine" },
-    { label: "Transmission", value: "transmission" },
-    { label: "Axle", value: "axle" },
-    { label: "Tire", value: "tire" },
-    { label: "Retarder", value: "retarder" },
-    { label: "Other parts", value: "other" },
-    { label: "Lighting", value: "lighting" },
-    { label: "Body / panels", value: "body-panel" },
-    { label: "Glass", value: "glass" },
-    { label: "Filters", value: "filter" },
-    { label: "Wheels", value: "wheel" },
-    { label: "Accessories", value: "accessory" },
-    { label: "Other retail", value: "other-retail" },
-  ];
 
   const brandsByLetter = useMemo(() => {
     const acc: Record<string, BrandWithLogo[]> = {};
@@ -282,20 +267,20 @@ export default function Sidebar() {
                 {carPartCategories.map((category) => (
                   <button
                     type="button"
-                    key={category.value}
+                    key={category.id}
                     onClick={() =>
                       setCarPartCategory(
-                        category.value === "all" ? null : category.value,
+                        category.id === "all" ? null : category.id,
                       )
                     }
                     className={`px-2.5 py-1.5 text-xs text-left rounded transition-colors ${
-                      selectedCarPartCategory === category.value ||
-                      (category.value === "all" && !selectedCarPartCategory)
+                      selectedCarPartCategory === category.id ||
+                      (category.id === "all" && !selectedCarPartCategory)
                         ? "bg-[var(--primary)] text-white"
                         : "bg-gray-100 text-[var(--text-secondary)] hover:bg-gray-200"
                     }`}
                   >
-                    {category.label}
+                    {category.title}
                   </button>
                 ))}
               </div>

@@ -7,7 +7,8 @@ export const vehicleCategoriesQuery = groq`
     "slug": slug.current,
     icon,
     description,
-    order
+    order,
+    appliesToSegments
   }
 `;
 
@@ -36,6 +37,7 @@ export const vehicleSeriesByFiltersQuery = (filters: {
   onSaleFilter?: boolean;
   newEnergyFilter?: boolean;
   fuelFilter?: string;
+  searchPattern?: string;
   start: number;
   end: number;
 }) => {
@@ -52,6 +54,11 @@ export const vehicleSeriesByFiltersQuery = (filters: {
   if (filters.newEnergyFilter) conditions.push("isNewEnergy == true");
   // Match fuel type by substring / pattern (e.g. Petrol, Diesel, BEV, PHEV)
   if (filters.fuelFilter) conditions.push("fuelType match $fuelFilter");
+  if (filters.searchPattern) {
+    conditions.push(
+      "(title match $searchPattern || model match $searchPattern || sku match $searchPattern || brand->title match $searchPattern)",
+    );
+  }
   return groq`
     *[${conditions.join(" && ")}]
       | order(
@@ -102,6 +109,7 @@ export const vehicleSeriesCountQuery = (filters: {
   onSaleFilter?: boolean;
   newEnergyFilter?: boolean;
   fuelFilter?: string;
+  searchPattern?: string;
 }) => {
   const conditions: string[] = ['_type == "vehicle"'];
   if (filters.categoryFilter)
@@ -115,6 +123,11 @@ export const vehicleSeriesCountQuery = (filters: {
   if (filters.onSaleFilter) conditions.push("isOnSale == true");
   if (filters.newEnergyFilter) conditions.push("isNewEnergy == true");
   if (filters.fuelFilter) conditions.push("fuelType match $fuelFilter");
+  if (filters.searchPattern) {
+    conditions.push(
+      "(title match $searchPattern || model match $searchPattern || sku match $searchPattern || brand->title match $searchPattern)",
+    );
+  }
   return groq`count(*[${conditions.join(" && ")}])`;
 };
 
@@ -142,22 +155,19 @@ export const sparePartLinesByBrandQuery = groq`
 
 // Car Parts Queries
 export const carPartsByFiltersQuery = (filters: {
-  brandFilter?: string;
-  categoryFilter?: string;
+  brandId?: string;
+  categoryId?: string;
   sparePartLineId?: string;
   onSaleFilter?: boolean;
   inStockFilter?: boolean;
+  searchPattern?: string;
   start: number;
   end: number;
 }) => {
   const conditions: string[] = ['_type == "carPart"'];
 
-  if (filters.brandFilter) {
-    conditions.push("brand match $brandFilter");
-  }
-  if (filters.categoryFilter) {
-    conditions.push("category == $categoryFilter");
-  }
+  if (filters.brandId) conditions.push("brand._ref == $brandId");
+  if (filters.categoryId) conditions.push("category._ref == $categoryId");
   if (filters.sparePartLineId) {
     conditions.push("sparePartLine._ref == $sparePartLineId");
   }
@@ -167,19 +177,26 @@ export const carPartsByFiltersQuery = (filters: {
   if (filters.inStockFilter) {
     conditions.push("inStock == true");
   }
+  if (filters.searchPattern) {
+    conditions.push(
+      "(name match $searchPattern || partNumber match $searchPattern || brand->title match $searchPattern || category->title match $searchPattern)",
+    );
+  }
 
   return groq`
     *[${conditions.join(" && ")}] | order(publishedAt desc) [$start...$end] {
       _id,
       name,
       partNumber,
-      category,
-      brand,
+      "category": category->{ _id, title, "slug": slug.current, sourceKey, order },
+      "brand": brand->{ _id, title, "slug": slug.current, logo },
       gallery[] {
         alt,
         image { asset-> }
       },
       priceRange,
+      priceZar,
+      exchangeRateZarUsd,
       specifications,
       description,
       isOnSale,
@@ -191,20 +208,17 @@ export const carPartsByFiltersQuery = (filters: {
 };
 
 export const carPartsCountQuery = (filters: {
-  brandFilter?: string;
-  categoryFilter?: string;
+  brandId?: string;
+  categoryId?: string;
   sparePartLineId?: string;
   onSaleFilter?: boolean;
   inStockFilter?: boolean;
+  searchPattern?: string;
 }) => {
   const conditions: string[] = ['_type == "carPart"'];
 
-  if (filters.brandFilter) {
-    conditions.push("brand match $brandFilter");
-  }
-  if (filters.categoryFilter) {
-    conditions.push("category == $categoryFilter");
-  }
+  if (filters.brandId) conditions.push("brand._ref == $brandId");
+  if (filters.categoryId) conditions.push("category._ref == $categoryId");
   if (filters.sparePartLineId) {
     conditions.push("sparePartLine._ref == $sparePartLineId");
   }
@@ -214,6 +228,21 @@ export const carPartsCountQuery = (filters: {
   if (filters.inStockFilter) {
     conditions.push("inStock == true");
   }
+  if (filters.searchPattern) {
+    conditions.push(
+      "(name match $searchPattern || partNumber match $searchPattern || brand->title match $searchPattern || category->title match $searchPattern)",
+    );
+  }
 
   return groq`count(*[${conditions.join(" && ")}])`;
 };
+
+export const carPartCategoriesQuery = groq`
+  *[_type == "carPartCategory"] | order(order asc, title asc) {
+    _id,
+    title,
+    "slug": slug.current,
+    sourceKey,
+    order
+  }
+`;

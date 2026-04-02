@@ -1,0 +1,11 @@
+[Unit]
+Description=Poll GitHub and deploy soleyb2b.com every minute
+
+[Timer]
+OnBootSec=90s
+OnUnitActiveSec=60s
+AccuracySec=30s
+Persistent=true
+
+[Install]
+WantedBy=timers.target

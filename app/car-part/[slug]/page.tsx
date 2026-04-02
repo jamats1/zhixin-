@@ -27,14 +27,8 @@ export const revalidate = 3600;
 
 type Props = { params: Promise<{ slug: string }> };
 
-function categoryLabel(cat: string): string {
-  if (!cat.includes("-") && cat === cat.toLowerCase()) {
-    return cat.charAt(0).toUpperCase() + cat.slice(1);
-  }
-  return cat
-    .split("-")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
+function categoryLabel(title: string | undefined): string {
+  return title?.trim() || "Uncategorized";
 }
 
 function formatPartPrice(doc: CarPartDetailDoc): string {
@@ -71,8 +65,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: [
       doc.name,
       doc.partNumber,
-      doc.brand,
-      doc.category,
+      doc.brand?.title,
+      doc.category?.title,
       "spare part",
       "auto parts",
       "Zhixin",
@@ -113,7 +107,9 @@ export default async function CarPartDetailPage({ params }: Props) {
   const images = mapCarPartImages(doc);
   const imageUrls = images.map((i) => i.url);
 
-  const related = await fetchRelatedCarParts(doc.slug, doc.category);
+  const related = doc.category?._id
+    ? await fetchRelatedCarParts(doc.slug, doc.category._id)
+    : [];
 
   const productLd = carPartProductJsonLd(doc, path, imageUrls);
   const itemListLd =
@@ -167,8 +163,8 @@ export default async function CarPartDetailPage({ params }: Props) {
             </p>
           )}
           <p className="mt-1 text-sm text-gray-500">
-            {categoryLabel(doc.category)}
-            {doc.brand?.trim() ? ` · ${doc.brand.trim()}` : ""}
+            {categoryLabel(doc.category?.title)}
+            {doc.brand?.title?.trim() ? ` · ${doc.brand.title.trim()}` : ""}
             {doc.inStock === false ? " · Out of stock" : ""}
           </p>
         </header>
@@ -206,7 +202,9 @@ export default async function CarPartDetailPage({ params }: Props) {
               </h2>
               <dl className="grid grid-cols-2 gap-y-2 text-sm">
                 <dt className="text-gray-500">Category</dt>
-                <dd className="font-semibold">{categoryLabel(doc.category)}</dd>
+                <dd className="font-semibold">
+                  {categoryLabel(doc.category?.title)}
+                </dd>
                 {doc.specifications?.material && (
                   <>
                     <dt className="text-gray-500">Material</dt>

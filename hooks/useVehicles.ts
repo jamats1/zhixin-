@@ -49,6 +49,7 @@ export function useVehicles() {
     onlyOnSale,
     onlyNewEnergy,
     fuelType,
+    searchQuery,
   } = useFilterStore();
   const { currentView } = useUIStore();
   const [error, setError] = useState<string | null>(null);
@@ -71,6 +72,7 @@ export function useVehicles() {
           onSaleFilter?: boolean;
           newEnergyFilter?: boolean;
           fuelFilter?: string;
+          searchPattern?: string;
           start: number;
           end: number;
         } = { start, end };
@@ -92,6 +94,11 @@ export function useVehicles() {
         }
         if (onlyOnSale) seriesFilters.onSaleFilter = true;
         if (onlyNewEnergy) seriesFilters.newEnergyFilter = true;
+
+        const trimmedSearch = (searchQuery || "").trim();
+        if (trimmedSearch) {
+          seriesFilters.searchPattern = `*${trimmedSearch}*`;
+        }
 
         // Map UI fuelType chips to Sanity fuelType patterns
         if (fuelType) {
@@ -131,6 +138,8 @@ export function useVehicles() {
           params.segmentFilter = seriesFilters.segmentFilter;
         if (seriesFilters.fuelFilter)
           params.fuelFilter = seriesFilters.fuelFilter;
+        if (seriesFilters.searchPattern)
+          params.searchPattern = seriesFilters.searchPattern;
 
         if (!client) {
           setVehicles([]);
@@ -153,6 +162,7 @@ export function useVehicles() {
           onSaleFilter: seriesFilters.onSaleFilter,
           newEnergyFilter: seriesFilters.newEnergyFilter,
           fuelFilter: seriesFilters.fuelFilter,
+          searchPattern: seriesFilters.searchPattern,
         };
         const countParams: Record<string, unknown> = {};
         if (countFilters.categoryFilter)
@@ -165,6 +175,8 @@ export function useVehicles() {
           countParams.segmentFilter = countFilters.segmentFilter;
         if (countFilters.fuelFilter)
           countParams.fuelFilter = countFilters.fuelFilter;
+        if (countFilters.searchPattern)
+          countParams.searchPattern = countFilters.searchPattern;
 
         const query = vehicleSeriesByFiltersQuery(seriesFilters);
         const [fetchedSeries, totalCount] = await Promise.all([
@@ -295,6 +307,7 @@ export function useVehicles() {
       onlyOnSale,
       onlyNewEnergy,
       fuelType,
+      searchQuery,
       currentView,
       setVehicles,
       appendVehicles,

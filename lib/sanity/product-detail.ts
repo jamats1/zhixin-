@@ -77,8 +77,8 @@ const carPartBySlugQuery = groq`
     _updatedAt,
     name,
     partNumber,
-    category,
-    brand,
+    "category": category->{ _id, title, "slug": slug.current, sourceKey },
+    "brand": brand->{ _id, title, "slug": slug.current, logo },
     gallery[]{ alt, image { asset-> } },
     priceRange,
     priceZar,
@@ -102,7 +102,7 @@ const relatedCarPartsQuery = groq`
     _type == "carPart"
     && defined(slug.current)
     && slug.current != $slug
-    && category == $category
+    && category._ref == $categoryId
     && inStock == true
   ]
     | order(publishedAt desc) [0...8] {
@@ -183,8 +183,8 @@ export type CarPartDetailDoc = {
   _updatedAt?: string;
   name: string;
   partNumber?: string;
-  category: string;
-  brand?: string;
+  category?: { _id: string; title?: string; slug?: string; sourceKey?: string };
+  brand?: { _id: string; title?: string; slug?: string; logo?: unknown };
   gallery?: Array<{ alt?: string; image?: { asset?: unknown } }>;
   priceRange?: {
     min?: number;
@@ -316,7 +316,7 @@ export async function fetchCarPartSlugById(id: string): Promise<string | null> {
 
 export async function fetchRelatedCarParts(
   slug: string,
-  category: string,
+  categoryId: string,
 ): Promise<RelatedCarPartCard[]> {
   if (!client) return [];
   const rows = await client.fetch<
@@ -330,7 +330,7 @@ export async function fetchRelatedCarParts(
       priceZar?: number;
       exchangeRateZarUsd?: number;
     }>
-  >(relatedCarPartsQuery, { slug, category });
+  >(relatedCarPartsQuery, { slug, categoryId });
   return rows.map((r) => {
     const first = r.gallery?.[0]?.image;
     const resolved = resolveCarPartPriceRange({

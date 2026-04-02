@@ -20,33 +20,35 @@ export default defineType({
     defineField({
       name: "category",
       title: "Category",
-      type: "string",
-      description:
-        "Aligned with ChinaTrucks parts sections (engine, transmission, axle, tire, retarder, other-parts).",
-      options: {
-        list: [
-          { title: "Engine", value: "engine" },
-          { title: "Transmission", value: "transmission" },
-          { title: "Axle", value: "axle" },
-          { title: "Tire", value: "tire" },
-          { title: "Retarder", value: "retarder" },
-          { title: "Other parts", value: "other" },
-          { title: "Lighting (retail)", value: "lighting" },
-          { title: "Body / panels (retail)", value: "body-panel" },
-          { title: "Glass (retail)", value: "glass" },
-          { title: "Filters (retail)", value: "filter" },
-          { title: "Wheels (retail)", value: "wheel" },
-          { title: "Accessories (retail)", value: "accessory" },
-          { title: "Other retail", value: "other-retail" },
-        ],
-      },
+      type: "reference",
+      to: [{ type: "carPartCategory" }],
+      description: "Reference category used by the Car Parts tab filters.",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "brand",
       title: "Brand",
+      type: "reference",
+      to: [{ type: "brand" }],
+      description: "Reference brand used by unified Brand filters.",
+    }),
+    defineField({
+      name: "legacyCategoryKey",
+      title: "Legacy category key (deprecated)",
       type: "string",
-      description: "Part manufacturer or brand",
+      description:
+        "Old string key from imports (e.g. engine). Kept temporarily for migration/rollback.",
+      readOnly: true,
+      hidden: true,
+    }),
+    defineField({
+      name: "legacyBrandText",
+      title: "Legacy brand text (deprecated)",
+      type: "string",
+      description:
+        "Old brand string from imports. Kept temporarily for migration/rollback.",
+      readOnly: true,
+      hidden: true,
     }),
     defineField({
       name: "compatibleVehicles",

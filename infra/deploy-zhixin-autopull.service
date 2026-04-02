@@ -1,0 +1,10 @@
+[Unit]
+Description=Pull main and deploy zhixincn.com (zhixin)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/deploy-zhixin-autopull.sh
+TimeoutStartSec=2400
+Nice=10

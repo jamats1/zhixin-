@@ -40,6 +40,21 @@ export default defineType({
       type: "number",
       initialValue: 0,
     }),
+    defineField({
+      name: "appliesToSegments",
+      title: "Applies to segments",
+      type: "array",
+      of: [{ type: "string" }],
+      options: {
+        list: [
+          { title: "Vehicles (car)", value: "car" },
+          { title: "Trucks (truck)", value: "truck" },
+        ],
+        layout: "grid",
+      },
+      description:
+        "Controls which top-level tab should show this category. Leave empty to show in both.",
+    }),
   ],
   preview: {
     select: {

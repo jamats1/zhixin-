@@ -3,6 +3,7 @@
 import { X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useBrands } from "@/hooks/useBrands";
+import { useCarPartCategories } from "@/hooks/useCarPartCategories";
 import { useCarParts } from "@/hooks/useCarParts";
 import { useVehicles } from "@/hooks/useVehicles";
 import { useCarPartsStore } from "@/stores/carPartsStore";
@@ -16,6 +17,7 @@ export default function VehicleGrid() {
   const isVehiclesView = currentView === "imageList" || currentView === "truckList";
   const isCarPartsView = currentView === "featuredAlbums";
   const { brands } = useBrands();
+  const { categories: carPartCategories } = useCarPartCategories();
 
   // Get filter state to show active filters
   const {
@@ -87,6 +89,12 @@ export default function VehicleGrid() {
   const hasActiveFilters = isVehiclesView
     ? !!(selectedBrand || selectedType || onlyOnSale || onlyNewEnergy || fuelType)
     : !!(selectedBrand || onlyOnSale || selectedCarPartCategory);
+
+  const selectedCarPartCategoryTitle =
+    isCarPartsView && selectedCarPartCategory
+      ? carPartCategories.find((c) => c.id === selectedCarPartCategory)?.title ??
+        selectedCarPartCategory
+      : null;
 
   const observerTarget = useRef<HTMLDivElement>(null);
 
@@ -254,7 +262,7 @@ export default function VehicleGrid() {
               )}
               {isCarPartsView && selectedCarPartCategory && (
                 <span className="inline-flex items-center gap-1 px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] rounded text-xs capitalize">
-                  {selectedCarPartCategory}
+                  {selectedCarPartCategoryTitle}
                   <button
                     type="button"
                     onClick={() => setCarPartCategory(null)}

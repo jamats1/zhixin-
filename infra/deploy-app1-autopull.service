@@ -1,0 +1,10 @@
+[Unit]
+Description=Pull main and deploy jamafurn.com (jama-furniture)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/deploy-app1-autopull.sh
+TimeoutStartSec=2400
+Nice=10

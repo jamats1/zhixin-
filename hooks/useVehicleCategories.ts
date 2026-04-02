@@ -12,6 +12,7 @@ type SanityVehicleCategory = {
   icon?: { asset?: { _ref?: string }; [k: string]: unknown };
   description?: string;
   order?: number;
+  appliesToSegments?: Array<"car" | "truck">;
 };
 
 const FALLBACK_CATEGORIES: VehicleCategory[] = [
@@ -26,7 +27,7 @@ const FALLBACK_CATEGORIES: VehicleCategory[] = [
   { id: "pickup", title: "Pickup", slug: "pickup", order: 7 },
 ];
 
-export function useVehicleCategories() {
+export function useVehicleCategories(segment?: "car" | "truck") {
   const [categories, setCategories] = useState<VehicleCategory[]>(FALLBACK_CATEGORIES);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -41,9 +42,16 @@ export function useVehicleCategories() {
       try {
         const data = await client.fetch<SanityVehicleCategory[]>(vehicleCategoriesQuery);
         if (cancelled) return;
+        const filtered =
+          segment == null
+            ? data
+            : data.filter((c) => {
+                const applies = c.appliesToSegments ?? [];
+                return applies.length === 0 || applies.includes(segment);
+              });
         const mapped: VehicleCategory[] = [
           { id: "all", title: "All", slug: "all", order: -1 },
-          ...data.map((c) => ({
+          ...filtered.map((c) => ({
             id: c._id,
             title: c.title,
             slug: c.slug ?? c._id,
@@ -63,7 +71,7 @@ export function useVehicleCategories() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [segment]);
 
   return { categories, isLoading };
 }

@@ -1,0 +1,10 @@
+[Unit]
+Description=Pull main and deploy soleyb2b.com (soley-b2b)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/deploy-app2-autopull.sh
+TimeoutStartSec=2400
+Nice=10

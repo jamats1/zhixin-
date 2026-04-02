@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useBrands } from "@/hooks/useBrands";
+import { useCarPartCategories } from "@/hooks/useCarPartCategories";
 import { useVehicleCategories } from "@/hooks/useVehicleCategories";
 import { brandLogoUrl } from "@/lib/sanity/client";
 import { useFilterStore } from "@/stores/filterStore";
@@ -60,7 +61,9 @@ export default function Filters() {
     setFuelType,
   } = useFilterStore();
   const { brands, isLoading: brandsLoading } = useBrands();
-  const { categories: vehicleCategories } = useVehicleCategories();
+  const vehicleSegment = currentView === "truckList" ? "truck" : "car";
+  const { categories: vehicleCategories } = useVehicleCategories(vehicleSegment);
+  const { categories: carPartCategories } = useCarPartCategories();
   const brandList = brands || [];
   const brandsWithVehicles = brandList.filter((b) => (b.count ?? 0) > 0);
   const hotBrands = brandList.filter((b) => b.isHot && (b.count ?? 0) > 0);
@@ -77,24 +80,6 @@ export default function Filters() {
 
   const isVehiclesView =
     currentView === "imageList" || currentView === "truckList";
-
-  /** ChinaTrucks parts index URLs: …/product/parts/{engine|transmission|axle|tire|retarder|other-parts}/ */
-  const carPartCategories = [
-    { label: "All", value: "all" },
-    { label: "Engine", value: "engine" },
-    { label: "Transmission", value: "transmission" },
-    { label: "Axle", value: "axle" },
-    { label: "Tire", value: "tire" },
-    { label: "Retarder", value: "retarder" },
-    { label: "Other parts", value: "other" },
-    { label: "Lighting", value: "lighting" },
-    { label: "Body / panels", value: "body-panel" },
-    { label: "Glass", value: "glass" },
-    { label: "Filters", value: "filter" },
-    { label: "Wheels", value: "wheel" },
-    { label: "Accessories", value: "accessory" },
-    { label: "Other retail", value: "other-retail" },
-  ];
 
   return (
     <>
@@ -245,7 +230,7 @@ export default function Filters() {
           {/* Quick Filters and Fuel Type Section */}
           <div className="flex min-h-7 w-full border-b border-b-[#F0F3F8] py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] transition-all last:border-none min-w-0">
             <div className="hidden sm:block w-12 md:w-[68px] leading-5 md:leading-7 text-[#828CA0] text-xs md:text-sm shrink-0">
-              Filters
+              Availability
             </div>
             <div className="flex flex-1 flex-wrap gap-2 text-xs md:text-sm text-[var(--text-primary)] min-w-0">
               {/* Quick Filters */}
@@ -354,20 +339,20 @@ export default function Filters() {
               {carPartCategories.map((category) => (
                 <button
                   type="button"
-                  key={category.value}
+                  key={category.id}
                   onClick={() =>
                     setCarPartCategory(
-                      category.value === "all" ? null : category.value,
+                      category.id === "all" ? null : category.id,
                     )
                   }
                   className={`cursor-pointer rounded px-3 md:px-2 py-1.5 text-xs whitespace-nowrap transition-colors min-h-[32px] md:min-h-[34px] snap-start ${
-                    selectedCarPartCategory === category.value ||
-                    (category.value === "all" && !selectedCarPartCategory)
+                    selectedCarPartCategory === category.id ||
+                    (category.id === "all" && !selectedCarPartCategory)
                       ? "bg-[var(--primary)] text-white"
                       : "hover:bg-gray-100"
                   }`}
                 >
-                  <span>{category.label}</span>
+                  <span>{category.title}</span>
                 </button>
               ))}
             </div>
