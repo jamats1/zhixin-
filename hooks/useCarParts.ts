@@ -72,6 +72,14 @@ export function useCarParts() {
   const fetchCarParts = useCallback(
     async (page: number = 1, append: boolean = false) => {
       try {
+        // When fetching a fresh page (not "load more"), clear stale UI immediately
+        // so the grid doesn't briefly show previous/placeholder cards.
+        if (!append) {
+          setCarParts([]);
+          setTotalCount(0);
+          setHasMore(false);
+          setCurrentPage(1);
+        }
         setLoading(true);
         setError(null);
 

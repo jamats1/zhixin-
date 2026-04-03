@@ -57,6 +57,14 @@ export function useVehicles() {
   const fetchVehicles = useCallback(
     async (page: number = 1, append: boolean = false) => {
       try {
+        // When fetching a fresh page (not "load more"), clear stale UI immediately
+        // so we don't briefly show previous/placeholder cards.
+        if (!append) {
+          setVehicles([]);
+          setTotalCount(0);
+          setHasMore(false);
+          setCurrentPage(1);
+        }
         setLoading(true);
         setError(null);
 
