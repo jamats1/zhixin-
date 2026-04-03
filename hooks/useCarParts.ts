@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { useBrands } from "@/hooks/useBrands";
 import client from "@/lib/sanity/client";
 import { resolveCarPartPriceRange } from "@/lib/sanity/car-part-price";
 import {

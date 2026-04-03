@@ -48,6 +48,7 @@ export default function Filters() {
     setBrand,
     setCategory,
     selectedCategory,
+    selectedBrand,
     alphabeticalFilter,
     setAlphabeticalFilter,
     setVehicleView,
@@ -60,7 +61,11 @@ export default function Filters() {
     setOnlyNewEnergy,
     setFuelType,
   } = useFilterStore();
-  const { brands, isLoading: brandsLoading } = useBrands();
+  const isVehiclesView =
+    currentView === "imageList" || currentView === "truckList";
+  const { brands, isLoading: brandsLoading } = useBrands({
+    countSource: isVehiclesView ? "vehicles" : "carParts",
+  });
   const vehicleSegment = currentView === "truckList" ? "truck" : "car";
   const { categories: vehicleCategories } = useVehicleCategories(vehicleSegment);
   const { categories: carPartCategories } = useCarPartCategories();
@@ -77,9 +82,6 @@ export default function Filters() {
         : brandsWithVehicles.length > 0
           ? brandsWithVehicles.slice(0, POPULAR_BRANDS_COUNT)
           : brandList.slice(0, POPULAR_BRANDS_COUNT);
-
-  const isVehiclesView =
-    currentView === "imageList" || currentView === "truckList";
 
   return (
     <>
@@ -128,81 +130,93 @@ export default function Filters() {
         </button>
       </div>
 
-      {/* Brand Filter Section - Different for Vehicles vs Car Parts */}
-      {isVehiclesView ? (
-        <>
-          {/* Vehicles: Full brand filter with letters */}
-          <div className="flex w-full flex-col items-start text-xs md:text-sm text-[var(--text-primary)] min-w-0">
-            <div className="flex w-full items-center min-w-0">
-              <div className="hidden sm:block w-12 md:w-14 min-w-[48px] md:min-w-[68px] text-left text-[#828CA0] text-xs md:text-sm shrink-0">
-                Brand
+      {/* Brand filter: same Hot / A–Z / logos for vehicles, trucks, and car parts (counts follow active tab). */}
+      <div className="flex w-full flex-col items-start text-xs md:text-sm text-[var(--text-primary)] min-w-0">
+        <div className="flex w-full items-center min-w-0">
+          <div className="hidden sm:block w-12 md:w-14 min-w-[48px] md:min-w-[68px] text-left text-[#828CA0] text-xs md:text-sm shrink-0">
+            Brand
+          </div>
+          <ul className="hidden md:flex w-full min-w-0 whitespace-nowrap border-b border-dashed border-b-[#F0F3F8] py-[15px] overflow-x-auto pr-4">
+            <li className="relative mr-1 min-w-[40px] h-7 flex-shrink-0 cursor-pointer rounded text-center bg-[#CCEBFF] px-1.5">
+              <button
+                type="button"
+                className="w-full h-full flex items-center justify-center text-xs font-medium"
+                onClick={() => setAlphabeticalFilter(null)}
+              >
+                Hot
+              </button>
+            </li>
+            {Array.from({ length: 26 }, (_, i) =>
+              String.fromCharCode(65 + i),
+            ).map((letter) => (
+              <li
+                key={letter}
+                className={`relative mr-1 w-7 h-7 flex-shrink-0 cursor-pointer rounded text-center hover:bg-gray-100 ${
+                  alphabeticalFilter === letter ? "bg-[#CCEBFF]" : ""
+                }`}
+              >
+                <button
+                  type="button"
+                  className="w-full h-full flex items-center justify-center text-xs font-medium"
+                  onClick={() => setAlphabeticalFilter(letter)}
+                >
+                  {letter}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="flex w-full items-start border-b border-b-[#F0F3F8] text-xs md:text-sm text-[var(--text-primary)] min-w-0">
+          <div
+            className="hidden sm:block w-12 md:w-14 min-w-[48px] md:min-w-[68px] shrink-0"
+            aria-hidden="true"
+          />
+          <div className="w-full min-w-0 bg-[#F8F9FC] px-2 md:px-4 pb-2 pt-2 md:pt-3 min-h-[60px] md:h-[84px] overflow-x-auto md:overflow-hidden">
+            {brandsLoading ? (
+              <div className="flex items-center min-h-[52px] text-[var(--text-tertiary)] text-xs">
+                Loading brands…
               </div>
-              {/* Letter filter - hidden on mobile */}
-              <ul className="hidden md:flex w-full min-w-0 whitespace-nowrap border-b border-dashed border-b-[#F0F3F8] py-[15px] overflow-x-auto pr-4">
-                <li className="relative mr-1 min-w-[40px] h-7 flex-shrink-0 cursor-pointer rounded text-center bg-[#CCEBFF] px-1.5">
-                  <button
-                    type="button"
-                    className="w-full h-full flex items-center justify-center text-xs font-medium"
-                    onClick={() => setAlphabeticalFilter(null)}
-                  >
-                    Hot
-                  </button>
-                </li>
-                {Array.from({ length: 26 }, (_, i) =>
-                  String.fromCharCode(65 + i),
-                ).map((letter) => (
-                  <li
-                    key={letter}
-                    className={`relative mr-1 w-7 h-7 flex-shrink-0 cursor-pointer rounded text-center hover:bg-gray-100 ${
-                      alphabeticalFilter === letter ? "bg-[#CCEBFF]" : ""
-                    }`}
-                  >
-                    <button
-                      type="button"
-                      className="w-full h-full flex items-center justify-center text-xs font-medium"
-                      onClick={() => setAlphabeticalFilter(letter)}
-                    >
-                      {letter}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex w-full items-start border-b border-b-[#F0F3F8] text-xs md:text-sm text-[var(--text-primary)] min-w-0">
-              <div
-                className="hidden sm:block w-12 md:w-14 min-w-[48px] md:min-w-[68px] shrink-0"
-                aria-hidden="true"
-              />
-              <div className="w-full min-w-0 bg-[#F8F9FC] px-2 md:px-4 pb-2 pt-2 md:pt-3 min-h-[60px] md:h-[84px] overflow-x-auto md:overflow-hidden">
-                {brandsLoading ? (
-                  <div className="flex items-center min-h-[52px] text-[var(--text-tertiary)] text-xs">
-                    Loading brands…
-                  </div>
-                ) : popularBrands.length === 0 ? (
-                  <div className="flex items-center min-h-[52px] text-[var(--text-tertiary)] text-xs">
+            ) : popularBrands.length === 0 ? (
+              <div className="flex items-center min-h-[52px] text-[var(--text-tertiary)] text-xs">
+                {isVehiclesView ? (
+                  <>
                     No brands to show. Sync brands from AutoCango (npm run
                     scrape:autocango -- --brands).
-                  </div>
+                  </>
                 ) : (
-                  <div className="flex flex-nowrap md:flex-wrap gap-2 md:gap-0">
-                    {popularBrands.map((brand) => (
-                      <button
-                        key={brand.id}
-                        type="button"
-                        onClick={() => setBrand(brand.id)}
-                        className="relative md:mr-4 flex min-w-[56px] md:min-w-[68px] flex-col items-center justify-center rounded p-1 md:p-1.5 text-[var(--text-primary)] hover:cursor-pointer hover:bg-gray-100 mb-2 md:mb-4"
-                        aria-label={`Filter by ${brand.name}`}
-                      >
-                        <BrandLogoSmall brand={brand} size={24} />
-                        <span className="text-xs">{brand.name}</span>
-                      </button>
-                    ))}
-                  </div>
+                  <>
+                    No brands with in-stock parts. Link a brand on car part
+                    documents in Sanity, or add inventory.
+                  </>
                 )}
               </div>
-            </div>
+            ) : (
+              <div className="flex flex-nowrap md:flex-wrap gap-2 md:gap-0">
+                {popularBrands.map((brand) => (
+                  <button
+                    key={brand.id}
+                    type="button"
+                    onClick={() => setBrand(brand.id)}
+                    className={`relative md:mr-4 flex min-w-[56px] md:min-w-[68px] flex-col items-center justify-center rounded p-1 md:p-1.5 text-[var(--text-primary)] hover:cursor-pointer hover:bg-gray-100 mb-2 md:mb-4 ${
+                      selectedBrand === brand.id
+                        ? "ring-2 ring-[var(--primary)] ring-offset-1"
+                        : ""
+                    }`}
+                    aria-label={`Filter by ${brand.name}`}
+                    aria-pressed={selectedBrand === brand.id}
+                  >
+                    <BrandLogoSmall brand={brand} size={24} />
+                    <span className="text-xs">{brand.name}</span>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
+        </div>
+      </div>
 
+      {isVehiclesView ? (
+        <>
           {/* Vehicle Category Filter Section (from Sanity Vehicle Categories) */}
           <div className="flex items-center min-h-7 w-full border-b border-b-[#F0F3F8] py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] transition-all min-w-0">
             <div className="hidden sm:block w-12 md:w-[68px] leading-5 md:leading-7 text-[#828CA0] text-xs md:text-sm shrink-0">
@@ -306,30 +320,6 @@ export default function Filters() {
         </>
       ) : (
         <>
-          {/* Car Parts: Simplified brand filter (no letters) */}
-          <div className="flex w-full flex-col items-start text-xs md:text-sm text-[var(--text-primary)] min-w-0">
-            <div className="flex w-full items-start border-b border-b-[#F0F3F8] text-xs md:text-sm text-[var(--text-primary)] min-w-0">
-              <div className="hidden sm:block w-12 md:w-14 min-w-[48px] md:min-w-[68px] text-left text-[#828CA0] text-xs md:text-sm shrink-0">
-                Brand
-              </div>
-              <div className="w-full min-w-0 bg-[#F8F9FC] px-2 md:px-4 pb-2 pt-2 md:pt-3 min-h-[60px] md:h-[84px] overflow-x-auto md:overflow-hidden">
-                <div className="flex flex-nowrap md:flex-wrap gap-2 md:gap-0">
-                  {popularBrands.map((brand) => (
-                    <button
-                      key={brand.id}
-                      type="button"
-                      onClick={() => setBrand(brand.id)}
-                      className="relative md:mr-4 flex min-w-[56px] md:min-w-[68px] flex-col items-center justify-center rounded p-1 md:p-1.5 text-[var(--text-primary)] hover:cursor-pointer hover:bg-gray-100 mb-2 md:mb-4"
-                    >
-                      <BrandLogoSmall brand={brand} size={24} />
-                      <span className="text-xs">{brand.name}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Car Parts Category Filter Section */}
           <div className="flex items-center min-h-7 w-full border-b border-b-[#F0F3F8] py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] transition-all min-w-0">
             <div className="hidden sm:block w-12 md:w-[68px] leading-5 md:leading-7 text-[#828CA0] text-xs md:text-sm shrink-0">

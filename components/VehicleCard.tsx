@@ -50,16 +50,17 @@ export default function VehicleCard({
     if (min == null || max == null) return "Price TBD";
     if (!Number.isFinite(min) || !Number.isFinite(max)) return "Price TBD";
     try {
+      const loc = "en-US" as const;
       if (currency === "USD") {
         if (min === max) {
-          return `$${min.toLocaleString()}`;
+          return `$${min.toLocaleString(loc)}`;
         }
-        return `$${min.toLocaleString()} - $${max.toLocaleString()}`;
+        return `$${min.toLocaleString(loc)} - $${max.toLocaleString(loc)}`;
       }
       if (min === max) {
-        return `${min} ${currency}`;
+        return `${min.toLocaleString(loc)} ${currency}`;
       }
-      return `${min} - ${max} ${currency}`;
+      return `${min.toLocaleString(loc)} - ${max.toLocaleString(loc)} ${currency}`;
     } catch (error) {
       console.error("Error formatting price:", error);
       return "Price TBD";
@@ -186,7 +187,8 @@ export default function VehicleCard({
               },
               {
                 label: "Mlg(km)",
-                value: v.mileage != null ? v.mileage.toLocaleString() : null,
+                value:
+                  v.mileage != null ? v.mileage.toLocaleString("en-US") : null,
                 className: "text-gray-900",
               },
               {

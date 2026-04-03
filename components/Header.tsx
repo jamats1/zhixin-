@@ -1,57 +1,38 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import LocationWeather from "./LocationWeather";
-import SearchBar from "./SearchBar";
+import LocationWeather from "@/components/LocationWeather";
+import SearchBar from "@/components/SearchBar";
 
 export default function Header() {
   return (
-    <header className="bg-white border-b border-[var(--border)] sticky top-0 z-50 w-full left-0 right-0 pt-[env(safe-area-inset-top)]">
-      <div className="max-w-[1400px] mx-auto px-3 md:px-4 md:pr-6 py-2 md:py-3 flex items-center justify-between gap-2 md:gap-4 w-full min-h-[44px] min-w-0">
-        {/* Logo */}
+    <header className="sticky top-0 z-50 w-full border-b border-[var(--border)] bg-white shadow-sm">
+      <div className="mx-auto flex min-h-[70px] w-full max-w-[1400px] flex-wrap items-center gap-x-2 gap-y-2 px-3 py-2 md:h-[70px] md:flex-nowrap md:gap-3 md:px-6 md:py-0">
         <Link
           href="/"
-          className="shrink-0 flex items-center gap-2 text-xl md:text-2xl text-[var(--primary)]"
+          className="flex shrink-0 items-center gap-2 text-lg font-semibold tracking-tight text-[var(--text-primary)] transition-colors hover:text-[var(--primary)] md:text-xl"
         >
-          <img
-            src="/favicon.ico"
-            alt="Zhixin"
-            width={40}
-            height={40}
-            className="h-9 w-9 md:h-10 md:w-10 rounded-md object-contain"
+          <Image
+            src="/icon.svg"
+            alt=""
+            width={36}
+            height={36}
+            className="size-8 shrink-0 rounded-md md:size-9"
+            unoptimized
           />
-          <span className="leading-tight">
-            <span className="font-bold">ZHI</span>
-            <span className="font-light">XIN</span>
-            <span className="font-bold">车</span>
-          </span>
+          <span className="whitespace-nowrap">Zhixin车</span>
         </Link>
-
-        {/* Location/Weather — hidden on mobile */}
-        <div className="hidden lg:block">
-          <LocationWeather />
-        </div>
-
-        {/* Modern Search Bar with Suggestions — 100% of available space */}
-        <div className="flex-1 min-w-0">
+        <div className="min-w-0 flex-1 basis-[min(100%,12rem)] md:basis-auto">
           <SearchBar />
         </div>
-
-        {/* User Actions — hidden on mobile */}
-        <div className="hidden md:flex items-center gap-3 text-sm">
-          <a
-            href="https://wa.me/8618157977478"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 md:px-5 py-1.5 md:py-2 min-h-[44px] bg-[var(--primary)] text-white rounded-md text-xs md:text-sm font-medium hover:bg-[var(--primary-hover)] transition-all duration-200 hover:shadow-md hover:shadow-[var(--primary)]/30 active:scale-[0.98] inline-flex items-center justify-center"
-          >
-            WhatsApp
-          </a>
+        <div className="flex shrink-0 items-center gap-2 md:gap-3">
+          <LocationWeather className="max-w-[min(100%,11rem)] sm:max-w-none" />
           <Link
             href="/inquiry"
-            className="px-4 md:px-5 py-1.5 md:py-2 min-h-[44px] text-[var(--primary)] border border-[var(--primary)] rounded-md text-xs md:text-sm font-medium hover:bg-[var(--primary)] hover:text-white transition-all duration-200 hover:shadow-md hover:shadow-[var(--primary)]/20 active:scale-[0.98] inline-flex items-center justify-center"
+            className="inline-flex min-h-[40px] shrink-0 items-center justify-center rounded-md bg-[var(--primary)] px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-[var(--primary-hover)] md:px-4"
           >
-            Inquiry form
+            Inquiry
           </Link>
         </div>
       </div>

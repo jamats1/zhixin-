@@ -63,7 +63,9 @@ export default function Sidebar() {
     selectedCarPartCategory,
     setCarPartCategory,
   } = useFilterStore();
-  const { brands, isLoading } = useBrands();
+  const { brands, isLoading } = useBrands({
+    countSource: isVehiclesView ? "vehicles" : "carParts",
+  });
   const { categories: carPartCategories } = useCarPartCategories();
   const { lines: sparePartLines, isLoading: spareLinesLoading } =
     useSparePartLines(isCarPartsView ? selectedBrand : null);

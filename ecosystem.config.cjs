@@ -1,3 +1,5 @@
+require("dotenv").config({ path: "/root/var/www/nextjs/zhixin/.env.local" });
+
 module.exports = {
   apps: [
     {

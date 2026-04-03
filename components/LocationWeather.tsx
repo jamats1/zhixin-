@@ -111,7 +111,13 @@ function getConditionLabel(weatherCode: number): string {
   }
 }
 
-export default function LocationWeather() {
+type LocationWeatherProps = {
+  className?: string;
+};
+
+export default function LocationWeather({
+  className = "",
+}: LocationWeatherProps) {
   const [location, setLocation] = useState<string>("Detecting...");
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -139,10 +145,7 @@ export default function LocationWeather() {
         if (!isMounted) return;
 
         const cityName =
-          ipData.city ||
-          ipData.region ||
-          ipData.country_name ||
-          "Unknown";
+          ipData.city || ipData.region || ipData.country_name || "Unknown";
         const latitude = ipData.latitude;
         const longitude = ipData.longitude;
 
@@ -152,11 +155,14 @@ export default function LocationWeather() {
         if (latitude && longitude) {
           try {
             const weatherController = new AbortController();
-            const weatherTimeoutId = setTimeout(() => weatherController.abort(), 5000);
+            const weatherTimeoutId = setTimeout(
+              () => weatherController.abort(),
+              5000,
+            );
 
             const weatherResponse = await fetch(
               `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weather_code,is_day&timezone=auto`,
-              { signal: weatherController.signal }
+              { signal: weatherController.signal },
             );
             clearTimeout(weatherTimeoutId);
 
@@ -182,7 +188,7 @@ export default function LocationWeather() {
                 isDay,
               });
             }
-          } catch (weatherError) {
+          } catch {
             // Fallback weather if API fails
             setWeather({
               location: cityName,
@@ -204,7 +210,7 @@ export default function LocationWeather() {
             isDay: true,
           });
         }
-      } catch (error) {
+      } catch {
         // Only update state if component is still mounted
         if (isMounted) {
           // Fallback to default location
@@ -233,7 +239,9 @@ export default function LocationWeather() {
   }, []);
 
   return (
-    <div className="shrink-0 ml-6 flex items-center gap-3 px-2.5 py-2.5 rounded-md bg-gradient-to-r from-slate-50/80 to-gray-50/80 border border-slate-200/60 hover:border-slate-300/60 shadow-sm hover:shadow transition-all duration-200 backdrop-blur-sm">
+    <div
+      className={`shrink-0 flex items-center gap-3 px-2.5 py-2.5 rounded-md bg-gradient-to-r from-slate-50/80 to-gray-50/80 border border-slate-200/60 hover:border-slate-300/60 shadow-sm hover:shadow transition-all duration-200 backdrop-blur-sm ${className}`}
+    >
       {/* Location */}
       <span className="text-xs font-medium text-[var(--text-primary)] truncate tracking-wide min-w-0">
         {isLoading ? "Detecting..." : location}
@@ -242,9 +250,16 @@ export default function LocationWeather() {
       {/* Weather Display */}
       {weather && !isLoading && (
         <>
-          <div className="h-4 w-px bg-slate-300/60 flex-shrink-0" aria-hidden="true" />
+          <div
+            className="h-4 w-px bg-slate-300/60 flex-shrink-0"
+            aria-hidden="true"
+          />
           <div className="flex items-center gap-1.5 flex-shrink-0">
-            <span className="text-xs leading-none flex-shrink-0" aria-label={weather.condition}>
+            <span
+              role="img"
+              className="text-xs leading-none flex-shrink-0"
+              aria-label={weather.condition}
+            >
               {weather.icon}
             </span>
             <span className="text-xs font-semibold text-[var(--text-primary)] whitespace-nowrap tracking-tight">

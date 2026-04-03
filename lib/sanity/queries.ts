@@ -143,6 +143,18 @@ export const brandsQuery = groq`
   }
 `;
 
+/** Brands with in-stock car part count (matches Car Parts listing default filter). */
+export const brandsCarPartsQuery = groq`
+  *[_type == "brand"] | order(order asc, title asc) {
+    _id,
+    title,
+    "slug": slug.current,
+    logo,
+    "count": count(*[_type == "carPart" && inStock == true && brand._ref == ^._id]),
+    isHot
+  }
+`;
+
 /** BD Spares–style model lines (C-Class, Q5, …) for a Sanity brand. */
 export const sparePartLinesByBrandQuery = groq`
   *[_type == "sparePartLine" && brand._ref == $brandId] | order(order asc, title asc) {

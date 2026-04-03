@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import client from "@/lib/sanity/client";
-import { brandsQuery } from "@/lib/sanity/queries";
+import { brandsCarPartsQuery, brandsQuery } from "@/lib/sanity/queries";
 import type { BrandWithLogo } from "@/types";
 
 type SanityBrand = {
@@ -35,7 +35,10 @@ const MOCK_BRANDS: BrandWithLogo[] = [
   { id: "mock-18", name: "Volvo", count: 12345 },
 ];
 
-export function useBrands() {
+export type BrandsCountSource = "vehicles" | "carParts";
+
+export function useBrands(opts?: { countSource?: BrandsCountSource }) {
+  const countSource = opts?.countSource ?? "vehicles";
   const [brands, setBrands] = useState<BrandWithLogo[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -53,7 +56,9 @@ export function useBrands() {
       try {
         setIsLoading(true);
         setError(null);
-        const data = await client.fetch<SanityBrand[]>(brandsQuery);
+        const query =
+          countSource === "carParts" ? brandsCarPartsQuery : brandsQuery;
+        const data = await client.fetch<SanityBrand[]>(query);
         if (cancelled) return;
         const mapped: BrandWithLogo[] = data.map((b) => ({
           id: b._id,
@@ -77,7 +82,7 @@ export function useBrands() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [countSource]);
 
   return { brands, isLoading, error };
 }

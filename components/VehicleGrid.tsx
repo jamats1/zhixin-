@@ -17,7 +17,9 @@ export default function VehicleGrid() {
   const isVehiclesView =
     currentView === "imageList" || currentView === "truckList";
   const isCarPartsView = currentView === "featuredAlbums";
-  const { brands } = useBrands();
+  const { brands } = useBrands({
+    countSource: isVehiclesView ? "vehicles" : "carParts",
+  });
   const { categories: carPartCategories } = useCarPartCategories();
 
   // Get filter state to show active filters
