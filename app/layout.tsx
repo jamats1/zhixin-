@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Browse vehicles, trucks, and car parts. Search by brand, model, and keywords.",
   icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    icon: [{ url: "/favicon.ico", sizes: "any" }],
   },
 };
 
