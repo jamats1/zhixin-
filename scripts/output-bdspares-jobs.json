@@ -1,5 +1,2133 @@
 [
   {
+    "brandSlug": "alfa-romeo",
+    "lineSlug": "feed",
+    "path": "alfa-romeo/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/alfa-romeo/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "alfa-romeo",
+    "lineSlug": "147",
+    "path": "alfa-romeo/147",
+    "listingUrl": "https://www.bdspares.co.za/brands/alfa-romeo/147/",
+    "lineTitle": "147"
+  },
+  {
+    "brandSlug": "alfa-romeo",
+    "lineSlug": "156",
+    "path": "alfa-romeo/156",
+    "listingUrl": "https://www.bdspares.co.za/brands/alfa-romeo/156/",
+    "lineTitle": "156"
+  },
+  {
+    "brandSlug": "alfa-romeo",
+    "lineSlug": "159",
+    "path": "alfa-romeo/159",
+    "listingUrl": "https://www.bdspares.co.za/brands/alfa-romeo/159/",
+    "lineTitle": "159"
+  },
+  {
+    "brandSlug": "alfa-romeo",
+    "lineSlug": "166",
+    "path": "alfa-romeo/166",
+    "listingUrl": "https://www.bdspares.co.za/brands/alfa-romeo/166/",
+    "lineTitle": "166"
+  },
+  {
+    "brandSlug": "alfa-romeo",
+    "lineSlug": "brera",
+    "path": "alfa-romeo/brera",
+    "listingUrl": "https://www.bdspares.co.za/brands/alfa-romeo/brera/",
+    "lineTitle": "Brera"
+  },
+  {
+    "brandSlug": "alfa-romeo",
+    "lineSlug": "giulia",
+    "path": "alfa-romeo/giulia",
+    "listingUrl": "https://www.bdspares.co.za/brands/alfa-romeo/giulia/",
+    "lineTitle": "Giulia"
+  },
+  {
+    "brandSlug": "alfa-romeo",
+    "lineSlug": "giulietta",
+    "path": "alfa-romeo/giulietta",
+    "listingUrl": "https://www.bdspares.co.za/brands/alfa-romeo/giulietta/",
+    "lineTitle": "Giulietta"
+  },
+  {
+    "brandSlug": "alfa-romeo",
+    "lineSlug": "mito",
+    "path": "alfa-romeo/mito",
+    "listingUrl": "https://www.bdspares.co.za/brands/alfa-romeo/mito/",
+    "lineTitle": "Mito"
+  },
+  {
+    "brandSlug": "alfa-romeo",
+    "lineSlug": "stelvio",
+    "path": "alfa-romeo/stelvio",
+    "listingUrl": "https://www.bdspares.co.za/brands/alfa-romeo/stelvio/",
+    "lineTitle": "Stelvio"
+  },
+  {
+    "brandSlug": "audi",
+    "lineSlug": "feed",
+    "path": "audi/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/audi/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "audi",
+    "lineSlug": "a1",
+    "path": "audi/a1",
+    "listingUrl": "https://www.bdspares.co.za/brands/audi/a1/",
+    "lineTitle": "A1"
+  },
+  {
+    "brandSlug": "audi",
+    "lineSlug": "a3",
+    "path": "audi/a3",
+    "listingUrl": "https://www.bdspares.co.za/brands/audi/a3/",
+    "lineTitle": "A3"
+  },
+  {
+    "brandSlug": "audi",
+    "lineSlug": "a4",
+    "path": "audi/a4",
+    "listingUrl": "https://www.bdspares.co.za/brands/audi/a4/",
+    "lineTitle": "A4"
+  },
+  {
+    "brandSlug": "audi",
+    "lineSlug": "a5",
+    "path": "audi/a5",
+    "listingUrl": "https://www.bdspares.co.za/brands/audi/a5/",
+    "lineTitle": "A5"
+  },
+  {
+    "brandSlug": "audi",
+    "lineSlug": "a6",
+    "path": "audi/a6",
+    "listingUrl": "https://www.bdspares.co.za/brands/audi/a6/",
+    "lineTitle": "A6"
+  },
+  {
+    "brandSlug": "audi",
+    "lineSlug": "a7",
+    "path": "audi/a7",
+    "listingUrl": "https://www.bdspares.co.za/brands/audi/a7/",
+    "lineTitle": "A7"
+  },
+  {
+    "brandSlug": "audi",
+    "lineSlug": "a8",
+    "path": "audi/a8",
+    "listingUrl": "https://www.bdspares.co.za/brands/audi/a8/",
+    "lineTitle": "A8"
+  },
+  {
+    "brandSlug": "audi",
+    "lineSlug": "q2",
+    "path": "audi/q2",
+    "listingUrl": "https://www.bdspares.co.za/brands/audi/q2/",
+    "lineTitle": "Q2"
+  },
+  {
+    "brandSlug": "audi",
+    "lineSlug": "q3",
+    "path": "audi/q3",
+    "listingUrl": "https://www.bdspares.co.za/brands/audi/q3/",
+    "lineTitle": "Q3"
+  },
+  {
+    "brandSlug": "audi",
+    "lineSlug": "q5",
+    "path": "audi/q5",
+    "listingUrl": "https://www.bdspares.co.za/brands/audi/q5/",
+    "lineTitle": "Q5"
+  },
+  {
+    "brandSlug": "audi",
+    "lineSlug": "q7",
+    "path": "audi/q7",
+    "listingUrl": "https://www.bdspares.co.za/brands/audi/q7/",
+    "lineTitle": "Q7"
+  },
+  {
+    "brandSlug": "audi",
+    "lineSlug": "q8",
+    "path": "audi/q8",
+    "listingUrl": "https://www.bdspares.co.za/brands/audi/q8/",
+    "lineTitle": "Q8"
+  },
+  {
+    "brandSlug": "audi",
+    "lineSlug": "r8",
+    "path": "audi/r8",
+    "listingUrl": "https://www.bdspares.co.za/brands/audi/r8/",
+    "lineTitle": "R8"
+  },
+  {
+    "brandSlug": "audi",
+    "lineSlug": "tt",
+    "path": "audi/tt",
+    "listingUrl": "https://www.bdspares.co.za/brands/audi/tt/",
+    "lineTitle": "Tt"
+  },
+  {
+    "brandSlug": "b-max",
+    "lineSlug": "feed",
+    "path": "b-max/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/b-max/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "berlingo",
+    "lineSlug": "feed",
+    "path": "berlingo/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/berlingo/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "bmw",
+    "lineSlug": "feed",
+    "path": "bmw/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/bmw/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "bmw",
+    "lineSlug": "1-series",
+    "path": "bmw/1-series",
+    "listingUrl": "https://www.bdspares.co.za/brands/bmw/1-series/",
+    "lineTitle": "1 Series"
+  },
+  {
+    "brandSlug": "bmw",
+    "lineSlug": "2-series",
+    "path": "bmw/2-series",
+    "listingUrl": "https://www.bdspares.co.za/brands/bmw/2-series/",
+    "lineTitle": "2 Series"
+  },
+  {
+    "brandSlug": "bmw",
+    "lineSlug": "3-series",
+    "path": "bmw/3-series",
+    "listingUrl": "https://www.bdspares.co.za/brands/bmw/3-series/",
+    "lineTitle": "3 Series"
+  },
+  {
+    "brandSlug": "bmw",
+    "lineSlug": "4-series",
+    "path": "bmw/4-series",
+    "listingUrl": "https://www.bdspares.co.za/brands/bmw/4-series/",
+    "lineTitle": "4 Series"
+  },
+  {
+    "brandSlug": "bmw",
+    "lineSlug": "5-series",
+    "path": "bmw/5-series",
+    "listingUrl": "https://www.bdspares.co.za/brands/bmw/5-series/",
+    "lineTitle": "5 Series"
+  },
+  {
+    "brandSlug": "bmw",
+    "lineSlug": "6-series",
+    "path": "bmw/6-series",
+    "listingUrl": "https://www.bdspares.co.za/brands/bmw/6-series/",
+    "lineTitle": "6 Series"
+  },
+  {
+    "brandSlug": "bmw",
+    "lineSlug": "7-series",
+    "path": "bmw/7-series",
+    "listingUrl": "https://www.bdspares.co.za/brands/bmw/7-series/",
+    "lineTitle": "7 Series"
+  },
+  {
+    "brandSlug": "bmw",
+    "lineSlug": "i3",
+    "path": "bmw/i3",
+    "listingUrl": "https://www.bdspares.co.za/brands/bmw/i3/",
+    "lineTitle": "I3"
+  },
+  {
+    "brandSlug": "bmw",
+    "lineSlug": "x1",
+    "path": "bmw/x1",
+    "listingUrl": "https://www.bdspares.co.za/brands/bmw/x1/",
+    "lineTitle": "X1"
+  },
+  {
+    "brandSlug": "bmw",
+    "lineSlug": "x2",
+    "path": "bmw/x2",
+    "listingUrl": "https://www.bdspares.co.za/brands/bmw/x2/",
+    "lineTitle": "X2"
+  },
+  {
+    "brandSlug": "bmw",
+    "lineSlug": "x3",
+    "path": "bmw/x3",
+    "listingUrl": "https://www.bdspares.co.za/brands/bmw/x3/",
+    "lineTitle": "X3"
+  },
+  {
+    "brandSlug": "bmw",
+    "lineSlug": "x4",
+    "path": "bmw/x4",
+    "listingUrl": "https://www.bdspares.co.za/brands/bmw/x4/",
+    "lineTitle": "X4"
+  },
+  {
+    "brandSlug": "bmw",
+    "lineSlug": "x5",
+    "path": "bmw/x5",
+    "listingUrl": "https://www.bdspares.co.za/brands/bmw/x5/",
+    "lineTitle": "X5"
+  },
+  {
+    "brandSlug": "bmw",
+    "lineSlug": "x6",
+    "path": "bmw/x6",
+    "listingUrl": "https://www.bdspares.co.za/brands/bmw/x6/",
+    "lineTitle": "X6"
+  },
+  {
+    "brandSlug": "bmw",
+    "lineSlug": "z3",
+    "path": "bmw/z3",
+    "listingUrl": "https://www.bdspares.co.za/brands/bmw/z3/",
+    "lineTitle": "Z3"
+  },
+  {
+    "brandSlug": "bmw",
+    "lineSlug": "z4",
+    "path": "bmw/z4",
+    "listingUrl": "https://www.bdspares.co.za/brands/bmw/z4/",
+    "lineTitle": "Z4"
+  },
+  {
+    "brandSlug": "cam",
+    "lineSlug": "feed",
+    "path": "cam/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/cam/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "cam",
+    "lineSlug": "inyathi",
+    "path": "cam/inyathi",
+    "listingUrl": "https://www.bdspares.co.za/brands/cam/inyathi/",
+    "lineTitle": "Inyathi"
+  },
+  {
+    "brandSlug": "chana",
+    "lineSlug": "feed",
+    "path": "chana/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/chana/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "chana",
+    "lineSlug": "benni",
+    "path": "chana/benni",
+    "listingUrl": "https://www.bdspares.co.za/brands/chana/benni/",
+    "lineTitle": "Benni"
+  },
+  {
+    "brandSlug": "chana",
+    "lineSlug": "mini-truck",
+    "path": "chana/mini-truck",
+    "listingUrl": "https://www.bdspares.co.za/brands/chana/mini-truck/",
+    "lineTitle": "Mini Truck"
+  },
+  {
+    "brandSlug": "chana",
+    "lineSlug": "star",
+    "path": "chana/star",
+    "listingUrl": "https://www.bdspares.co.za/brands/chana/star/",
+    "lineTitle": "Star"
+  },
+  {
+    "brandSlug": "chery",
+    "lineSlug": "feed",
+    "path": "chery/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/chery/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "chery",
+    "lineSlug": "fulwin",
+    "path": "chery/fulwin",
+    "listingUrl": "https://www.bdspares.co.za/brands/chery/fulwin/",
+    "lineTitle": "Fulwin"
+  },
+  {
+    "brandSlug": "chery",
+    "lineSlug": "qq",
+    "path": "chery/qq",
+    "listingUrl": "https://www.bdspares.co.za/brands/chery/qq/",
+    "lineTitle": "Qq"
+  },
+  {
+    "brandSlug": "chery",
+    "lineSlug": "tiggo",
+    "path": "chery/tiggo",
+    "listingUrl": "https://www.bdspares.co.za/brands/chery/tiggo/",
+    "lineTitle": "Tiggo"
+  },
+  {
+    "brandSlug": "chevrolet",
+    "lineSlug": "feed",
+    "path": "chevrolet/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/chevrolet/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "chevrolet",
+    "lineSlug": "aveo",
+    "path": "chevrolet/aveo",
+    "listingUrl": "https://www.bdspares.co.za/brands/chevrolet/aveo/",
+    "lineTitle": "Aveo"
+  },
+  {
+    "brandSlug": "chevrolet",
+    "lineSlug": "captiva",
+    "path": "chevrolet/captiva",
+    "listingUrl": "https://www.bdspares.co.za/brands/chevrolet/captiva/",
+    "lineTitle": "Captiva"
+  },
+  {
+    "brandSlug": "chevrolet",
+    "lineSlug": "cruze",
+    "path": "chevrolet/cruze",
+    "listingUrl": "https://www.bdspares.co.za/brands/chevrolet/cruze/",
+    "lineTitle": "Cruze"
+  },
+  {
+    "brandSlug": "chevrolet",
+    "lineSlug": "lumina",
+    "path": "chevrolet/lumina",
+    "listingUrl": "https://www.bdspares.co.za/brands/chevrolet/lumina/",
+    "lineTitle": "Lumina"
+  },
+  {
+    "brandSlug": "chevrolet",
+    "lineSlug": "optra",
+    "path": "chevrolet/optra",
+    "listingUrl": "https://www.bdspares.co.za/brands/chevrolet/optra/",
+    "lineTitle": "Optra"
+  },
+  {
+    "brandSlug": "chevrolet",
+    "lineSlug": "orlando",
+    "path": "chevrolet/orlando",
+    "listingUrl": "https://www.bdspares.co.za/brands/chevrolet/orlando/",
+    "lineTitle": "Orlando"
+  },
+  {
+    "brandSlug": "chevrolet",
+    "lineSlug": "sonic",
+    "path": "chevrolet/sonic",
+    "listingUrl": "https://www.bdspares.co.za/brands/chevrolet/sonic/",
+    "lineTitle": "Sonic"
+  },
+  {
+    "brandSlug": "chevrolet",
+    "lineSlug": "spark",
+    "path": "chevrolet/spark",
+    "listingUrl": "https://www.bdspares.co.za/brands/chevrolet/spark/",
+    "lineTitle": "Spark"
+  },
+  {
+    "brandSlug": "chevrolet",
+    "lineSlug": "trailblazer",
+    "path": "chevrolet/trailblazer",
+    "listingUrl": "https://www.bdspares.co.za/brands/chevrolet/trailblazer/",
+    "lineTitle": "Trailblazer"
+  },
+  {
+    "brandSlug": "chevrolet",
+    "lineSlug": "utility",
+    "path": "chevrolet/utility",
+    "listingUrl": "https://www.bdspares.co.za/brands/chevrolet/utility/",
+    "lineTitle": "Utility"
+  },
+  {
+    "brandSlug": "chrysler",
+    "lineSlug": "feed",
+    "path": "chrysler/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/chrysler/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "chrysler",
+    "lineSlug": "300",
+    "path": "chrysler/300",
+    "listingUrl": "https://www.bdspares.co.za/brands/chrysler/300/",
+    "lineTitle": "300"
+  },
+  {
+    "brandSlug": "chrysler",
+    "lineSlug": "300c",
+    "path": "chrysler/300c",
+    "listingUrl": "https://www.bdspares.co.za/brands/chrysler/300c/",
+    "lineTitle": "300c"
+  },
+  {
+    "brandSlug": "chrysler",
+    "lineSlug": "crossfire",
+    "path": "chrysler/crossfire",
+    "listingUrl": "https://www.bdspares.co.za/brands/chrysler/crossfire/",
+    "lineTitle": "Crossfire"
+  },
+  {
+    "brandSlug": "chrysler",
+    "lineSlug": "neon",
+    "path": "chrysler/neon",
+    "listingUrl": "https://www.bdspares.co.za/brands/chrysler/neon/",
+    "lineTitle": "Neon"
+  },
+  {
+    "brandSlug": "chrysler",
+    "lineSlug": "pt-cruiser",
+    "path": "chrysler/pt-cruiser",
+    "listingUrl": "https://www.bdspares.co.za/brands/chrysler/pt-cruiser/",
+    "lineTitle": "Pt Cruiser"
+  },
+  {
+    "brandSlug": "chrysler",
+    "lineSlug": "sebring",
+    "path": "chrysler/sebring",
+    "listingUrl": "https://www.bdspares.co.za/brands/chrysler/sebring/",
+    "lineTitle": "Sebring"
+  },
+  {
+    "brandSlug": "chrysler",
+    "lineSlug": "voyager",
+    "path": "chrysler/voyager",
+    "listingUrl": "https://www.bdspares.co.za/brands/chrysler/voyager/",
+    "lineTitle": "Voyager"
+  },
+  {
+    "brandSlug": "citroen",
+    "lineSlug": "feed",
+    "path": "citroen/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/citroen/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "citroen",
+    "lineSlug": "c1-citroen",
+    "path": "citroen/c1-citroen",
+    "listingUrl": "https://www.bdspares.co.za/brands/citroen/c1-citroen/",
+    "lineTitle": "C1 Citroen"
+  },
+  {
+    "brandSlug": "citroen",
+    "lineSlug": "c2",
+    "path": "citroen/c2",
+    "listingUrl": "https://www.bdspares.co.za/brands/citroen/c2/",
+    "lineTitle": "C2"
+  },
+  {
+    "brandSlug": "citroen",
+    "lineSlug": "c3",
+    "path": "citroen/c3",
+    "listingUrl": "https://www.bdspares.co.za/brands/citroen/c3/",
+    "lineTitle": "C3"
+  },
+  {
+    "brandSlug": "citroen",
+    "lineSlug": "c4",
+    "path": "citroen/c4",
+    "listingUrl": "https://www.bdspares.co.za/brands/citroen/c4/",
+    "lineTitle": "C4"
+  },
+  {
+    "brandSlug": "citroen",
+    "lineSlug": "c5",
+    "path": "citroen/c5",
+    "listingUrl": "https://www.bdspares.co.za/brands/citroen/c5/",
+    "lineTitle": "C5"
+  },
+  {
+    "brandSlug": "citroen",
+    "lineSlug": "ds3",
+    "path": "citroen/ds3",
+    "listingUrl": "https://www.bdspares.co.za/brands/citroen/ds3/",
+    "lineTitle": "Ds3"
+  },
+  {
+    "brandSlug": "citroen",
+    "lineSlug": "picasso",
+    "path": "citroen/picasso",
+    "listingUrl": "https://www.bdspares.co.za/brands/citroen/picasso/",
+    "lineTitle": "Picasso"
+  },
+  {
+    "brandSlug": "citroen",
+    "lineSlug": "xsara",
+    "path": "citroen/xsara",
+    "listingUrl": "https://www.bdspares.co.za/brands/citroen/xsara/",
+    "lineTitle": "Xsara"
+  },
+  {
+    "brandSlug": "daewoo",
+    "lineSlug": "feed",
+    "path": "daewoo/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/daewoo/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "daewoo",
+    "lineSlug": "cielo",
+    "path": "daewoo/cielo",
+    "listingUrl": "https://www.bdspares.co.za/brands/daewoo/cielo/",
+    "lineTitle": "Cielo"
+  },
+  {
+    "brandSlug": "daewoo",
+    "lineSlug": "espero",
+    "path": "daewoo/espero",
+    "listingUrl": "https://www.bdspares.co.za/brands/daewoo/espero/",
+    "lineTitle": "Espero"
+  },
+  {
+    "brandSlug": "daewoo",
+    "lineSlug": "lanos",
+    "path": "daewoo/lanos",
+    "listingUrl": "https://www.bdspares.co.za/brands/daewoo/lanos/",
+    "lineTitle": "Lanos"
+  },
+  {
+    "brandSlug": "daewoo",
+    "lineSlug": "matiz",
+    "path": "daewoo/matiz",
+    "listingUrl": "https://www.bdspares.co.za/brands/daewoo/matiz/",
+    "lineTitle": "Matiz"
+  },
+  {
+    "brandSlug": "daewoo",
+    "lineSlug": "nubira",
+    "path": "daewoo/nubira",
+    "listingUrl": "https://www.bdspares.co.za/brands/daewoo/nubira/",
+    "lineTitle": "Nubira"
+  },
+  {
+    "brandSlug": "daihatsu",
+    "lineSlug": "feed",
+    "path": "daihatsu/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/daihatsu/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "daihatsu",
+    "lineSlug": "charade",
+    "path": "daihatsu/charade",
+    "listingUrl": "https://www.bdspares.co.za/brands/daihatsu/charade/",
+    "lineTitle": "Charade"
+  },
+  {
+    "brandSlug": "daihatsu",
+    "lineSlug": "copen",
+    "path": "daihatsu/copen",
+    "listingUrl": "https://www.bdspares.co.za/brands/daihatsu/copen/",
+    "lineTitle": "Copen"
+  },
+  {
+    "brandSlug": "daihatsu",
+    "lineSlug": "cuore",
+    "path": "daihatsu/cuore",
+    "listingUrl": "https://www.bdspares.co.za/brands/daihatsu/cuore/",
+    "lineTitle": "Cuore"
+  },
+  {
+    "brandSlug": "daihatsu",
+    "lineSlug": "gran-max",
+    "path": "daihatsu/gran-max",
+    "listingUrl": "https://www.bdspares.co.za/brands/daihatsu/gran-max/",
+    "lineTitle": "Gran Max"
+  },
+  {
+    "brandSlug": "daihatsu",
+    "lineSlug": "materia",
+    "path": "daihatsu/materia",
+    "listingUrl": "https://www.bdspares.co.za/brands/daihatsu/materia/",
+    "lineTitle": "Materia"
+  },
+  {
+    "brandSlug": "daihatsu",
+    "lineSlug": "sirion",
+    "path": "daihatsu/sirion",
+    "listingUrl": "https://www.bdspares.co.za/brands/daihatsu/sirion/",
+    "lineTitle": "Sirion"
+  },
+  {
+    "brandSlug": "daihatsu",
+    "lineSlug": "terios",
+    "path": "daihatsu/terios",
+    "listingUrl": "https://www.bdspares.co.za/brands/daihatsu/terios/",
+    "lineTitle": "Terios"
+  },
+  {
+    "brandSlug": "datsun",
+    "lineSlug": "feed",
+    "path": "datsun/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/datsun/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "datsun",
+    "lineSlug": "go",
+    "path": "datsun/go",
+    "listingUrl": "https://www.bdspares.co.za/brands/datsun/go/",
+    "lineTitle": "Go"
+  },
+  {
+    "brandSlug": "dodge",
+    "lineSlug": "feed",
+    "path": "dodge/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/dodge/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "dodge",
+    "lineSlug": "caliber",
+    "path": "dodge/caliber",
+    "listingUrl": "https://www.bdspares.co.za/brands/dodge/caliber/",
+    "lineTitle": "Caliber"
+  },
+  {
+    "brandSlug": "dodge",
+    "lineSlug": "journey",
+    "path": "dodge/journey",
+    "listingUrl": "https://www.bdspares.co.za/brands/dodge/journey/",
+    "lineTitle": "Journey"
+  },
+  {
+    "brandSlug": "dodge",
+    "lineSlug": "nitro",
+    "path": "dodge/nitro",
+    "listingUrl": "https://www.bdspares.co.za/brands/dodge/nitro/",
+    "lineTitle": "Nitro"
+  },
+  {
+    "brandSlug": "fiat",
+    "lineSlug": "feed",
+    "path": "fiat/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/fiat/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "fiat",
+    "lineSlug": "500",
+    "path": "fiat/500",
+    "listingUrl": "https://www.bdspares.co.za/brands/fiat/500/",
+    "lineTitle": "500"
+  },
+  {
+    "brandSlug": "fiat",
+    "lineSlug": "bravo",
+    "path": "fiat/bravo",
+    "listingUrl": "https://www.bdspares.co.za/brands/fiat/bravo/",
+    "lineTitle": "Bravo"
+  },
+  {
+    "brandSlug": "fiat",
+    "lineSlug": "croma",
+    "path": "fiat/croma",
+    "listingUrl": "https://www.bdspares.co.za/brands/fiat/croma/",
+    "lineTitle": "Croma"
+  },
+  {
+    "brandSlug": "fiat",
+    "lineSlug": "doblo",
+    "path": "fiat/doblo",
+    "listingUrl": "https://www.bdspares.co.za/brands/fiat/doblo/",
+    "lineTitle": "Doblo"
+  },
+  {
+    "brandSlug": "fiat",
+    "lineSlug": "ducato",
+    "path": "fiat/ducato",
+    "listingUrl": "https://www.bdspares.co.za/brands/fiat/ducato/",
+    "lineTitle": "Ducato"
+  },
+  {
+    "brandSlug": "fiat",
+    "lineSlug": "fiorino",
+    "path": "fiat/fiorino",
+    "listingUrl": "https://www.bdspares.co.za/brands/fiat/fiorino/",
+    "lineTitle": "Fiorino"
+  },
+  {
+    "brandSlug": "fiat",
+    "lineSlug": "fullback",
+    "path": "fiat/fullback",
+    "listingUrl": "https://www.bdspares.co.za/brands/fiat/fullback/",
+    "lineTitle": "Fullback"
+  },
+  {
+    "brandSlug": "fiat",
+    "lineSlug": "linea",
+    "path": "fiat/linea",
+    "listingUrl": "https://www.bdspares.co.za/brands/fiat/linea/",
+    "lineTitle": "Linea"
+  },
+  {
+    "brandSlug": "fiat",
+    "lineSlug": "palio",
+    "path": "fiat/palio",
+    "listingUrl": "https://www.bdspares.co.za/brands/fiat/palio/",
+    "lineTitle": "Palio"
+  },
+  {
+    "brandSlug": "fiat",
+    "lineSlug": "panda",
+    "path": "fiat/panda",
+    "listingUrl": "https://www.bdspares.co.za/brands/fiat/panda/",
+    "lineTitle": "Panda"
+  },
+  {
+    "brandSlug": "fiat",
+    "lineSlug": "punto",
+    "path": "fiat/punto",
+    "listingUrl": "https://www.bdspares.co.za/brands/fiat/punto/",
+    "lineTitle": "Punto"
+  },
+  {
+    "brandSlug": "fiat",
+    "lineSlug": "seicento",
+    "path": "fiat/seicento",
+    "listingUrl": "https://www.bdspares.co.za/brands/fiat/seicento/",
+    "lineTitle": "Seicento"
+  },
+  {
+    "brandSlug": "fiat",
+    "lineSlug": "stilo",
+    "path": "fiat/stilo",
+    "listingUrl": "https://www.bdspares.co.za/brands/fiat/stilo/",
+    "lineTitle": "Stilo"
+  },
+  {
+    "brandSlug": "fiat",
+    "lineSlug": "strada",
+    "path": "fiat/strada",
+    "listingUrl": "https://www.bdspares.co.za/brands/fiat/strada/",
+    "lineTitle": "Strada"
+  },
+  {
+    "brandSlug": "fiat",
+    "lineSlug": "tipo",
+    "path": "fiat/tipo",
+    "listingUrl": "https://www.bdspares.co.za/brands/fiat/tipo/",
+    "lineTitle": "Tipo"
+  },
+  {
+    "brandSlug": "fiat",
+    "lineSlug": "uno",
+    "path": "fiat/uno",
+    "listingUrl": "https://www.bdspares.co.za/brands/fiat/uno/",
+    "lineTitle": "Uno"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "feed",
+    "path": "ford/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "bantam",
+    "path": "ford/bantam",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/bantam/",
+    "lineTitle": "Bantam"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "courier",
+    "path": "ford/courier",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/courier/",
+    "lineTitle": "Courier"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "ecosport",
+    "path": "ford/ecosport",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/ecosport/",
+    "lineTitle": "Ecosport"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "escort",
+    "path": "ford/escort",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/escort/",
+    "lineTitle": "Escort"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "everest",
+    "path": "ford/everest",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/everest/",
+    "lineTitle": "Everest"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "falcon",
+    "path": "ford/falcon",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/falcon/",
+    "lineTitle": "Falcon"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "fiesta",
+    "path": "ford/fiesta",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/fiesta/",
+    "lineTitle": "Fiesta"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "figo",
+    "path": "ford/figo",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/figo/",
+    "lineTitle": "Figo"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "focus",
+    "path": "ford/focus",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/focus/",
+    "lineTitle": "Focus"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "fusion",
+    "path": "ford/fusion",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/fusion/",
+    "lineTitle": "Fusion"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "ikon",
+    "path": "ford/ikon",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/ikon/",
+    "lineTitle": "Ikon"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "ka",
+    "path": "ford/ka",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/ka/",
+    "lineTitle": "Ka"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "kuga",
+    "path": "ford/kuga",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/kuga/",
+    "lineTitle": "Kuga"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "laser",
+    "path": "ford/laser",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/laser/",
+    "lineTitle": "Laser"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "mondeo",
+    "path": "ford/mondeo",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/mondeo/",
+    "lineTitle": "Mondeo"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "mustang",
+    "path": "ford/mustang",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/mustang/",
+    "lineTitle": "Mustang"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "puma",
+    "path": "ford/puma",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/puma/",
+    "lineTitle": "Puma"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "ranger",
+    "path": "ford/ranger",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/ranger/",
+    "lineTitle": "Ranger"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "sapphire",
+    "path": "ford/sapphire",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/sapphire/",
+    "lineTitle": "Sapphire"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "sierra",
+    "path": "ford/sierra",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/sierra/",
+    "lineTitle": "Sierra"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "telstar",
+    "path": "ford/telstar",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/telstar/",
+    "lineTitle": "Telstar"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "territory",
+    "path": "ford/territory",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/territory/",
+    "lineTitle": "Territory"
+  },
+  {
+    "brandSlug": "ford",
+    "lineSlug": "transit-tourneo",
+    "path": "ford/transit-tourneo",
+    "listingUrl": "https://www.bdspares.co.za/brands/ford/transit-tourneo/",
+    "lineTitle": "Transit Tourneo"
+  },
+  {
+    "brandSlug": "foton",
+    "lineSlug": "feed",
+    "path": "foton/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/foton/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "foton",
+    "lineSlug": "tunland",
+    "path": "foton/tunland",
+    "listingUrl": "https://www.bdspares.co.za/brands/foton/tunland/",
+    "lineTitle": "Tunland"
+  },
+  {
+    "brandSlug": "gac",
+    "lineSlug": "feed",
+    "path": "gac/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/gac/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "gac",
+    "lineSlug": "go-now",
+    "path": "gac/go-now",
+    "listingUrl": "https://www.bdspares.co.za/brands/gac/go-now/",
+    "lineTitle": "Go Now"
+  },
+  {
+    "brandSlug": "geely",
+    "lineSlug": "feed",
+    "path": "geely/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/geely/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "geely",
+    "lineSlug": "ck",
+    "path": "geely/ck",
+    "listingUrl": "https://www.bdspares.co.za/brands/geely/ck/",
+    "lineTitle": "Ck"
+  },
+  {
+    "brandSlug": "geely",
+    "lineSlug": "emgrand",
+    "path": "geely/emgrand",
+    "listingUrl": "https://www.bdspares.co.za/brands/geely/emgrand/",
+    "lineTitle": "Emgrand"
+  },
+  {
+    "brandSlug": "geely",
+    "lineSlug": "lc",
+    "path": "geely/lc",
+    "listingUrl": "https://www.bdspares.co.za/brands/geely/lc/",
+    "lineTitle": "Lc"
+  },
+  {
+    "brandSlug": "glb",
+    "lineSlug": "feed",
+    "path": "glb/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/glb/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "gwm",
+    "lineSlug": "feed",
+    "path": "gwm/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/gwm/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "gwm",
+    "lineSlug": "florid",
+    "path": "gwm/florid",
+    "listingUrl": "https://www.bdspares.co.za/brands/gwm/florid/",
+    "lineTitle": "Florid"
+  },
+  {
+    "brandSlug": "gwm",
+    "lineSlug": "hover",
+    "path": "gwm/hover",
+    "listingUrl": "https://www.bdspares.co.za/brands/gwm/hover/",
+    "lineTitle": "Hover"
+  },
+  {
+    "brandSlug": "gwm",
+    "lineSlug": "m4",
+    "path": "gwm/m4",
+    "listingUrl": "https://www.bdspares.co.za/brands/gwm/m4/",
+    "lineTitle": "M4"
+  },
+  {
+    "brandSlug": "gwm",
+    "lineSlug": "p-series",
+    "path": "gwm/p-series",
+    "listingUrl": "https://www.bdspares.co.za/brands/gwm/p-series/",
+    "lineTitle": "P Series"
+  },
+  {
+    "brandSlug": "gwm",
+    "lineSlug": "sailor",
+    "path": "gwm/sailor",
+    "listingUrl": "https://www.bdspares.co.za/brands/gwm/sailor/",
+    "lineTitle": "Sailor"
+  },
+  {
+    "brandSlug": "gwm",
+    "lineSlug": "steed",
+    "path": "gwm/steed",
+    "listingUrl": "https://www.bdspares.co.za/brands/gwm/steed/",
+    "lineTitle": "Steed"
+  },
+  {
+    "brandSlug": "haval",
+    "lineSlug": "feed",
+    "path": "haval/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/haval/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "haval",
+    "lineSlug": "h1-haval",
+    "path": "haval/h1-haval",
+    "listingUrl": "https://www.bdspares.co.za/brands/haval/h1-haval/",
+    "lineTitle": "H1 Haval"
+  },
+  {
+    "brandSlug": "haval",
+    "lineSlug": "h2",
+    "path": "haval/h2",
+    "listingUrl": "https://www.bdspares.co.za/brands/haval/h2/",
+    "lineTitle": "H2"
+  },
+  {
+    "brandSlug": "haval",
+    "lineSlug": "h5",
+    "path": "haval/h5",
+    "listingUrl": "https://www.bdspares.co.za/brands/haval/h5/",
+    "lineTitle": "H5"
+  },
+  {
+    "brandSlug": "haval",
+    "lineSlug": "h6",
+    "path": "haval/h6",
+    "listingUrl": "https://www.bdspares.co.za/brands/haval/h6/",
+    "lineTitle": "H6"
+  },
+  {
+    "brandSlug": "haval",
+    "lineSlug": "h9",
+    "path": "haval/h9",
+    "listingUrl": "https://www.bdspares.co.za/brands/haval/h9/",
+    "lineTitle": "H9"
+  },
+  {
+    "brandSlug": "haval",
+    "lineSlug": "jolion",
+    "path": "haval/jolion",
+    "listingUrl": "https://www.bdspares.co.za/brands/haval/jolion/",
+    "lineTitle": "Jolion"
+  },
+  {
+    "brandSlug": "honda",
+    "lineSlug": "feed",
+    "path": "honda/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/honda/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "honda",
+    "lineSlug": "accord",
+    "path": "honda/accord",
+    "listingUrl": "https://www.bdspares.co.za/brands/honda/accord/",
+    "lineTitle": "Accord"
+  },
+  {
+    "brandSlug": "honda",
+    "lineSlug": "amaze",
+    "path": "honda/amaze",
+    "listingUrl": "https://www.bdspares.co.za/brands/honda/amaze/",
+    "lineTitle": "Amaze"
+  },
+  {
+    "brandSlug": "honda",
+    "lineSlug": "ballade",
+    "path": "honda/ballade",
+    "listingUrl": "https://www.bdspares.co.za/brands/honda/ballade/",
+    "lineTitle": "Ballade"
+  },
+  {
+    "brandSlug": "honda",
+    "lineSlug": "br-v",
+    "path": "honda/br-v",
+    "listingUrl": "https://www.bdspares.co.za/brands/honda/br-v/",
+    "lineTitle": "Br V"
+  },
+  {
+    "brandSlug": "honda",
+    "lineSlug": "brio",
+    "path": "honda/brio",
+    "listingUrl": "https://www.bdspares.co.za/brands/honda/brio/",
+    "lineTitle": "Brio"
+  },
+  {
+    "brandSlug": "honda",
+    "lineSlug": "civic",
+    "path": "honda/civic",
+    "listingUrl": "https://www.bdspares.co.za/brands/honda/civic/",
+    "lineTitle": "Civic"
+  },
+  {
+    "brandSlug": "honda",
+    "lineSlug": "cr-v",
+    "path": "honda/cr-v",
+    "listingUrl": "https://www.bdspares.co.za/brands/honda/cr-v/",
+    "lineTitle": "Cr V"
+  },
+  {
+    "brandSlug": "honda",
+    "lineSlug": "fit",
+    "path": "honda/fit",
+    "listingUrl": "https://www.bdspares.co.za/brands/honda/fit/",
+    "lineTitle": "Fit"
+  },
+  {
+    "brandSlug": "honda",
+    "lineSlug": "fr-v",
+    "path": "honda/fr-v",
+    "listingUrl": "https://www.bdspares.co.za/brands/honda/fr-v/",
+    "lineTitle": "Fr V"
+  },
+  {
+    "brandSlug": "honda",
+    "lineSlug": "hr-v",
+    "path": "honda/hr-v",
+    "listingUrl": "https://www.bdspares.co.za/brands/honda/hr-v/",
+    "lineTitle": "Hr V"
+  },
+  {
+    "brandSlug": "honda",
+    "lineSlug": "jazz",
+    "path": "honda/jazz",
+    "listingUrl": "https://www.bdspares.co.za/brands/honda/jazz/",
+    "lineTitle": "Jazz"
+  },
+  {
+    "brandSlug": "honda",
+    "lineSlug": "mobilio",
+    "path": "honda/mobilio",
+    "listingUrl": "https://www.bdspares.co.za/brands/honda/mobilio/",
+    "lineTitle": "Mobilio"
+  },
+  {
+    "brandSlug": "honda",
+    "lineSlug": "prelude",
+    "path": "honda/prelude",
+    "listingUrl": "https://www.bdspares.co.za/brands/honda/prelude/",
+    "lineTitle": "Prelude"
+  },
+  {
+    "brandSlug": "honda",
+    "lineSlug": "s2000",
+    "path": "honda/s2000",
+    "listingUrl": "https://www.bdspares.co.za/brands/honda/s2000/",
+    "lineTitle": "S2000"
+  },
+  {
+    "brandSlug": "hummer",
+    "lineSlug": "feed",
+    "path": "hummer/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/hummer/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "feed",
+    "path": "hyundai/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "accent",
+    "path": "hyundai/accent",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/accent/",
+    "lineTitle": "Accent"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "atos",
+    "path": "hyundai/atos",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/atos/",
+    "lineTitle": "Atos"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "creta",
+    "path": "hyundai/creta",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/creta/",
+    "lineTitle": "Creta"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "elantra",
+    "path": "hyundai/elantra",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/elantra/",
+    "lineTitle": "Elantra"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "getz",
+    "path": "hyundai/getz",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/getz/",
+    "lineTitle": "Getz"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "grand-i10",
+    "path": "hyundai/grand-i10",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/grand-i10/",
+    "lineTitle": "Grand I10"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "h1",
+    "path": "hyundai/h1",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/h1/",
+    "lineTitle": "H1"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "h100",
+    "path": "hyundai/h100",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/h100/",
+    "lineTitle": "H100"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "i10",
+    "path": "hyundai/i10",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/i10/",
+    "lineTitle": "I10"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "i20",
+    "path": "hyundai/i20",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/i20/",
+    "lineTitle": "I20"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "i30",
+    "path": "hyundai/i30",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/i30/",
+    "lineTitle": "I30"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "ix35",
+    "path": "hyundai/ix35",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/ix35/",
+    "lineTitle": "Ix35"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "kona",
+    "path": "hyundai/kona",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/kona/",
+    "lineTitle": "Kona"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "rio-hyundai",
+    "path": "hyundai/rio-hyundai",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/rio-hyundai/",
+    "lineTitle": "Rio Hyundai"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "santa-fe",
+    "path": "hyundai/santa-fe",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/santa-fe/",
+    "lineTitle": "Santa Fe"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "seltos-hyundai",
+    "path": "hyundai/seltos-hyundai",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/seltos-hyundai/",
+    "lineTitle": "Seltos Hyundai"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "sonata-hyundai",
+    "path": "hyundai/sonata-hyundai",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/sonata-hyundai/",
+    "lineTitle": "Sonata Hyundai"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "staria",
+    "path": "hyundai/staria",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/staria/",
+    "lineTitle": "Staria"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "terracan",
+    "path": "hyundai/terracan",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/terracan/",
+    "lineTitle": "Terracan"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "tiburon",
+    "path": "hyundai/tiburon",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/tiburon/",
+    "lineTitle": "Tiburon"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "tucson",
+    "path": "hyundai/tucson",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/tucson/",
+    "lineTitle": "Tucson"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "veloster",
+    "path": "hyundai/veloster",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/veloster/",
+    "lineTitle": "Veloster"
+  },
+  {
+    "brandSlug": "hyundai",
+    "lineSlug": "venue",
+    "path": "hyundai/venue",
+    "listingUrl": "https://www.bdspares.co.za/brands/hyundai/venue/",
+    "lineTitle": "Venue"
+  },
+  {
+    "brandSlug": "infiniti",
+    "lineSlug": "feed",
+    "path": "infiniti/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/infiniti/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "infiniti",
+    "lineSlug": "q50",
+    "path": "infiniti/q50",
+    "listingUrl": "https://www.bdspares.co.za/brands/infiniti/q50/",
+    "lineTitle": "Q50"
+  },
+  {
+    "brandSlug": "isuzu",
+    "lineSlug": "feed",
+    "path": "isuzu/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/isuzu/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "isuzu",
+    "lineSlug": "d-max",
+    "path": "isuzu/d-max",
+    "listingUrl": "https://www.bdspares.co.za/brands/isuzu/d-max/",
+    "lineTitle": "D Max"
+  },
+  {
+    "brandSlug": "isuzu",
+    "lineSlug": "kb",
+    "path": "isuzu/kb",
+    "listingUrl": "https://www.bdspares.co.za/brands/isuzu/kb/",
+    "lineTitle": "Kb"
+  },
+  {
+    "brandSlug": "isuzu",
+    "lineSlug": "mux",
+    "path": "isuzu/mux",
+    "listingUrl": "https://www.bdspares.co.za/brands/isuzu/mux/",
+    "lineTitle": "Mux"
+  },
+  {
+    "brandSlug": "isuzu",
+    "lineSlug": "npr",
+    "path": "isuzu/npr",
+    "listingUrl": "https://www.bdspares.co.za/brands/isuzu/npr/",
+    "lineTitle": "Npr"
+  },
+  {
+    "brandSlug": "isuzu",
+    "lineSlug": "wfr",
+    "path": "isuzu/wfr",
+    "listingUrl": "https://www.bdspares.co.za/brands/isuzu/wfr/",
+    "lineTitle": "Wfr"
+  },
+  {
+    "brandSlug": "iveco",
+    "lineSlug": "feed",
+    "path": "iveco/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/iveco/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "iveco",
+    "lineSlug": "daily",
+    "path": "iveco/daily",
+    "listingUrl": "https://www.bdspares.co.za/brands/iveco/daily/",
+    "lineTitle": "Daily"
+  },
+  {
+    "brandSlug": "jac",
+    "lineSlug": "feed",
+    "path": "jac/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/jac/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "jac",
+    "lineSlug": "x200",
+    "path": "jac/x200",
+    "listingUrl": "https://www.bdspares.co.za/brands/jac/x200/",
+    "lineTitle": "X200"
+  },
+  {
+    "brandSlug": "jaecoo",
+    "lineSlug": "feed",
+    "path": "jaecoo/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/jaecoo/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "jaecoo",
+    "lineSlug": "j7",
+    "path": "jaecoo/j7",
+    "listingUrl": "https://www.bdspares.co.za/brands/jaecoo/j7/",
+    "lineTitle": "J7"
+  },
+  {
+    "brandSlug": "jaguar",
+    "lineSlug": "feed",
+    "path": "jaguar/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/jaguar/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "jaguar",
+    "lineSlug": "e-pace",
+    "path": "jaguar/e-pace",
+    "listingUrl": "https://www.bdspares.co.za/brands/jaguar/e-pace/",
+    "lineTitle": "E Pace"
+  },
+  {
+    "brandSlug": "jaguar",
+    "lineSlug": "f-pace",
+    "path": "jaguar/f-pace",
+    "listingUrl": "https://www.bdspares.co.za/brands/jaguar/f-pace/",
+    "lineTitle": "F Pace"
+  },
+  {
+    "brandSlug": "jaguar",
+    "lineSlug": "f-type",
+    "path": "jaguar/f-type",
+    "listingUrl": "https://www.bdspares.co.za/brands/jaguar/f-type/",
+    "lineTitle": "F Type"
+  },
+  {
+    "brandSlug": "jaguar",
+    "lineSlug": "s-type",
+    "path": "jaguar/s-type",
+    "listingUrl": "https://www.bdspares.co.za/brands/jaguar/s-type/",
+    "lineTitle": "S Type"
+  },
+  {
+    "brandSlug": "jaguar",
+    "lineSlug": "x-type",
+    "path": "jaguar/x-type",
+    "listingUrl": "https://www.bdspares.co.za/brands/jaguar/x-type/",
+    "lineTitle": "X Type"
+  },
+  {
+    "brandSlug": "jaguar",
+    "lineSlug": "xe",
+    "path": "jaguar/xe",
+    "listingUrl": "https://www.bdspares.co.za/brands/jaguar/xe/",
+    "lineTitle": "Xe"
+  },
+  {
+    "brandSlug": "jaguar",
+    "lineSlug": "xf",
+    "path": "jaguar/xf",
+    "listingUrl": "https://www.bdspares.co.za/brands/jaguar/xf/",
+    "lineTitle": "Xf"
+  },
+  {
+    "brandSlug": "jeep",
+    "lineSlug": "feed",
+    "path": "jeep/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/jeep/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "jeep",
+    "lineSlug": "cherokee",
+    "path": "jeep/cherokee",
+    "listingUrl": "https://www.bdspares.co.za/brands/jeep/cherokee/",
+    "lineTitle": "Cherokee"
+  },
+  {
+    "brandSlug": "jeep",
+    "lineSlug": "compass",
+    "path": "jeep/compass",
+    "listingUrl": "https://www.bdspares.co.za/brands/jeep/compass/",
+    "lineTitle": "Compass"
+  },
+  {
+    "brandSlug": "jeep",
+    "lineSlug": "gladiator",
+    "path": "jeep/gladiator",
+    "listingUrl": "https://www.bdspares.co.za/brands/jeep/gladiator/",
+    "lineTitle": "Gladiator"
+  },
+  {
+    "brandSlug": "jeep",
+    "lineSlug": "grand-cherokee",
+    "path": "jeep/grand-cherokee",
+    "listingUrl": "https://www.bdspares.co.za/brands/jeep/grand-cherokee/",
+    "lineTitle": "Grand Cherokee"
+  },
+  {
+    "brandSlug": "jeep",
+    "lineSlug": "patriot",
+    "path": "jeep/patriot",
+    "listingUrl": "https://www.bdspares.co.za/brands/jeep/patriot/",
+    "lineTitle": "Patriot"
+  },
+  {
+    "brandSlug": "jeep",
+    "lineSlug": "renegade",
+    "path": "jeep/renegade",
+    "listingUrl": "https://www.bdspares.co.za/brands/jeep/renegade/",
+    "lineTitle": "Renegade"
+  },
+  {
+    "brandSlug": "jeep",
+    "lineSlug": "wrangler",
+    "path": "jeep/wrangler",
+    "listingUrl": "https://www.bdspares.co.za/brands/jeep/wrangler/",
+    "lineTitle": "Wrangler"
+  },
+  {
+    "brandSlug": "k2500",
+    "lineSlug": "feed",
+    "path": "k2500/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/k2500/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "kia",
+    "lineSlug": "feed",
+    "path": "kia/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/kia/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "kia",
+    "lineSlug": "carens",
+    "path": "kia/carens",
+    "listingUrl": "https://www.bdspares.co.za/brands/kia/carens/",
+    "lineTitle": "Carens"
+  },
+  {
+    "brandSlug": "kia",
+    "lineSlug": "carnival",
+    "path": "kia/carnival",
+    "listingUrl": "https://www.bdspares.co.za/brands/kia/carnival/",
+    "lineTitle": "Carnival"
+  },
+  {
+    "brandSlug": "kia",
+    "lineSlug": "cerato",
+    "path": "kia/cerato",
+    "listingUrl": "https://www.bdspares.co.za/brands/kia/cerato/",
+    "lineTitle": "Cerato"
+  },
+  {
+    "brandSlug": "kia",
+    "lineSlug": "k2700",
+    "path": "kia/k2700",
+    "listingUrl": "https://www.bdspares.co.za/brands/kia/k2700/",
+    "lineTitle": "K2700"
+  },
+  {
+    "brandSlug": "kia",
+    "lineSlug": "optima",
+    "path": "kia/optima",
+    "listingUrl": "https://www.bdspares.co.za/brands/kia/optima/",
+    "lineTitle": "Optima"
+  },
+  {
+    "brandSlug": "kia",
+    "lineSlug": "pegas",
+    "path": "kia/pegas",
+    "listingUrl": "https://www.bdspares.co.za/brands/kia/pegas/",
+    "lineTitle": "Pegas"
+  },
+  {
+    "brandSlug": "kia",
+    "lineSlug": "picanto",
+    "path": "kia/picanto",
+    "listingUrl": "https://www.bdspares.co.za/brands/kia/picanto/",
+    "lineTitle": "Picanto"
+  },
+  {
+    "brandSlug": "kia",
+    "lineSlug": "proceed",
+    "path": "kia/proceed",
+    "listingUrl": "https://www.bdspares.co.za/brands/kia/proceed/",
+    "lineTitle": "Proceed"
+  },
+  {
+    "brandSlug": "kia",
+    "lineSlug": "rio",
+    "path": "kia/rio",
+    "listingUrl": "https://www.bdspares.co.za/brands/kia/rio/",
+    "lineTitle": "Rio"
+  },
+  {
+    "brandSlug": "kia",
+    "lineSlug": "sedona",
+    "path": "kia/sedona",
+    "listingUrl": "https://www.bdspares.co.za/brands/kia/sedona/",
+    "lineTitle": "Sedona"
+  },
+  {
+    "brandSlug": "kia",
+    "lineSlug": "seltos",
+    "path": "kia/seltos",
+    "listingUrl": "https://www.bdspares.co.za/brands/kia/seltos/",
+    "lineTitle": "Seltos"
+  },
+  {
+    "brandSlug": "kia",
+    "lineSlug": "shuma",
+    "path": "kia/shuma",
+    "listingUrl": "https://www.bdspares.co.za/brands/kia/shuma/",
+    "lineTitle": "Shuma"
+  },
+  {
+    "brandSlug": "kia",
+    "lineSlug": "sonet",
+    "path": "kia/sonet",
+    "listingUrl": "https://www.bdspares.co.za/brands/kia/sonet/",
+    "lineTitle": "Sonet"
+  },
+  {
+    "brandSlug": "kia",
+    "lineSlug": "sorento",
+    "path": "kia/sorento",
+    "listingUrl": "https://www.bdspares.co.za/brands/kia/sorento/",
+    "lineTitle": "Sorento"
+  },
+  {
+    "brandSlug": "kia",
+    "lineSlug": "soul",
+    "path": "kia/soul",
+    "listingUrl": "https://www.bdspares.co.za/brands/kia/soul/",
+    "lineTitle": "Soul"
+  },
+  {
+    "brandSlug": "kia",
+    "lineSlug": "sportage",
+    "path": "kia/sportage",
+    "listingUrl": "https://www.bdspares.co.za/brands/kia/sportage/",
+    "lineTitle": "Sportage"
+  },
+  {
+    "brandSlug": "land-rover",
+    "lineSlug": "feed",
+    "path": "land-rover/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/land-rover/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "land-rover",
+    "lineSlug": "defender",
+    "path": "land-rover/defender",
+    "listingUrl": "https://www.bdspares.co.za/brands/land-rover/defender/",
+    "lineTitle": "Defender"
+  },
+  {
+    "brandSlug": "land-rover",
+    "lineSlug": "discovery",
+    "path": "land-rover/discovery",
+    "listingUrl": "https://www.bdspares.co.za/brands/land-rover/discovery/",
+    "lineTitle": "Discovery"
+  },
+  {
+    "brandSlug": "land-rover",
+    "lineSlug": "discovery-sport",
+    "path": "land-rover/discovery-sport",
+    "listingUrl": "https://www.bdspares.co.za/brands/land-rover/discovery-sport/",
+    "lineTitle": "Discovery Sport"
+  },
+  {
+    "brandSlug": "land-rover",
+    "lineSlug": "evoque",
+    "path": "land-rover/evoque",
+    "listingUrl": "https://www.bdspares.co.za/brands/land-rover/evoque/",
+    "lineTitle": "Evoque"
+  },
+  {
+    "brandSlug": "land-rover",
+    "lineSlug": "freelander",
+    "path": "land-rover/freelander",
+    "listingUrl": "https://www.bdspares.co.za/brands/land-rover/freelander/",
+    "lineTitle": "Freelander"
+  },
+  {
+    "brandSlug": "land-rover",
+    "lineSlug": "range-rover",
+    "path": "land-rover/range-rover",
+    "listingUrl": "https://www.bdspares.co.za/brands/land-rover/range-rover/",
+    "lineTitle": "Range Rover"
+  },
+  {
+    "brandSlug": "land-rover",
+    "lineSlug": "velar",
+    "path": "land-rover/velar",
+    "listingUrl": "https://www.bdspares.co.za/brands/land-rover/velar/",
+    "lineTitle": "Velar"
+  },
+  {
+    "brandSlug": "lexus",
+    "lineSlug": "feed",
+    "path": "lexus/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/lexus/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "lexus",
+    "lineSlug": "ct",
+    "path": "lexus/ct",
+    "listingUrl": "https://www.bdspares.co.za/brands/lexus/ct/",
+    "lineTitle": "Ct"
+  },
+  {
+    "brandSlug": "lexus",
+    "lineSlug": "es",
+    "path": "lexus/es",
+    "listingUrl": "https://www.bdspares.co.za/brands/lexus/es/",
+    "lineTitle": "Es"
+  },
+  {
+    "brandSlug": "lexus",
+    "lineSlug": "gs",
+    "path": "lexus/gs",
+    "listingUrl": "https://www.bdspares.co.za/brands/lexus/gs/",
+    "lineTitle": "Gs"
+  },
+  {
+    "brandSlug": "lexus",
+    "lineSlug": "is",
+    "path": "lexus/is",
+    "listingUrl": "https://www.bdspares.co.za/brands/lexus/is/",
+    "lineTitle": "Is"
+  },
+  {
+    "brandSlug": "lexus",
+    "lineSlug": "ls",
+    "path": "lexus/ls",
+    "listingUrl": "https://www.bdspares.co.za/brands/lexus/ls/",
+    "lineTitle": "Ls"
+  },
+  {
+    "brandSlug": "lexus",
+    "lineSlug": "lx",
+    "path": "lexus/lx",
+    "listingUrl": "https://www.bdspares.co.za/brands/lexus/lx/",
+    "lineTitle": "Lx"
+  },
+  {
+    "brandSlug": "lexus",
+    "lineSlug": "nx",
+    "path": "lexus/nx",
+    "listingUrl": "https://www.bdspares.co.za/brands/lexus/nx/",
+    "lineTitle": "Nx"
+  },
+  {
+    "brandSlug": "lexus",
+    "lineSlug": "rx",
+    "path": "lexus/rx",
+    "listingUrl": "https://www.bdspares.co.za/brands/lexus/rx/",
+    "lineTitle": "Rx"
+  },
+  {
+    "brandSlug": "mahindra",
+    "lineSlug": "feed",
+    "path": "mahindra/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/mahindra/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "mahindra",
+    "lineSlug": "bolero",
+    "path": "mahindra/bolero",
+    "listingUrl": "https://www.bdspares.co.za/brands/mahindra/bolero/",
+    "lineTitle": "Bolero"
+  },
+  {
+    "brandSlug": "mahindra",
+    "lineSlug": "kuv",
+    "path": "mahindra/kuv",
+    "listingUrl": "https://www.bdspares.co.za/brands/mahindra/kuv/",
+    "lineTitle": "Kuv"
+  },
+  {
+    "brandSlug": "mahindra",
+    "lineSlug": "scorpio",
+    "path": "mahindra/scorpio",
+    "listingUrl": "https://www.bdspares.co.za/brands/mahindra/scorpio/",
+    "lineTitle": "Scorpio"
+  },
+  {
+    "brandSlug": "mahindra",
+    "lineSlug": "tuv",
+    "path": "mahindra/tuv",
+    "listingUrl": "https://www.bdspares.co.za/brands/mahindra/tuv/",
+    "lineTitle": "Tuv"
+  },
+  {
+    "brandSlug": "mahindra",
+    "lineSlug": "xuv",
+    "path": "mahindra/xuv",
+    "listingUrl": "https://www.bdspares.co.za/brands/mahindra/xuv/",
+    "lineTitle": "Xuv"
+  },
+  {
+    "brandSlug": "mahindra",
+    "lineSlug": "xylo",
+    "path": "mahindra/xylo",
+    "listingUrl": "https://www.bdspares.co.za/brands/mahindra/xylo/",
+    "lineTitle": "Xylo"
+  },
+  {
+    "brandSlug": "man",
+    "lineSlug": "feed",
+    "path": "man/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/man/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "man",
+    "lineSlug": "tga",
+    "path": "man/tga",
+    "listingUrl": "https://www.bdspares.co.za/brands/man/tga/",
+    "lineTitle": "Tga"
+  },
+  {
+    "brandSlug": "man",
+    "lineSlug": "tgl",
+    "path": "man/tgl",
+    "listingUrl": "https://www.bdspares.co.za/brands/man/tgl/",
+    "lineTitle": "Tgl"
+  },
+  {
+    "brandSlug": "maserati",
+    "lineSlug": "feed",
+    "path": "maserati/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/maserati/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "maserati",
+    "lineSlug": "levante",
+    "path": "maserati/levante",
+    "listingUrl": "https://www.bdspares.co.za/brands/maserati/levante/",
+    "lineTitle": "Levante"
+  },
+  {
+    "brandSlug": "maserati",
+    "lineSlug": "quattroporte",
+    "path": "maserati/quattroporte",
+    "listingUrl": "https://www.bdspares.co.za/brands/maserati/quattroporte/",
+    "lineTitle": "Quattroporte"
+  },
+  {
+    "brandSlug": "mazda",
+    "lineSlug": "feed",
+    "path": "mazda/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/mazda/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "mazda",
+    "lineSlug": "2",
+    "path": "mazda/2",
+    "listingUrl": "https://www.bdspares.co.za/brands/mazda/2/",
+    "lineTitle": "2"
+  },
+  {
+    "brandSlug": "mazda",
+    "lineSlug": "3",
+    "path": "mazda/3",
+    "listingUrl": "https://www.bdspares.co.za/brands/mazda/3/",
+    "lineTitle": "3"
+  },
+  {
+    "brandSlug": "mazda",
+    "lineSlug": "323",
+    "path": "mazda/323",
+    "listingUrl": "https://www.bdspares.co.za/brands/mazda/323/",
+    "lineTitle": "323"
+  },
+  {
+    "brandSlug": "mazda",
+    "lineSlug": "5",
+    "path": "mazda/5",
+    "listingUrl": "https://www.bdspares.co.za/brands/mazda/5/",
+    "lineTitle": "5"
+  },
+  {
+    "brandSlug": "mazda",
+    "lineSlug": "6",
+    "path": "mazda/6",
+    "listingUrl": "https://www.bdspares.co.za/brands/mazda/6/",
+    "lineTitle": "6"
+  },
+  {
+    "brandSlug": "mazda",
+    "lineSlug": "626",
+    "path": "mazda/626",
+    "listingUrl": "https://www.bdspares.co.za/brands/mazda/626/",
+    "lineTitle": "626"
+  },
+  {
+    "brandSlug": "mazda",
+    "lineSlug": "b-series",
+    "path": "mazda/b-series",
+    "listingUrl": "https://www.bdspares.co.za/brands/mazda/b-series/",
+    "lineTitle": "B Series"
+  },
+  {
+    "brandSlug": "mazda",
+    "lineSlug": "bt50",
+    "path": "mazda/bt50",
+    "listingUrl": "https://www.bdspares.co.za/brands/mazda/bt50/",
+    "lineTitle": "Bt50"
+  },
+  {
+    "brandSlug": "mazda",
+    "lineSlug": "cx-3",
+    "path": "mazda/cx-3",
+    "listingUrl": "https://www.bdspares.co.za/brands/mazda/cx-3/",
+    "lineTitle": "Cx 3"
+  },
+  {
+    "brandSlug": "mazda",
+    "lineSlug": "cx-30",
+    "path": "mazda/cx-30",
+    "listingUrl": "https://www.bdspares.co.za/brands/mazda/cx-30/",
+    "lineTitle": "Cx 30"
+  },
+  {
+    "brandSlug": "mazda",
+    "lineSlug": "cx-5",
+    "path": "mazda/cx-5",
+    "listingUrl": "https://www.bdspares.co.za/brands/mazda/cx-5/",
+    "lineTitle": "Cx 5"
+  },
+  {
+    "brandSlug": "mazda",
+    "lineSlug": "cx-7",
+    "path": "mazda/cx-7",
+    "listingUrl": "https://www.bdspares.co.za/brands/mazda/cx-7/",
+    "lineTitle": "Cx 7"
+  },
+  {
+    "brandSlug": "mazda",
+    "lineSlug": "drifter",
+    "path": "mazda/drifter",
+    "listingUrl": "https://www.bdspares.co.za/brands/mazda/drifter/",
+    "lineTitle": "Drifter"
+  },
+  {
+    "brandSlug": "mazda",
+    "lineSlug": "etude",
+    "path": "mazda/etude",
+    "listingUrl": "https://www.bdspares.co.za/brands/mazda/etude/",
+    "lineTitle": "Etude"
+  },
+  {
+    "brandSlug": "mazda",
+    "lineSlug": "magnum",
+    "path": "mazda/magnum",
+    "listingUrl": "https://www.bdspares.co.za/brands/mazda/magnum/",
+    "lineTitle": "Magnum"
+  },
+  {
+    "brandSlug": "mazda",
+    "lineSlug": "mx-5",
+    "path": "mazda/mx-5",
+    "listingUrl": "https://www.bdspares.co.za/brands/mazda/mx-5/",
+    "lineTitle": "Mx 5"
+  },
+  {
+    "brandSlug": "mazda",
+    "lineSlug": "rustler",
+    "path": "mazda/rustler",
+    "listingUrl": "https://www.bdspares.co.za/brands/mazda/rustler/",
+    "lineTitle": "Rustler"
+  },
+  {
+    "brandSlug": "mclaren",
+    "lineSlug": "feed",
+    "path": "mclaren/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/mclaren/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "mclaren",
+    "lineSlug": "p1",
+    "path": "mclaren/p1",
+    "listingUrl": "https://www.bdspares.co.za/brands/mclaren/p1/",
+    "lineTitle": "P1"
+  },
+  {
     "brandSlug": "mercedes-benz",
     "lineSlug": "feed",
     "path": "mercedes-benz/feed",
@@ -180,5 +2308,1454 @@
     "path": "mercedes-benz/x-class",
     "listingUrl": "https://www.bdspares.co.za/brands/mercedes-benz/x-class/",
     "lineTitle": "X Class"
+  },
+  {
+    "brandSlug": "mg",
+    "lineSlug": "feed",
+    "path": "mg/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/mg/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "mg",
+    "lineSlug": "6-mg",
+    "path": "mg/6-mg",
+    "listingUrl": "https://www.bdspares.co.za/brands/mg/6-mg/",
+    "lineTitle": "6 Mg"
+  },
+  {
+    "brandSlug": "mg",
+    "lineSlug": "rover",
+    "path": "mg/rover",
+    "listingUrl": "https://www.bdspares.co.za/brands/mg/rover/",
+    "lineTitle": "Rover"
+  },
+  {
+    "brandSlug": "mini-cooper",
+    "lineSlug": "feed",
+    "path": "mini-cooper/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/mini-cooper/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "mini-cooper",
+    "lineSlug": "clubman",
+    "path": "mini-cooper/clubman",
+    "listingUrl": "https://www.bdspares.co.za/brands/mini-cooper/clubman/",
+    "lineTitle": "Clubman"
+  },
+  {
+    "brandSlug": "mini-cooper",
+    "lineSlug": "countryman",
+    "path": "mini-cooper/countryman",
+    "listingUrl": "https://www.bdspares.co.za/brands/mini-cooper/countryman/",
+    "lineTitle": "Countryman"
+  },
+  {
+    "brandSlug": "mitsubishi",
+    "lineSlug": "feed",
+    "path": "mitsubishi/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/mitsubishi/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "mitsubishi",
+    "lineSlug": "asx",
+    "path": "mitsubishi/asx",
+    "listingUrl": "https://www.bdspares.co.za/brands/mitsubishi/asx/",
+    "lineTitle": "Asx"
+  },
+  {
+    "brandSlug": "mitsubishi",
+    "lineSlug": "chariot",
+    "path": "mitsubishi/chariot",
+    "listingUrl": "https://www.bdspares.co.za/brands/mitsubishi/chariot/",
+    "lineTitle": "Chariot"
+  },
+  {
+    "brandSlug": "mitsubishi",
+    "lineSlug": "colt",
+    "path": "mitsubishi/colt",
+    "listingUrl": "https://www.bdspares.co.za/brands/mitsubishi/colt/",
+    "lineTitle": "Colt"
+  },
+  {
+    "brandSlug": "mitsubishi",
+    "lineSlug": "eclipse-cross",
+    "path": "mitsubishi/eclipse-cross",
+    "listingUrl": "https://www.bdspares.co.za/brands/mitsubishi/eclipse-cross/",
+    "lineTitle": "Eclipse Cross"
+  },
+  {
+    "brandSlug": "mitsubishi",
+    "lineSlug": "l300",
+    "path": "mitsubishi/l300",
+    "listingUrl": "https://www.bdspares.co.za/brands/mitsubishi/l300/",
+    "lineTitle": "L300"
+  },
+  {
+    "brandSlug": "mitsubishi",
+    "lineSlug": "lancer",
+    "path": "mitsubishi/lancer",
+    "listingUrl": "https://www.bdspares.co.za/brands/mitsubishi/lancer/",
+    "lineTitle": "Lancer"
+  },
+  {
+    "brandSlug": "mitsubishi",
+    "lineSlug": "mirage",
+    "path": "mitsubishi/mirage",
+    "listingUrl": "https://www.bdspares.co.za/brands/mitsubishi/mirage/",
+    "lineTitle": "Mirage"
+  },
+  {
+    "brandSlug": "mitsubishi",
+    "lineSlug": "outlander",
+    "path": "mitsubishi/outlander",
+    "listingUrl": "https://www.bdspares.co.za/brands/mitsubishi/outlander/",
+    "lineTitle": "Outlander"
+  },
+  {
+    "brandSlug": "mitsubishi",
+    "lineSlug": "pajero",
+    "path": "mitsubishi/pajero",
+    "listingUrl": "https://www.bdspares.co.za/brands/mitsubishi/pajero/",
+    "lineTitle": "Pajero"
+  },
+  {
+    "brandSlug": "mitsubishi",
+    "lineSlug": "scorpio-mitsubishi",
+    "path": "mitsubishi/scorpio-mitsubishi",
+    "listingUrl": "https://www.bdspares.co.za/brands/mitsubishi/scorpio-mitsubishi/",
+    "lineTitle": "Scorpio Mitsubishi"
+  },
+  {
+    "brandSlug": "mitsubishi",
+    "lineSlug": "triton",
+    "path": "mitsubishi/triton",
+    "listingUrl": "https://www.bdspares.co.za/brands/mitsubishi/triton/",
+    "lineTitle": "Triton"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "feed",
+    "path": "nissan/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "1-tonner",
+    "path": "nissan/1-tonner",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/1-tonner/",
+    "lineTitle": "1 Tonner"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "1400",
+    "path": "nissan/1400",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/1400/",
+    "lineTitle": "1400"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "350z",
+    "path": "nissan/350z",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/350z/",
+    "lineTitle": "350z"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "370-z",
+    "path": "nissan/370-z",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/370-z/",
+    "lineTitle": "370 Z"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "almera",
+    "path": "nissan/almera",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/almera/",
+    "lineTitle": "Almera"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "gt-r",
+    "path": "nissan/gt-r",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/gt-r/",
+    "lineTitle": "Gt R"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "hardbody",
+    "path": "nissan/hardbody",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/hardbody/",
+    "lineTitle": "Hardbody"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "juke",
+    "path": "nissan/juke",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/juke/",
+    "lineTitle": "Juke"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "lavina",
+    "path": "nissan/lavina",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/lavina/",
+    "lineTitle": "Lavina"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "livina",
+    "path": "nissan/livina",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/livina/",
+    "lineTitle": "Livina"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "magnite",
+    "path": "nissan/magnite",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/magnite/",
+    "lineTitle": "Magnite"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "micra",
+    "path": "nissan/micra",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/micra/",
+    "lineTitle": "Micra"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "murano",
+    "path": "nissan/murano",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/murano/",
+    "lineTitle": "Murano"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "navara",
+    "path": "nissan/navara",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/navara/",
+    "lineTitle": "Navara"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "np200",
+    "path": "nissan/np200",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/np200/",
+    "lineTitle": "Np200"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "np300",
+    "path": "nissan/np300",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/np300/",
+    "lineTitle": "Np300"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "nv200",
+    "path": "nissan/nv200",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/nv200/",
+    "lineTitle": "Nv200"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "nv350",
+    "path": "nissan/nv350",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/nv350/",
+    "lineTitle": "Nv350"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "pathfinder",
+    "path": "nissan/pathfinder",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/pathfinder/",
+    "lineTitle": "Pathfinder"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "patrol",
+    "path": "nissan/patrol",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/patrol/",
+    "lineTitle": "Patrol"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "primera",
+    "path": "nissan/primera",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/primera/",
+    "lineTitle": "Primera"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "qashqai",
+    "path": "nissan/qashqai",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/qashqai/",
+    "lineTitle": "Qashqai"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "sentra",
+    "path": "nissan/sentra",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/sentra/",
+    "lineTitle": "Sentra"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "skyline",
+    "path": "nissan/skyline",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/skyline/",
+    "lineTitle": "Skyline"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "tiida",
+    "path": "nissan/tiida",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/tiida/",
+    "lineTitle": "Tiida"
+  },
+  {
+    "brandSlug": "nissan",
+    "lineSlug": "x-trail",
+    "path": "nissan/x-trail",
+    "listingUrl": "https://www.bdspares.co.za/brands/nissan/x-trail/",
+    "lineTitle": "X Trail"
+  },
+  {
+    "brandSlug": "omoda",
+    "lineSlug": "feed",
+    "path": "omoda/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/omoda/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "omoda",
+    "lineSlug": "c5-omoda",
+    "path": "omoda/c5-omoda",
+    "listingUrl": "https://www.bdspares.co.za/brands/omoda/c5-omoda/",
+    "lineTitle": "C5 Omoda"
+  },
+  {
+    "brandSlug": "opel",
+    "lineSlug": "feed",
+    "path": "opel/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/opel/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "opel",
+    "lineSlug": "adam",
+    "path": "opel/adam",
+    "listingUrl": "https://www.bdspares.co.za/brands/opel/adam/",
+    "lineTitle": "Adam"
+  },
+  {
+    "brandSlug": "opel",
+    "lineSlug": "astra",
+    "path": "opel/astra",
+    "listingUrl": "https://www.bdspares.co.za/brands/opel/astra/",
+    "lineTitle": "Astra"
+  },
+  {
+    "brandSlug": "opel",
+    "lineSlug": "corsa",
+    "path": "opel/corsa",
+    "listingUrl": "https://www.bdspares.co.za/brands/opel/corsa/",
+    "lineTitle": "Corsa"
+  },
+  {
+    "brandSlug": "opel",
+    "lineSlug": "crossland",
+    "path": "opel/crossland",
+    "listingUrl": "https://www.bdspares.co.za/brands/opel/crossland/",
+    "lineTitle": "Crossland"
+  },
+  {
+    "brandSlug": "opel",
+    "lineSlug": "grand-land",
+    "path": "opel/grand-land",
+    "listingUrl": "https://www.bdspares.co.za/brands/opel/grand-land/",
+    "lineTitle": "Grand Land"
+  },
+  {
+    "brandSlug": "opel",
+    "lineSlug": "kadett",
+    "path": "opel/kadett",
+    "listingUrl": "https://www.bdspares.co.za/brands/opel/kadett/",
+    "lineTitle": "Kadett"
+  },
+  {
+    "brandSlug": "opel",
+    "lineSlug": "meriva",
+    "path": "opel/meriva",
+    "listingUrl": "https://www.bdspares.co.za/brands/opel/meriva/",
+    "lineTitle": "Meriva"
+  },
+  {
+    "brandSlug": "opel",
+    "lineSlug": "mokka",
+    "path": "opel/mokka",
+    "listingUrl": "https://www.bdspares.co.za/brands/opel/mokka/",
+    "lineTitle": "Mokka"
+  },
+  {
+    "brandSlug": "opel",
+    "lineSlug": "monza",
+    "path": "opel/monza",
+    "listingUrl": "https://www.bdspares.co.za/brands/opel/monza/",
+    "lineTitle": "Monza"
+  },
+  {
+    "brandSlug": "opel",
+    "lineSlug": "utility-opel",
+    "path": "opel/utility-opel",
+    "listingUrl": "https://www.bdspares.co.za/brands/opel/utility-opel/",
+    "lineTitle": "Utility Opel"
+  },
+  {
+    "brandSlug": "opel",
+    "lineSlug": "vivaro",
+    "path": "opel/vivaro",
+    "listingUrl": "https://www.bdspares.co.za/brands/opel/vivaro/",
+    "lineTitle": "Vivaro"
+  },
+  {
+    "brandSlug": "opel",
+    "lineSlug": "zafira",
+    "path": "opel/zafira",
+    "listingUrl": "https://www.bdspares.co.za/brands/opel/zafira/",
+    "lineTitle": "Zafira"
+  },
+  {
+    "brandSlug": "peugeot",
+    "lineSlug": "feed",
+    "path": "peugeot/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/peugeot/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "peugeot",
+    "lineSlug": "107",
+    "path": "peugeot/107",
+    "listingUrl": "https://www.bdspares.co.za/brands/peugeot/107/",
+    "lineTitle": "107"
+  },
+  {
+    "brandSlug": "peugeot",
+    "lineSlug": "108",
+    "path": "peugeot/108",
+    "listingUrl": "https://www.bdspares.co.za/brands/peugeot/108/",
+    "lineTitle": "108"
+  },
+  {
+    "brandSlug": "peugeot",
+    "lineSlug": "2008",
+    "path": "peugeot/2008",
+    "listingUrl": "https://www.bdspares.co.za/brands/peugeot/2008/",
+    "lineTitle": "2008"
+  },
+  {
+    "brandSlug": "peugeot",
+    "lineSlug": "206",
+    "path": "peugeot/206",
+    "listingUrl": "https://www.bdspares.co.za/brands/peugeot/206/",
+    "lineTitle": "206"
+  },
+  {
+    "brandSlug": "peugeot",
+    "lineSlug": "207",
+    "path": "peugeot/207",
+    "listingUrl": "https://www.bdspares.co.za/brands/peugeot/207/",
+    "lineTitle": "207"
+  },
+  {
+    "brandSlug": "peugeot",
+    "lineSlug": "208",
+    "path": "peugeot/208",
+    "listingUrl": "https://www.bdspares.co.za/brands/peugeot/208/",
+    "lineTitle": "208"
+  },
+  {
+    "brandSlug": "peugeot",
+    "lineSlug": "3008",
+    "path": "peugeot/3008",
+    "listingUrl": "https://www.bdspares.co.za/brands/peugeot/3008/",
+    "lineTitle": "3008"
+  },
+  {
+    "brandSlug": "peugeot",
+    "lineSlug": "307",
+    "path": "peugeot/307",
+    "listingUrl": "https://www.bdspares.co.za/brands/peugeot/307/",
+    "lineTitle": "307"
+  },
+  {
+    "brandSlug": "peugeot",
+    "lineSlug": "308",
+    "path": "peugeot/308",
+    "listingUrl": "https://www.bdspares.co.za/brands/peugeot/308/",
+    "lineTitle": "308"
+  },
+  {
+    "brandSlug": "peugeot",
+    "lineSlug": "4008",
+    "path": "peugeot/4008",
+    "listingUrl": "https://www.bdspares.co.za/brands/peugeot/4008/",
+    "lineTitle": "4008"
+  },
+  {
+    "brandSlug": "peugeot",
+    "lineSlug": "508",
+    "path": "peugeot/508",
+    "listingUrl": "https://www.bdspares.co.za/brands/peugeot/508/",
+    "lineTitle": "508"
+  },
+  {
+    "brandSlug": "peugeot",
+    "lineSlug": "607",
+    "path": "peugeot/607",
+    "listingUrl": "https://www.bdspares.co.za/brands/peugeot/607/",
+    "lineTitle": "607"
+  },
+  {
+    "brandSlug": "peugeot",
+    "lineSlug": "boxer",
+    "path": "peugeot/boxer",
+    "listingUrl": "https://www.bdspares.co.za/brands/peugeot/boxer/",
+    "lineTitle": "Boxer"
+  },
+  {
+    "brandSlug": "peugeot",
+    "lineSlug": "partner",
+    "path": "peugeot/partner",
+    "listingUrl": "https://www.bdspares.co.za/brands/peugeot/partner/",
+    "lineTitle": "Partner"
+  },
+  {
+    "brandSlug": "porsche",
+    "lineSlug": "feed",
+    "path": "porsche/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/porsche/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "porsche",
+    "lineSlug": "cayenne",
+    "path": "porsche/cayenne",
+    "listingUrl": "https://www.bdspares.co.za/brands/porsche/cayenne/",
+    "lineTitle": "Cayenne"
+  },
+  {
+    "brandSlug": "proton",
+    "lineSlug": "feed",
+    "path": "proton/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/proton/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "proton",
+    "lineSlug": "arena",
+    "path": "proton/arena",
+    "listingUrl": "https://www.bdspares.co.za/brands/proton/arena/",
+    "lineTitle": "Arena"
+  },
+  {
+    "brandSlug": "proton",
+    "lineSlug": "gen-2",
+    "path": "proton/gen-2",
+    "listingUrl": "https://www.bdspares.co.za/brands/proton/gen-2/",
+    "lineTitle": "Gen 2"
+  },
+  {
+    "brandSlug": "proton",
+    "lineSlug": "savvy",
+    "path": "proton/savvy",
+    "listingUrl": "https://www.bdspares.co.za/brands/proton/savvy/",
+    "lineTitle": "Savvy"
+  },
+  {
+    "brandSlug": "renault",
+    "lineSlug": "feed",
+    "path": "renault/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/renault/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "renault",
+    "lineSlug": "captur",
+    "path": "renault/captur",
+    "listingUrl": "https://www.bdspares.co.za/brands/renault/captur/",
+    "lineTitle": "Captur"
+  },
+  {
+    "brandSlug": "renault",
+    "lineSlug": "clio",
+    "path": "renault/clio",
+    "listingUrl": "https://www.bdspares.co.za/brands/renault/clio/",
+    "lineTitle": "Clio"
+  },
+  {
+    "brandSlug": "renault",
+    "lineSlug": "duster",
+    "path": "renault/duster",
+    "listingUrl": "https://www.bdspares.co.za/brands/renault/duster/",
+    "lineTitle": "Duster"
+  },
+  {
+    "brandSlug": "renault",
+    "lineSlug": "espace",
+    "path": "renault/espace",
+    "listingUrl": "https://www.bdspares.co.za/brands/renault/espace/",
+    "lineTitle": "Espace"
+  },
+  {
+    "brandSlug": "renault",
+    "lineSlug": "fluence",
+    "path": "renault/fluence",
+    "listingUrl": "https://www.bdspares.co.za/brands/renault/fluence/",
+    "lineTitle": "Fluence"
+  },
+  {
+    "brandSlug": "renault",
+    "lineSlug": "kadjar",
+    "path": "renault/kadjar",
+    "listingUrl": "https://www.bdspares.co.za/brands/renault/kadjar/",
+    "lineTitle": "Kadjar"
+  },
+  {
+    "brandSlug": "renault",
+    "lineSlug": "kangoo",
+    "path": "renault/kangoo",
+    "listingUrl": "https://www.bdspares.co.za/brands/renault/kangoo/",
+    "lineTitle": "Kangoo"
+  },
+  {
+    "brandSlug": "renault",
+    "lineSlug": "kiger",
+    "path": "renault/kiger",
+    "listingUrl": "https://www.bdspares.co.za/brands/renault/kiger/",
+    "lineTitle": "Kiger"
+  },
+  {
+    "brandSlug": "renault",
+    "lineSlug": "koleos",
+    "path": "renault/koleos",
+    "listingUrl": "https://www.bdspares.co.za/brands/renault/koleos/",
+    "lineTitle": "Koleos"
+  },
+  {
+    "brandSlug": "renault",
+    "lineSlug": "kwid",
+    "path": "renault/kwid",
+    "listingUrl": "https://www.bdspares.co.za/brands/renault/kwid/",
+    "lineTitle": "Kwid"
+  },
+  {
+    "brandSlug": "renault",
+    "lineSlug": "laguna",
+    "path": "renault/laguna",
+    "listingUrl": "https://www.bdspares.co.za/brands/renault/laguna/",
+    "lineTitle": "Laguna"
+  },
+  {
+    "brandSlug": "renault",
+    "lineSlug": "logan",
+    "path": "renault/logan",
+    "listingUrl": "https://www.bdspares.co.za/brands/renault/logan/",
+    "lineTitle": "Logan"
+  },
+  {
+    "brandSlug": "renault",
+    "lineSlug": "master",
+    "path": "renault/master",
+    "listingUrl": "https://www.bdspares.co.za/brands/renault/master/",
+    "lineTitle": "Master"
+  },
+  {
+    "brandSlug": "renault",
+    "lineSlug": "megane",
+    "path": "renault/megane",
+    "listingUrl": "https://www.bdspares.co.za/brands/renault/megane/",
+    "lineTitle": "Megane"
+  },
+  {
+    "brandSlug": "renault",
+    "lineSlug": "modus",
+    "path": "renault/modus",
+    "listingUrl": "https://www.bdspares.co.za/brands/renault/modus/",
+    "lineTitle": "Modus"
+  },
+  {
+    "brandSlug": "renault",
+    "lineSlug": "sandero",
+    "path": "renault/sandero",
+    "listingUrl": "https://www.bdspares.co.za/brands/renault/sandero/",
+    "lineTitle": "Sandero"
+  },
+  {
+    "brandSlug": "renault",
+    "lineSlug": "scenic",
+    "path": "renault/scenic",
+    "listingUrl": "https://www.bdspares.co.za/brands/renault/scenic/",
+    "lineTitle": "Scenic"
+  },
+  {
+    "brandSlug": "renault",
+    "lineSlug": "triber",
+    "path": "renault/triber",
+    "listingUrl": "https://www.bdspares.co.za/brands/renault/triber/",
+    "lineTitle": "Triber"
+  },
+  {
+    "brandSlug": "renault",
+    "lineSlug": "twingo",
+    "path": "renault/twingo",
+    "listingUrl": "https://www.bdspares.co.za/brands/renault/twingo/",
+    "lineTitle": "Twingo"
+  },
+  {
+    "brandSlug": "s3",
+    "lineSlug": "feed",
+    "path": "s3/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/s3/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "seat",
+    "lineSlug": "feed",
+    "path": "seat/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/seat/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "seat",
+    "lineSlug": "ibiza",
+    "path": "seat/ibiza",
+    "listingUrl": "https://www.bdspares.co.za/brands/seat/ibiza/",
+    "lineTitle": "Ibiza"
+  },
+  {
+    "brandSlug": "smart",
+    "lineSlug": "feed",
+    "path": "smart/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/smart/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "smart",
+    "lineSlug": "fortwo",
+    "path": "smart/fortwo",
+    "listingUrl": "https://www.bdspares.co.za/brands/smart/fortwo/",
+    "lineTitle": "Fortwo"
+  },
+  {
+    "brandSlug": "ssangyong",
+    "lineSlug": "feed",
+    "path": "ssangyong/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/ssangyong/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "ssangyong",
+    "lineSlug": "actyon",
+    "path": "ssangyong/actyon",
+    "listingUrl": "https://www.bdspares.co.za/brands/ssangyong/actyon/",
+    "lineTitle": "Actyon"
+  },
+  {
+    "brandSlug": "ssangyong",
+    "lineSlug": "kyron",
+    "path": "ssangyong/kyron",
+    "listingUrl": "https://www.bdspares.co.za/brands/ssangyong/kyron/",
+    "lineTitle": "Kyron"
+  },
+  {
+    "brandSlug": "ssangyong",
+    "lineSlug": "musso",
+    "path": "ssangyong/musso",
+    "listingUrl": "https://www.bdspares.co.za/brands/ssangyong/musso/",
+    "lineTitle": "Musso"
+  },
+  {
+    "brandSlug": "ssangyong",
+    "lineSlug": "rexton",
+    "path": "ssangyong/rexton",
+    "listingUrl": "https://www.bdspares.co.za/brands/ssangyong/rexton/",
+    "lineTitle": "Rexton"
+  },
+  {
+    "brandSlug": "subaru",
+    "lineSlug": "feed",
+    "path": "subaru/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/subaru/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "subaru",
+    "lineSlug": "forester",
+    "path": "subaru/forester",
+    "listingUrl": "https://www.bdspares.co.za/brands/subaru/forester/",
+    "lineTitle": "Forester"
+  },
+  {
+    "brandSlug": "subaru",
+    "lineSlug": "impreza",
+    "path": "subaru/impreza",
+    "listingUrl": "https://www.bdspares.co.za/brands/subaru/impreza/",
+    "lineTitle": "Impreza"
+  },
+  {
+    "brandSlug": "subaru",
+    "lineSlug": "tribeca",
+    "path": "subaru/tribeca",
+    "listingUrl": "https://www.bdspares.co.za/brands/subaru/tribeca/",
+    "lineTitle": "Tribeca"
+  },
+  {
+    "brandSlug": "subaru",
+    "lineSlug": "xv",
+    "path": "subaru/xv",
+    "listingUrl": "https://www.bdspares.co.za/brands/subaru/xv/",
+    "lineTitle": "Xv"
+  },
+  {
+    "brandSlug": "suzuki",
+    "lineSlug": "feed",
+    "path": "suzuki/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/suzuki/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "suzuki",
+    "lineSlug": "alto",
+    "path": "suzuki/alto",
+    "listingUrl": "https://www.bdspares.co.za/brands/suzuki/alto/",
+    "lineTitle": "Alto"
+  },
+  {
+    "brandSlug": "suzuki",
+    "lineSlug": "baleno",
+    "path": "suzuki/baleno",
+    "listingUrl": "https://www.bdspares.co.za/brands/suzuki/baleno/",
+    "lineTitle": "Baleno"
+  },
+  {
+    "brandSlug": "suzuki",
+    "lineSlug": "brezza-urban-cruiser",
+    "path": "suzuki/brezza-urban-cruiser",
+    "listingUrl": "https://www.bdspares.co.za/brands/suzuki/brezza-urban-cruiser/",
+    "lineTitle": "Brezza Urban Cruiser"
+  },
+  {
+    "brandSlug": "suzuki",
+    "lineSlug": "celerio",
+    "path": "suzuki/celerio",
+    "listingUrl": "https://www.bdspares.co.za/brands/suzuki/celerio/",
+    "lineTitle": "Celerio"
+  },
+  {
+    "brandSlug": "suzuki",
+    "lineSlug": "ciaz",
+    "path": "suzuki/ciaz",
+    "listingUrl": "https://www.bdspares.co.za/brands/suzuki/ciaz/",
+    "lineTitle": "Ciaz"
+  },
+  {
+    "brandSlug": "suzuki",
+    "lineSlug": "dzire",
+    "path": "suzuki/dzire",
+    "listingUrl": "https://www.bdspares.co.za/brands/suzuki/dzire/",
+    "lineTitle": "Dzire"
+  },
+  {
+    "brandSlug": "suzuki",
+    "lineSlug": "ertiga",
+    "path": "suzuki/ertiga",
+    "listingUrl": "https://www.bdspares.co.za/brands/suzuki/ertiga/",
+    "lineTitle": "Ertiga"
+  },
+  {
+    "brandSlug": "suzuki",
+    "lineSlug": "fronx",
+    "path": "suzuki/fronx",
+    "listingUrl": "https://www.bdspares.co.za/brands/suzuki/fronx/",
+    "lineTitle": "Fronx"
+  },
+  {
+    "brandSlug": "suzuki",
+    "lineSlug": "grand-vitara",
+    "path": "suzuki/grand-vitara",
+    "listingUrl": "https://www.bdspares.co.za/brands/suzuki/grand-vitara/",
+    "lineTitle": "Grand Vitara"
+  },
+  {
+    "brandSlug": "suzuki",
+    "lineSlug": "ignis",
+    "path": "suzuki/ignis",
+    "listingUrl": "https://www.bdspares.co.za/brands/suzuki/ignis/",
+    "lineTitle": "Ignis"
+  },
+  {
+    "brandSlug": "suzuki",
+    "lineSlug": "jimny",
+    "path": "suzuki/jimny",
+    "listingUrl": "https://www.bdspares.co.za/brands/suzuki/jimny/",
+    "lineTitle": "Jimny"
+  },
+  {
+    "brandSlug": "suzuki",
+    "lineSlug": "s-presso",
+    "path": "suzuki/s-presso",
+    "listingUrl": "https://www.bdspares.co.za/brands/suzuki/s-presso/",
+    "lineTitle": "S Presso"
+  },
+  {
+    "brandSlug": "suzuki",
+    "lineSlug": "splash",
+    "path": "suzuki/splash",
+    "listingUrl": "https://www.bdspares.co.za/brands/suzuki/splash/",
+    "lineTitle": "Splash"
+  },
+  {
+    "brandSlug": "suzuki",
+    "lineSlug": "super-carry",
+    "path": "suzuki/super-carry",
+    "listingUrl": "https://www.bdspares.co.za/brands/suzuki/super-carry/",
+    "lineTitle": "Super Carry"
+  },
+  {
+    "brandSlug": "suzuki",
+    "lineSlug": "swift",
+    "path": "suzuki/swift",
+    "listingUrl": "https://www.bdspares.co.za/brands/suzuki/swift/",
+    "lineTitle": "Swift"
+  },
+  {
+    "brandSlug": "suzuki",
+    "lineSlug": "sx4",
+    "path": "suzuki/sx4",
+    "listingUrl": "https://www.bdspares.co.za/brands/suzuki/sx4/",
+    "lineTitle": "Sx4"
+  },
+  {
+    "brandSlug": "tata",
+    "lineSlug": "feed",
+    "path": "tata/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/tata/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "tata",
+    "lineSlug": "indica-tata",
+    "path": "tata/indica-tata",
+    "listingUrl": "https://www.bdspares.co.za/brands/tata/indica-tata/",
+    "lineTitle": "Indica Tata"
+  },
+  {
+    "brandSlug": "tata",
+    "lineSlug": "indigo",
+    "path": "tata/indigo",
+    "listingUrl": "https://www.bdspares.co.za/brands/tata/indigo/",
+    "lineTitle": "Indigo"
+  },
+  {
+    "brandSlug": "tata",
+    "lineSlug": "super-ace",
+    "path": "tata/super-ace",
+    "listingUrl": "https://www.bdspares.co.za/brands/tata/super-ace/",
+    "lineTitle": "Super Ace"
+  },
+  {
+    "brandSlug": "tata",
+    "lineSlug": "vista",
+    "path": "tata/vista",
+    "listingUrl": "https://www.bdspares.co.za/brands/tata/vista/",
+    "lineTitle": "Vista"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "feed",
+    "path": "toyota/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "86",
+    "path": "toyota/86",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/86/",
+    "lineTitle": "86"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "agya",
+    "path": "toyota/agya",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/agya/",
+    "lineTitle": "Agya"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "auris",
+    "path": "toyota/auris",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/auris/",
+    "lineTitle": "Auris"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "avanza",
+    "path": "toyota/avanza",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/avanza/",
+    "lineTitle": "Avanza"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "avensis",
+    "path": "toyota/avensis",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/avensis/",
+    "lineTitle": "Avensis"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "aygo",
+    "path": "toyota/aygo",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/aygo/",
+    "lineTitle": "Aygo"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "c-hr",
+    "path": "toyota/c-hr",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/c-hr/",
+    "lineTitle": "C Hr"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "camry",
+    "path": "toyota/camry",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/camry/",
+    "lineTitle": "Camry"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "condor",
+    "path": "toyota/condor",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/condor/",
+    "lineTitle": "Condor"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "conquest",
+    "path": "toyota/conquest",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/conquest/",
+    "lineTitle": "Conquest"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "corolla",
+    "path": "toyota/corolla",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/corolla/",
+    "lineTitle": "Corolla"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "cressida",
+    "path": "toyota/cressida",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/cressida/",
+    "lineTitle": "Cressida"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "dyna",
+    "path": "toyota/dyna",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/dyna/",
+    "lineTitle": "Dyna"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "etios",
+    "path": "toyota/etios",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/etios/",
+    "lineTitle": "Etios"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "fj-cruiser",
+    "path": "toyota/fj-cruiser",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/fj-cruiser/",
+    "lineTitle": "Fj Cruiser"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "fortuner",
+    "path": "toyota/fortuner",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/fortuner/",
+    "lineTitle": "Fortuner"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "hiace",
+    "path": "toyota/hiace",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/hiace/",
+    "lineTitle": "Hiace"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "hilux-toyota",
+    "path": "toyota/hilux-toyota",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/hilux-toyota/",
+    "lineTitle": "Hilux Toyota"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "hino",
+    "path": "toyota/hino",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/hino/",
+    "lineTitle": "Hino"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "innova",
+    "path": "toyota/innova",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/innova/",
+    "lineTitle": "Innova"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "land-cruiser",
+    "path": "toyota/land-cruiser",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/land-cruiser/",
+    "lineTitle": "Land Cruiser"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "prado",
+    "path": "toyota/prado",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/prado/",
+    "lineTitle": "Prado"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "prius",
+    "path": "toyota/prius",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/prius/",
+    "lineTitle": "Prius"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "quantum",
+    "path": "toyota/quantum",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/quantum/",
+    "lineTitle": "Quantum"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "rav-4",
+    "path": "toyota/rav-4",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/rav-4/",
+    "lineTitle": "Rav 4"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "rumion",
+    "path": "toyota/rumion",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/rumion/",
+    "lineTitle": "Rumion"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "runx",
+    "path": "toyota/runx",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/runx/",
+    "lineTitle": "Runx"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "rush",
+    "path": "toyota/rush",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/rush/",
+    "lineTitle": "Rush"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "starlet",
+    "path": "toyota/starlet",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/starlet/",
+    "lineTitle": "Starlet"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "tazz",
+    "path": "toyota/tazz",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/tazz/",
+    "lineTitle": "Tazz"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "urban-cruiser",
+    "path": "toyota/urban-cruiser",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/urban-cruiser/",
+    "lineTitle": "Urban Cruiser"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "venture",
+    "path": "toyota/venture",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/venture/",
+    "lineTitle": "Venture"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "verso",
+    "path": "toyota/verso",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/verso/",
+    "lineTitle": "Verso"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "vitz",
+    "path": "toyota/vitz",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/vitz/",
+    "lineTitle": "Vitz"
+  },
+  {
+    "brandSlug": "toyota",
+    "lineSlug": "yaris",
+    "path": "toyota/yaris",
+    "listingUrl": "https://www.bdspares.co.za/brands/toyota/yaris/",
+    "lineTitle": "Yaris"
+  },
+  {
+    "brandSlug": "vitara",
+    "lineSlug": "feed",
+    "path": "vitara/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/vitara/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "volvo",
+    "lineSlug": "feed",
+    "path": "volvo/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/volvo/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "volvo",
+    "lineSlug": "c30",
+    "path": "volvo/c30",
+    "listingUrl": "https://www.bdspares.co.za/brands/volvo/c30/",
+    "lineTitle": "C30"
+  },
+  {
+    "brandSlug": "volvo",
+    "lineSlug": "s40",
+    "path": "volvo/s40",
+    "listingUrl": "https://www.bdspares.co.za/brands/volvo/s40/",
+    "lineTitle": "S40"
+  },
+  {
+    "brandSlug": "volvo",
+    "lineSlug": "s60",
+    "path": "volvo/s60",
+    "listingUrl": "https://www.bdspares.co.za/brands/volvo/s60/",
+    "lineTitle": "S60"
+  },
+  {
+    "brandSlug": "volvo",
+    "lineSlug": "s80",
+    "path": "volvo/s80",
+    "listingUrl": "https://www.bdspares.co.za/brands/volvo/s80/",
+    "lineTitle": "S80"
+  },
+  {
+    "brandSlug": "volvo",
+    "lineSlug": "v40",
+    "path": "volvo/v40",
+    "listingUrl": "https://www.bdspares.co.za/brands/volvo/v40/",
+    "lineTitle": "V40"
+  },
+  {
+    "brandSlug": "volvo",
+    "lineSlug": "v60",
+    "path": "volvo/v60",
+    "listingUrl": "https://www.bdspares.co.za/brands/volvo/v60/",
+    "lineTitle": "V60"
+  },
+  {
+    "brandSlug": "volvo",
+    "lineSlug": "v70",
+    "path": "volvo/v70",
+    "listingUrl": "https://www.bdspares.co.za/brands/volvo/v70/",
+    "lineTitle": "V70"
+  },
+  {
+    "brandSlug": "volvo",
+    "lineSlug": "xc40",
+    "path": "volvo/xc40",
+    "listingUrl": "https://www.bdspares.co.za/brands/volvo/xc40/",
+    "lineTitle": "Xc40"
+  },
+  {
+    "brandSlug": "volvo",
+    "lineSlug": "xc60",
+    "path": "volvo/xc60",
+    "listingUrl": "https://www.bdspares.co.za/brands/volvo/xc60/",
+    "lineTitle": "Xc60"
+  },
+  {
+    "brandSlug": "volvo",
+    "lineSlug": "xc90",
+    "path": "volvo/xc90",
+    "listingUrl": "https://www.bdspares.co.za/brands/volvo/xc90/",
+    "lineTitle": "Xc90"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "feed",
+    "path": "vw/feed",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/feed/",
+    "lineTitle": "Feed"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "amarok",
+    "path": "vw/amarok",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/amarok/",
+    "lineTitle": "Amarok"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "arteon",
+    "path": "vw/arteon",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/arteon/",
+    "lineTitle": "Arteon"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "beetle",
+    "path": "vw/beetle",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/beetle/",
+    "lineTitle": "Beetle"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "caddy",
+    "path": "vw/caddy",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/caddy/",
+    "lineTitle": "Caddy"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "crafter",
+    "path": "vw/crafter",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/crafter/",
+    "lineTitle": "Crafter"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "golf",
+    "path": "vw/golf",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/golf/",
+    "lineTitle": "Golf"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "jetta",
+    "path": "vw/jetta",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/jetta/",
+    "lineTitle": "Jetta"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "kombi-caravelle",
+    "path": "vw/kombi-caravelle",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/kombi-caravelle/",
+    "lineTitle": "Kombi Caravelle"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "passat",
+    "path": "vw/passat",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/passat/",
+    "lineTitle": "Passat"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "polo",
+    "path": "vw/polo",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/polo/",
+    "lineTitle": "Polo"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "scirocco",
+    "path": "vw/scirocco",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/scirocco/",
+    "lineTitle": "Scirocco"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "sharan",
+    "path": "vw/sharan",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/sharan/",
+    "lineTitle": "Sharan"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "t-cross",
+    "path": "vw/t-cross",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/t-cross/",
+    "lineTitle": "T Cross"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "t-roc-vw",
+    "path": "vw/t-roc-vw",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/t-roc-vw/",
+    "lineTitle": "T Roc Vw"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "taigo",
+    "path": "vw/taigo",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/taigo/",
+    "lineTitle": "Taigo"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "tiguan",
+    "path": "vw/tiguan",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/tiguan/",
+    "lineTitle": "Tiguan"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "touareg",
+    "path": "vw/touareg",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/touareg/",
+    "lineTitle": "Touareg"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "touran",
+    "path": "vw/touran",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/touran/",
+    "lineTitle": "Touran"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "transporter",
+    "path": "vw/transporter",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/transporter/",
+    "lineTitle": "Transporter"
+  },
+  {
+    "brandSlug": "vw",
+    "lineSlug": "up",
+    "path": "vw/up",
+    "listingUrl": "https://www.bdspares.co.za/brands/vw/up/",
+    "lineTitle": "Up"
   }
 ]

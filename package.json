@@ -9,6 +9,8 @@
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "studio": "next dev",
     "sanity:deploy": "npx sanity@latest deploy",
     "sanity:graphql": "npx sanity@latest graphql deploy",
@@ -53,6 +55,7 @@
     "slugify": "^1.6.6",
     "tailwindcss": "^4",
     "tsx": "^4.19.2",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^3.0.5"
   }
 }

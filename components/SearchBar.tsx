@@ -314,7 +314,7 @@ export default function SearchBar() {
   return (
     <form
       onSubmit={handleSearch}
-      className="flex-1 min-w-0 mx-2 md:mx-4"
+      className="flex-1 min-w-0 mx-1 sm:mx-2 md:mx-4"
       ref={searchRef}
     >
       <div className="relative">

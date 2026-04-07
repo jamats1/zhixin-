@@ -5,7 +5,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useBrands } from "@/hooks/useBrands";
 import { useCarPartCategories } from "@/hooks/useCarPartCategories";
 import { useCarParts } from "@/hooks/useCarParts";
+import { useSparePartLines } from "@/hooks/useSparePartLines";
 import { useVehicles } from "@/hooks/useVehicles";
+import { useVehicleTypes } from "@/hooks/useVehicleTypes";
 import { useCarPartsStore } from "@/stores/carPartsStore";
 import { useFilterStore } from "@/stores/filterStore";
 import { useGalleryStore } from "@/stores/galleryStore";
@@ -26,17 +28,35 @@ export default function VehicleGrid() {
   const {
     selectedBrand,
     selectedType,
+    selectedSparePartLineId,
     onlyOnSale,
     onlyNewEnergy,
     fuelType,
     selectedCarPartCategory,
     resetFilters,
     setBrand,
+    setType,
+    setSparePartLine,
     setOnlyOnSale,
     setOnlyNewEnergy,
     setFuelType,
     setCarPartCategory,
   } = useFilterStore();
+
+  const { types: vehicleTypeOptions } = useVehicleTypes();
+  const { lines: spareLinesForLabels } = useSparePartLines(
+    isCarPartsView ? selectedBrand : null,
+  );
+  const selectedTypeLabel =
+    selectedType && isVehiclesView
+      ? (vehicleTypeOptions.find((t) => t.id === selectedType)?.title ??
+        selectedType)
+      : null;
+  const selectedSpareLineLabel =
+    isCarPartsView && selectedSparePartLineId
+      ? (spareLinesForLabels.find((l) => l.id === selectedSparePartLineId)
+          ?.title ?? selectedSparePartLineId)
+      : null;
 
   // Conditionally use hooks based on view to avoid unnecessary fetches
   const vehiclesHook = useVehicles();
@@ -102,7 +122,12 @@ export default function VehicleGrid() {
         onlyNewEnergy ||
         fuelType
       )
-    : !!(selectedBrand || onlyOnSale || selectedCarPartCategory);
+    : !!(
+        selectedBrand ||
+        onlyOnSale ||
+        selectedCarPartCategory ||
+        selectedSparePartLineId
+      );
 
   const selectedCarPartCategoryTitle =
     isCarPartsView && selectedCarPartCategory
@@ -198,9 +223,9 @@ export default function VehicleGrid() {
       )}
 
       {/* Results Count - Sticky aligned with reference */}
-      <div className="sticky top-[60px] md:top-[71px] z-10 bg-white pb-2 md:pb-3 pt-2 md:pt-3 border-b border-[var(--border)]">
-        <div className="flex items-center justify-between gap-4 flex-wrap">
-          <span className="text-xs md:text-sm font-[300] text-[#828CA0]">
+      <div className="sticky top-[56px] md:top-[71px] z-10 bg-white pb-2 md:pb-3 pt-2 md:pt-3 border-b border-[var(--border)]">
+        <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between md:gap-4">
+          <span className="text-xs md:text-sm font-[300] text-[#828CA0] shrink-0">
             Total <em className="not-italic text-[#FF6600]">{totalCount}</em>{" "}
             {hasActiveFilters ? (
               <span className="hidden sm:inline">
@@ -214,12 +239,25 @@ export default function VehicleGrid() {
 
           {/* Active Filters Display */}
           {hasActiveFilters && (
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-xs text-[var(--text-tertiary)]">
+            <div className="flex min-w-0 max-w-full items-center gap-2 max-md:flex-nowrap max-md:overflow-x-auto max-md:pb-0.5 max-md:[scrollbar-width:none] max-md:[&::-webkit-scrollbar]:hidden md:flex-wrap">
+              <span className="hidden sm:inline text-xs text-[var(--text-tertiary)] shrink-0">
                 Active filters:
               </span>
               {isVehiclesView && (
                 <>
+                  {selectedType && selectedTypeLabel && (
+                    <span className="inline-flex items-center gap-1 px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] rounded text-xs">
+                      Type: {selectedTypeLabel}
+                      <button
+                        type="button"
+                        onClick={() => setType(null)}
+                        className="hover:bg-[var(--primary)]/20 rounded-full p-0.5"
+                        aria-label="Remove body type filter"
+                      >
+                        <X className="h-3 w-3" />
+                      </button>
+                    </span>
+                  )}
                   {onlyOnSale && (
                     <span className="inline-flex items-center gap-1 px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] rounded text-xs">
                       On Sale
@@ -289,6 +327,23 @@ export default function VehicleGrid() {
                   </button>
                 </span>
               )}
+              {isCarPartsView &&
+                selectedSparePartLineId &&
+                selectedSpareLineLabel && (
+                  <span className="inline-flex max-w-[220px] items-center gap-1 px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] rounded text-xs">
+                    <span className="truncate">
+                      Line: {selectedSpareLineLabel}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setSparePartLine(null)}
+                      className="hover:bg-[var(--primary)]/20 shrink-0 rounded-full p-0.5"
+                      aria-label="Remove model line filter"
+                    >
+                      <X className="h-3 w-3" />
+                    </button>
+                  </span>
+                )}
               <button
                 type="button"
                 onClick={resetFilters}

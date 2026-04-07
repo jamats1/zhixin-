@@ -3,7 +3,9 @@
 import Image from "next/image";
 import { useBrands } from "@/hooks/useBrands";
 import { useCarPartCategories } from "@/hooks/useCarPartCategories";
+import { useSparePartLines } from "@/hooks/useSparePartLines";
 import { useVehicleCategories } from "@/hooks/useVehicleCategories";
+import { useVehicleTypesForFilters } from "@/hooks/useVehicleTypesForFilters";
 import { brandLogoUrl } from "@/lib/sanity/client";
 import { useFilterStore } from "@/stores/filterStore";
 import { useUIStore } from "@/stores/uiStore";
@@ -47,8 +49,12 @@ export default function Filters() {
   const {
     setBrand,
     setCategory,
+    setType,
     selectedCategory,
     selectedBrand,
+    selectedType,
+    selectedSparePartLineId,
+    setSparePartLine,
     alphabeticalFilter,
     setAlphabeticalFilter,
     setVehicleView,
@@ -67,8 +73,15 @@ export default function Filters() {
     countSource: isVehiclesView ? "vehicles" : "carParts",
   });
   const vehicleSegment = currentView === "truckList" ? "truck" : "car";
-  const { categories: vehicleCategories } = useVehicleCategories(vehicleSegment);
+  const { categories: vehicleCategories } =
+    useVehicleCategories(vehicleSegment);
   const { categories: carPartCategories } = useCarPartCategories();
+  const { types: vehicleTypesForRow, showRow: showVehicleTypeRow } =
+    useVehicleTypesForFilters(selectedCategory);
+  const { lines: sparePartLines, isLoading: spareLinesLoading } =
+    useSparePartLines(
+      currentView === "featuredAlbums" ? selectedBrand : null,
+    );
   const brandList = brands || [];
   const brandsWithVehicles = brandList.filter((b) => (b.count ?? 0) > 0);
   const hotBrands = brandList.filter((b) => b.isHot && (b.count ?? 0) > 0);
@@ -86,14 +99,14 @@ export default function Filters() {
   return (
     <>
       {/* Main Categories */}
-      <div className="mb-2 md:mb-1 flex flex-nowrap items-center border-b border-b-[#E6E9F0] bg-white text-base md:text-lg overflow-x-auto scrollbar-none snap-x snap-mandatory">
+      <div className="mb-2 md:mb-1 flex flex-nowrap items-center border-b border-b-[#E6E9F0] bg-white text-sm md:text-lg overflow-x-auto scrollbar-none snap-x snap-mandatory">
         <button
           type="button"
           onClick={() => {
             setVehicleView("imageList");
             setCurrentView("imageList");
           }}
-          className={`relative mr-4 md:mr-10 px-4 py-2 md:py-2.5 min-h-[40px] rounded-full snap-start after:absolute md:after:-bottom-0 after:left-0 md:after:h-[3px] md:after:w-full transition-colors font-[600] ${
+          className={`relative mr-3 md:mr-10 px-3 py-1.5 md:px-4 md:py-2.5 min-h-[36px] md:min-h-[40px] rounded-full snap-start after:absolute md:after:-bottom-0 after:left-0 md:after:h-[3px] md:after:w-full transition-colors font-[600] ${
             currentView === "imageList"
               ? "text-[var(--primary)] bg-[var(--primary)]/5 md:bg-transparent md:after:bg-[var(--primary)]"
               : "text-[var(--text-primary)] hover:text-[var(--primary)]"
@@ -107,7 +120,7 @@ export default function Filters() {
             setVehicleView("truckList");
             setCurrentView("truckList");
           }}
-          className={`relative mr-4 md:mr-10 px-4 py-2 md:py-2.5 min-h-[40px] rounded-full snap-start after:absolute md:after:-bottom-0 after:left-0 md:after:h-[3px] md:after:w-full transition-colors font-[600] ${
+          className={`relative mr-3 md:mr-10 px-3 py-1.5 md:px-4 md:py-2.5 min-h-[36px] md:min-h-[40px] rounded-full snap-start after:absolute md:after:-bottom-0 after:left-0 md:after:h-[3px] md:after:w-full transition-colors font-[600] ${
             currentView === "truckList"
               ? "text-[var(--primary)] bg-[var(--primary)]/5 md:bg-transparent md:after:bg-[var(--primary)]"
               : "text-[var(--text-primary)] hover:text-[var(--primary)]"
@@ -120,7 +133,7 @@ export default function Filters() {
           onClick={() => {
             setCurrentView("featuredAlbums");
           }}
-          className={`relative mr-4 md:mr-10 px-4 py-2 md:py-2.5 min-h-[40px] rounded-full snap-start after:absolute md:after:-bottom-0 after:left-0 md:after:h-[3px] md:after:w-full transition-colors font-[600] ${
+          className={`relative mr-3 md:mr-10 px-3 py-1.5 md:px-4 md:py-2.5 min-h-[36px] md:min-h-[40px] rounded-full snap-start after:absolute md:after:-bottom-0 after:left-0 md:after:h-[3px] md:after:w-full transition-colors font-[600] ${
             currentView === "featuredAlbums"
               ? "text-[var(--primary)] bg-[var(--primary)]/5 md:bg-transparent md:after:bg-[var(--primary)]"
               : "text-[var(--text-primary)] hover:text-[var(--primary)]"
@@ -171,24 +184,16 @@ export default function Filters() {
             className="hidden sm:block w-12 md:w-14 min-w-[48px] md:min-w-[68px] shrink-0"
             aria-hidden="true"
           />
-          <div className="w-full min-w-0 bg-[#F8F9FC] px-2 md:px-4 pb-2 pt-2 md:pt-3 min-h-[60px] md:h-[84px] overflow-x-auto md:overflow-hidden">
+          <div className="w-full min-w-0 bg-[#F8F9FC] px-2 md:px-4 pb-1.5 pt-1.5 md:pb-2 md:pt-3 min-h-[52px] md:min-h-[60px] md:h-[84px] overflow-x-auto md:overflow-hidden">
             {brandsLoading ? (
               <div className="flex items-center min-h-[52px] text-[var(--text-tertiary)] text-xs">
                 Loading brands…
               </div>
             ) : popularBrands.length === 0 ? (
               <div className="flex items-center min-h-[52px] text-[var(--text-tertiary)] text-xs">
-                {isVehiclesView ? (
-                  <>
-                    No brands to show. Sync brands from AutoCango (npm run
-                    scrape:autocango -- --brands).
-                  </>
-                ) : (
-                  <>
-                    No brands with in-stock parts. Link a brand on car part
-                    documents in Sanity, or add inventory.
-                  </>
-                )}
+                {isVehiclesView
+                  ? "No brands to show. Sync brands from AutoCango (npm run scrape:autocango -- --brands)."
+                  : "No brands with in-stock parts. Link a brand on car part documents in Sanity, or add inventory."}
               </div>
             ) : (
               <div className="flex flex-nowrap md:flex-wrap gap-2 md:gap-0">
@@ -241,13 +246,59 @@ export default function Filters() {
             </div>
           </div>
 
-          {/* Quick Filters and Fuel Type Section */}
-          <div className="flex min-h-7 w-full border-b border-b-[#F0F3F8] py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] transition-all last:border-none min-w-0">
+          {/* Body / series type from Sanity (vehicleType), scoped by category */}
+          {showVehicleTypeRow ? (
+            <div className="flex items-center min-h-7 w-full border-b border-b-[#F0F3F8] py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] transition-all min-w-0">
+              <div className="hidden sm:block w-12 md:w-[68px] leading-5 md:leading-7 text-[#828CA0] text-xs md:text-sm shrink-0">
+                Body type
+              </div>
+              <div className="flex flex-1 flex-nowrap md:flex-wrap gap-1.5 md:gap-2 text-xs md:text-sm text-[var(--text-primary)] min-w-0 overflow-x-auto snap-x snap-mandatory">
+                {vehicleTypesForRow.map((t) => (
+                  <button
+                    type="button"
+                    key={t.id}
+                    onClick={() => setType(t.id === "all" ? null : t.id)}
+                    className={`cursor-pointer rounded px-3 md:px-2 py-1.5 text-xs whitespace-nowrap min-h-[32px] md:min-h-[34px] snap-start transition-colors ${
+                      (t.id === "all" && !selectedType) ||
+                      selectedType === t.id
+                        ? "bg-[var(--primary)] text-white"
+                        : "hover:bg-gray-100"
+                    }`}
+                  >
+                    {t.title}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : null}
+
+          {/* Quick filters + fuel: desktop/tablet only; mobile uses FAB drawer to avoid duplicate rows */}
+          <div className="hidden md:flex min-h-7 w-full border-b border-b-[#F0F3F8] py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] transition-all last:border-none min-w-0">
             <div className="hidden sm:block w-12 md:w-[68px] leading-5 md:leading-7 text-[#828CA0] text-xs md:text-sm shrink-0">
               Availability
             </div>
             <div className="flex flex-1 flex-wrap gap-2 text-xs md:text-sm text-[var(--text-primary)] min-w-0">
-              {/* Quick Filters */}
+              <label
+                className={`flex items-center gap-1.5 cursor-pointer px-2.5 py-1.5 rounded-md border transition-all ${
+                  !onlyOnSale && !onlyNewEnergy
+                    ? "bg-[var(--primary)]/10 border-[var(--primary)]/30 text-[var(--primary)]"
+                    : "bg-gray-50 border-gray-200 text-[var(--text-secondary)] hover:bg-gray-100 hover:border-gray-300"
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="quickFilter"
+                  checked={!onlyOnSale && !onlyNewEnergy}
+                  onChange={() => {
+                    setOnlyOnSale(false);
+                    setOnlyNewEnergy(false);
+                  }}
+                  className="w-3 h-3 text-[var(--primary)] border-[var(--border)] rounded-full focus:ring-1 focus:ring-[var(--primary)] focus:ring-offset-0 accent-[var(--primary)] cursor-pointer"
+                />
+                <span className="text-xs font-medium whitespace-nowrap">
+                  All
+                </span>
+              </label>
               <label
                 className={`flex items-center gap-1.5 cursor-pointer px-2.5 py-1.5 rounded-md border transition-all ${
                   onlyOnSale && !onlyNewEnergy
@@ -291,7 +342,22 @@ export default function Filters() {
                 </span>
               </label>
 
-              {/* Fuel Type Filters */}
+              <span
+                className="hidden lg:inline w-px h-6 self-center bg-[var(--border)] mx-1 shrink-0"
+                aria-hidden
+              />
+
+              <button
+                type="button"
+                onClick={() => setFuelType(null)}
+                className={`px-2.5 py-1 text-xs rounded transition-colors whitespace-nowrap ${
+                  fuelType == null
+                    ? "bg-[var(--primary)] text-white"
+                    : "bg-gray-100 text-[var(--text-secondary)] hover:bg-gray-200"
+                }`}
+              >
+                Any fuel
+              </button>
               {[
                 { label: "Gas", value: "gas" as const },
                 { label: "Diesel", value: "diesel" as const },
@@ -348,8 +414,52 @@ export default function Filters() {
             </div>
           </div>
 
-          {/* Car Parts: On Sale Filter */}
-          <div className="flex min-h-7 w-full border-b border-b-[#F0F3F8] py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] transition-all last:border-none min-w-0">
+          {/* Model line (BD Spares paths) when a brand is selected */}
+          {selectedBrand ? (
+            <div className="flex items-start min-h-7 w-full border-b border-b-[#F0F3F8] py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] transition-all min-w-0">
+              <div className="hidden sm:block w-12 md:w-[68px] leading-5 md:leading-7 text-[#828CA0] text-xs md:text-sm shrink-0 pt-1">
+                Model line
+              </div>
+              <div className="flex flex-1 flex-nowrap md:flex-wrap gap-1.5 md:gap-2 text-xs md:text-sm min-w-0 overflow-x-auto snap-x snap-mandatory">
+                {spareLinesLoading ? (
+                  <span className="text-[var(--text-tertiary)] text-xs py-1">
+                    Loading lines…
+                  </span>
+                ) : (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => setSparePartLine(null)}
+                      className={`cursor-pointer rounded px-3 md:px-2 py-1.5 text-xs whitespace-nowrap min-h-[32px] md:min-h-[34px] snap-start transition-colors ${
+                        !selectedSparePartLineId
+                          ? "bg-[var(--primary)] text-white"
+                          : "hover:bg-gray-100 text-[var(--text-primary)]"
+                      }`}
+                    >
+                      All lines
+                    </button>
+                    {sparePartLines.map((line) => (
+                      <button
+                        type="button"
+                        key={line.id}
+                        onClick={() => setSparePartLine(line.id)}
+                        className={`cursor-pointer rounded px-3 md:px-2 py-1.5 text-xs whitespace-nowrap min-h-[32px] md:min-h-[34px] snap-start transition-colors ${
+                          selectedSparePartLineId === line.id
+                            ? "bg-[var(--primary)] text-white"
+                            : "hover:bg-gray-100 text-[var(--text-primary)]"
+                        }`}
+                      >
+                        {line.title}
+                      </button>
+                    ))}
+                  </>
+                )}
+              </div>
+            </div>
+          ) : null}
+
+          {/* Car parts on-sale: desktop/tablet only; mobile uses FAB drawer */}
+          <div className="hidden md:flex min-h-7 w-full border-b border-b-[#F0F3F8] py-2 md:py-3 text-xs md:text-sm text-[var(--text-primary)] transition-all last:border-none min-w-0">
             <div className="hidden sm:block w-12 md:w-[68px] leading-5 md:leading-7 text-[#828CA0] text-xs md:text-sm shrink-0">
               Filters
             </div>

@@ -89,8 +89,37 @@ export const useFilterStore = create<FilterState & FilterActions>((set) => ({
   setBrand: (brand) =>
     set({ selectedBrand: brand, selectedSparePartLineId: null }),
   setSparePartLine: (lineId) => set({ selectedSparePartLineId: lineId }),
-  setType: (type) => set({ selectedType: type }),
-  setCategory: (category) => set({ selectedCategory: category }),
+  setType: (type) =>
+    set((state) => {
+      const v = state.currentVehicleView;
+      const vf = state.vehicleViewFilters[v];
+      return {
+        selectedType: type,
+        vehicleViewFilters: {
+          ...state.vehicleViewFilters,
+          [v]: { ...vf, selectedType: type },
+        },
+      };
+    }),
+  setCategory: (category) =>
+    set((state) => {
+      const v = state.currentVehicleView;
+      const vf = state.vehicleViewFilters[v];
+      const categoryChanged = vf.selectedCategory !== category;
+      const nextType = categoryChanged ? null : vf.selectedType;
+      return {
+        selectedCategory: category,
+        selectedType: nextType,
+        vehicleViewFilters: {
+          ...state.vehicleViewFilters,
+          [v]: {
+            ...vf,
+            selectedCategory: category,
+            selectedType: nextType,
+          },
+        },
+      };
+    }),
   setCarPartCategory: (category) => set({ selectedCarPartCategory: category }),
   setOnlyOnSale: (value) => set({ onlyOnSale: value }),
   setOnlyNewEnergy: (value) => set({ onlyNewEnergy: value }),
