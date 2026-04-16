@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect } from "react";
 import { useBrands } from "@/hooks/useBrands";
 import { useCarPartCategories } from "@/hooks/useCarPartCategories";
 import { useSparePartLines } from "@/hooks/useSparePartLines";
@@ -75,13 +76,19 @@ export default function Filters() {
   const vehicleSegment = currentView === "truckList" ? "truck" : "car";
   const { categories: vehicleCategories } =
     useVehicleCategories(vehicleSegment);
+
+  useEffect(() => {
+    if (!isVehiclesView) return;
+    const ids = new Set(vehicleCategories.map((c) => c.id));
+    if (selectedCategory != null && !ids.has(selectedCategory)) {
+      setCategory(null);
+    }
+  }, [isVehiclesView, vehicleCategories, selectedCategory, setCategory]);
   const { categories: carPartCategories } = useCarPartCategories();
   const { types: vehicleTypesForRow, showRow: showVehicleTypeRow } =
     useVehicleTypesForFilters(selectedCategory);
   const { lines: sparePartLines, isLoading: spareLinesLoading } =
-    useSparePartLines(
-      currentView === "featuredAlbums" ? selectedBrand : null,
-    );
+    useSparePartLines(currentView === "featuredAlbums" ? selectedBrand : null);
   const brandList = brands || [];
   const brandsWithVehicles = brandList.filter((b) => (b.count ?? 0) > 0);
   const hotBrands = brandList.filter((b) => b.isHot && (b.count ?? 0) > 0);
@@ -259,8 +266,7 @@ export default function Filters() {
                     key={t.id}
                     onClick={() => setType(t.id === "all" ? null : t.id)}
                     className={`cursor-pointer rounded px-3 md:px-2 py-1.5 text-xs whitespace-nowrap min-h-[32px] md:min-h-[34px] snap-start transition-colors ${
-                      (t.id === "all" && !selectedType) ||
-                      selectedType === t.id
+                      (t.id === "all" && !selectedType) || selectedType === t.id
                         ? "bg-[var(--primary)] text-white"
                         : "hover:bg-gray-100"
                     }`}

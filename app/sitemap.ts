@@ -9,14 +9,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = getSiteUrl();
   const fallback = new Date();
 
-  const entries: MetadataRoute.Sitemap = [
-    {
-      url: base,
-      lastModified: fallback,
-      changeFrequency: "daily",
-      priority: 1,
-    },
+  const staticPaths = [
+    "/",
+    "/search",
+    "/about",
+    "/contact",
+    "/careers",
+    "/feedback",
+    "/license",
+    "/inquiry",
+    "/faq",
+    "/mobile",
   ];
+
+  const entries: MetadataRoute.Sitemap = staticPaths.map((path) => ({
+    url: path === "/" ? base : `${base}${path}`,
+    lastModified: fallback,
+    changeFrequency: path === "/" ? ("daily" as const) : ("weekly" as const),
+    priority: path === "/" ? 1 : 0.5,
+  }));
 
   try {
     const [vehicles, parts] = await Promise.all([

@@ -25,6 +25,12 @@ export default function Footer() {
             Contact Us
           </Link>
           <Link
+            href="/faq"
+            className="hover:text-[var(--primary)] transition-colors py-2"
+          >
+            FAQ
+          </Link>
+          <Link
             href="/careers"
             className="hover:text-[var(--primary)] transition-colors py-2"
           >

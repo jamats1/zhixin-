@@ -118,7 +118,7 @@ export default function VehicleCard({
   const whatsappDigits = getSiteWhatsAppDigits();
 
   return (
-    <div className="bg-white rounded-lg overflow-hidden border border-[var(--border)] hover:shadow-lg transition-shadow transition-transform active:scale-[0.98] active:opacity-95">
+    <article className="group bg-white rounded-xl sm:rounded-lg overflow-hidden border border-[var(--border)] shadow-sm hover:shadow-lg transition-shadow transition-transform active:scale-[0.98] active:opacity-95 touch-manipulation">
       {/* Image: native img to avoid Next image optimizer timeouts; Sanity CDN URLs loaded directly */}
       <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden">
         <img
@@ -138,7 +138,7 @@ export default function VehicleCard({
 
         {/* Image Count Overlay */}
         {imageCount > 0 && (
-          <div className="absolute top-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded">
+          <div className="absolute top-2 left-2 bg-black/60 text-white text-[11px] sm:text-xs px-2 py-1 rounded-md">
             {imageCount} images
           </div>
         )}
@@ -147,17 +147,17 @@ export default function VehicleCard({
         {vrUrl && (
           <Link
             href={vrUrl}
-            className="absolute top-2 right-2 text-white text-xs hover:text-[var(--primary)] transition-colors flex items-center gap-1"
+            className="absolute top-2 right-2 flex min-h-10 min-w-10 items-center justify-center rounded-md bg-black/45 px-2 text-white text-[11px] sm:text-xs font-medium hover:bg-black/55 hover:text-[var(--primary)] transition-colors"
           >
-            <span>VR View</span>
+            <span>VR</span>
           </Link>
         )}
       </div>
 
       {/* Content */}
-      <div className="p-4">
+      <div className="p-3 sm:p-4">
         {/* Title */}
-        <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
+        <h3 className="text-base sm:text-lg font-semibold text-[var(--text-primary)] mb-1.5 sm:mb-2 line-clamp-2 leading-snug">
           {title}
         </h3>
 
@@ -169,8 +169,8 @@ export default function VehicleCard({
         )}
 
         {/* Price */}
-        <div className="text-sm mb-4">
-          <span className="font-semibold text-blue-600">
+        <div className="text-sm mb-3 sm:mb-4">
+          <span className="font-semibold text-blue-600 tabular-nums">
             {formatPrice(vehicle.priceRange)}
           </span>
         </div>
@@ -210,7 +210,7 @@ export default function VehicleCard({
             if (specs.length === 0) return null;
             return (
               <div
-                className="grid gap-1 border-t border-gray-100 pt-3 mb-4 text-[10px] text-center"
+                className="grid gap-1 border-t border-gray-100 pt-2.5 sm:pt-3 mb-3 sm:mb-4 text-[10px] sm:text-xs text-center"
                 style={{
                   gridTemplateColumns: `repeat(${specs.length}, minmax(0, 1fr))`,
                 }}
@@ -230,32 +230,30 @@ export default function VehicleCard({
             );
           })()}
 
-        {/* Action Buttons */}
-        <div className="flex gap-2">
-          <span className="flex-1 min-w-0">
-            <button
-              type="button"
-              className="w-full px-4 py-2 bg-[var(--primary)] text-white rounded hover:bg-[var(--primary-hover)] transition-colors font-medium text-sm min-h-[44px] flex items-center justify-center"
-              aria-label="WhatsApp Me about this listing"
-              onClick={() =>
-                openWhatsAppListingInquiry({
-                  phoneDigits: whatsappDigits,
-                  listingTitle: title,
-                  productPath: detailUrl,
-                })
-              }
-            >
-              WhatsApp Me
-            </button>
-          </span>
+        {/* Action Buttons — stacked on narrow cards, row from sm */}
+        <div className="flex flex-col gap-2 sm:flex-row sm:gap-2">
+          <button
+            type="button"
+            className="w-full sm:flex-1 px-4 py-2.5 bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--primary-hover)] transition-colors font-medium text-sm min-h-[48px] sm:min-h-[44px] flex items-center justify-center touch-manipulation"
+            aria-label="WhatsApp Me about this listing"
+            onClick={() =>
+              openWhatsAppListingInquiry({
+                phoneDigits: whatsappDigits,
+                listingTitle: title,
+                productPath: detailUrl,
+              })
+            }
+          >
+            WhatsApp Me
+          </button>
           <Link
             href={detailUrl}
-            className="px-4 py-2 border border-[var(--border)] text-[var(--text-primary)] rounded hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors font-medium text-sm min-h-[44px] flex items-center justify-center"
+            className="w-full sm:w-auto sm:shrink-0 px-4 py-2.5 border border-[var(--border)] text-[var(--text-primary)] rounded-lg hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors font-medium text-sm min-h-[48px] sm:min-h-[44px] flex items-center justify-center touch-manipulation"
           >
             {isCarPart ? "View Details" : "View Series"}
           </Link>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

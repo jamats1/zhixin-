@@ -1,3 +1,9 @@
+import {
+  SITE_BRAND,
+  SITE_DESCRIPTION,
+  SITE_KNOWS_ABOUT,
+} from "@/lib/seo/site-identity";
+
 function stripJsonLdContext(node: Record<string, unknown>) {
   const { "@context": _drop, ...rest } = node;
   return rest;
@@ -28,22 +34,39 @@ export function JsonLd({
   );
 }
 
-export function organizationJsonLd(siteUrl: string, name: string) {
+export function organizationJsonLd(siteUrl: string, name: string = SITE_BRAND) {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
     name,
     url: siteUrl,
+    description: SITE_DESCRIPTION,
+    areaServed: [
+      { "@type": "AdministrativeArea", name: "Worldwide" },
+      { "@type": "Country", name: "China" },
+    ],
+    knowsAbout: [...SITE_KNOWS_ABOUT],
   };
 }
 
-export function websiteJsonLd(siteUrl: string, name: string) {
+export function websiteJsonLd(siteUrl: string, name: string = SITE_BRAND) {
+  const searchTemplate = `${siteUrl.replace(/\/$/, "")}/search?q={search_term_string}`;
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name,
     url: siteUrl,
+    description: SITE_DESCRIPTION,
     publisher: { "@type": "Organization", name, url: siteUrl },
+    inLanguage: "en",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: searchTemplate,
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 }
 

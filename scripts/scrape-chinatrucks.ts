@@ -545,7 +545,20 @@ async function ensureTruckCategoryId(): Promise<string | null> {
   const existing = await sanity.fetch<{ _id: string } | null>(
     `*[_type == "vehicleCategory" && (slug.current == "truck" || title match "Truck*")][0]{_id}`,
   );
-  if (existing?._id) return existing._id;
+  if (existing?._id) {
+    const doc = await sanity.fetch<{ appliesToSegments?: string[] } | null>(
+      `*[_id == $id][0]{appliesToSegments}`,
+      { id: existing._id },
+    );
+    const segs = doc?.appliesToSegments ?? [];
+    if (!segs.includes("truck")) {
+      await sanity
+        .patch(existing._id)
+        .set({ appliesToSegments: [...segs, "truck"] })
+        .commit();
+    }
+    return existing._id;
+  }
 
   const id = "vehicleCategory-truck";
   await sanity.createOrReplace({
@@ -555,6 +568,7 @@ async function ensureTruckCategoryId(): Promise<string | null> {
     slug: { _type: "slug", current: "truck" },
     description: "Truck vehicles scraped from ChinaTrucks.",
     order: 5,
+    appliesToSegments: ["truck"],
   });
   return id;
 }

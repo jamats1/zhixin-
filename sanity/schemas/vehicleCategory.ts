@@ -53,7 +53,7 @@ export default defineType({
         layout: "grid",
       },
       description:
-        "Controls which top-level tab should show this category. Leave empty to show in both.",
+        "Which catalog tab lists this category. Leave empty for Vehicles (passenger) only. Add Trucks for the Trucks tab. Choose both values only when the category should appear under both tabs.",
     }),
   ],
   preview: {
